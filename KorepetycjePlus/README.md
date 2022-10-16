@@ -1,6 +1,6 @@
 # Korepetycje_Plus
-Wykonane zadania: /n
-✅ Wybrać Framework CSS /n
+Wykonane zadania: 
+✅ Wybrać Framework CSS <br>
 ✅ Stworzyć mockup
 ✅ Zaplanować zadania
 ✅ Przygotować kanban
