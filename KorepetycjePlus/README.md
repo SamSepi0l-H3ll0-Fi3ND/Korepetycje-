@@ -1,7 +1,7 @@
 # Korepetycje_Plus
-Wykonane zadania: 
+Wykonane zadania: <br>
 ✅ Wybrać Framework CSS <br>
-✅ Stworzyć mockup
-✅ Zaplanować zadania
-✅ Przygotować kanban
-✅ Stworzyć diagramy UML
+✅ Stworzyć mockup <br>
+✅ Zaplanować zadania <br>
+✅ Przygotować kanban <br>
+✅ Stworzyć diagramy UML <br>
