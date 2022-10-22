@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Rna/HxrBu23U8K3Bh53Y54cex9IMsoIvfqN+OEuvlApKlxse1S8BZHR1eNjfh7sEi9QBSUZ6HPG0/xAHgjXE/A==",
+  "dgSpecHash": "jcsW+ZrKKslXthRU/Fsnv1HOoZPH1+gv7o0iybxYqEi/94Az3cMsUb4urfnL9kcCNPd/w27dylhLu2O6GXn7uQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\erago\\source\\repos\\Koreprtycje+\\Koreprtycje+\\Koreprtycje+.csproj",
+  "projectFilePath": "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Koreprtycje+\\Koreprtycje+.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\erago\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\erago\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

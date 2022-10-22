@@ -2,8 +2,9 @@
 {
     public enum RoleValue
     {
-        Administrator = 0,
-        Tutor = 1,
-        User = 2
+        User = 0,
+        Administrator = 1,
+        Tutor = 2,
+        Client = 3,
     }
 }

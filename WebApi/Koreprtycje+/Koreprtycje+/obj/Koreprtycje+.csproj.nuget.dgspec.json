@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\erago\\source\\repos\\Koreprtycje+\\Koreprtycje+\\Koreprtycje+.csproj": {}
+    "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Koreprtycje+\\Koreprtycje+.csproj": {}
   },
   "projects": {
-    "C:\\Users\\erago\\source\\repos\\Koreprtycje+\\Koreprtycje+\\Koreprtycje+.csproj": {
+    "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Koreprtycje+\\Koreprtycje+.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\erago\\source\\repos\\Koreprtycje+\\Koreprtycje+\\Koreprtycje+.csproj",
+        "projectUniqueName": "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Koreprtycje+\\Koreprtycje+.csproj",
         "projectName": "Koreprtycje+",
-        "projectPath": "C:\\Users\\erago\\source\\repos\\Koreprtycje+\\Koreprtycje+\\Koreprtycje+.csproj",
+        "projectPath": "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Koreprtycje+\\Koreprtycje+.csproj",
         "packagesPath": "C:\\Users\\erago\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\erago\\source\\repos\\Koreprtycje+\\Koreprtycje+\\obj\\",
+        "outputPath": "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Koreprtycje+\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\erago\\AppData\\Roaming\\NuGet\\NuGet.Config",
