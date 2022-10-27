@@ -7,6 +7,8 @@ namespace Koreprtycje_.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Address{ get; set; }
+        public byte[] PasswordHash { get; set; }
+        public byte[] PasswordSalt { get; set; }
         public virtual List<Announcement> Announcements { get; set; }
         //public virtual List<Conversation> Conversations { get; set; }
         //public virtual List<int> Favorites { get; set; }

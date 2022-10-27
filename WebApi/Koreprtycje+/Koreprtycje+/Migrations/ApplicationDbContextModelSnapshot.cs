@@ -4,18 +4,16 @@ using Koreprtycje_.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Koreprtycje_.Data.Migrations
+namespace Koreprtycje_.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221022092459_initial")]
-    partial class initial
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -56,6 +54,16 @@ namespace Koreprtycje_.Data.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("LessonLength")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("SubjectId")
                         .HasColumnType("int");
@@ -138,11 +146,16 @@ namespace Koreprtycje_.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int?>("AnnouncementId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AnnouncementId");
 
                     b.ToTable("Tags");
                 });
@@ -195,8 +208,13 @@ namespace Koreprtycje_.Data.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<byte[]>("PasswordHash")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<byte[]>("PasswordSalt")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
@@ -397,6 +415,13 @@ namespace Koreprtycje_.Data.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Koreprtycje_.Models.Tag", b =>
+                {
+                    b.HasOne("Koreprtycje_.Models.Announcement", null)
+                        .WithMany("Tags")
+                        .HasForeignKey("AnnouncementId");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.HasOne("Koreprtycje_.Models.Role", null)
@@ -446,6 +471,11 @@ namespace Koreprtycje_.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Koreprtycje_.Models.Announcement", b =>
+                {
+                    b.Navigation("Tags");
                 });
 
             modelBuilder.Entity("Koreprtycje_.Models.User", b =>
