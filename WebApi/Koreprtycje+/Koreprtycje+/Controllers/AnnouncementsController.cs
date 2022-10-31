@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Koreprtycje_.Data;
 using Koreprtycje_.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Koreprtycje_.Controllers
 {
@@ -22,7 +23,7 @@ namespace Koreprtycje_.Controllers
         }
 
         // GET: api/Announcements
-        [HttpGet]
+        [HttpGet, Authorize(Roles = "User")]
         public async Task<ActionResult<IEnumerable<Announcement>>> GetAnnouncements()
         {
             return await _context.Announcements.ToListAsync();

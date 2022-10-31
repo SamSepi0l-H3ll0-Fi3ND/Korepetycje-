@@ -536,3 +536,9 @@ C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Koreprtycje+\ob
 C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Koreprtycje+\obj\Debug\net6.0\Koreprtycje+.pdb
 C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Koreprtycje+\obj\Debug\net6.0\Koreprtycje+.genruntimeconfig.cache
 C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Koreprtycje+\obj\Debug\net6.0\ref\Koreprtycje+.dll
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Koreprtycje+\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Koreprtycje+\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Koreprtycje+\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Koreprtycje+\bin\Debug\net6.0\Scrutor.dll
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Koreprtycje+\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Koreprtycje+\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll

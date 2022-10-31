@@ -2,6 +2,9 @@
 using Koreprtycje_.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Security.Cryptography;
 
 namespace Koreprtycje_.Controllers
@@ -11,10 +14,12 @@ namespace Koreprtycje_.Controllers
     public class AuthenticationController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private readonly IConfiguration _configuration;
 
-        public AuthenticationController(ApplicationDbContext dbContext)
+        public AuthenticationController(ApplicationDbContext dbContext, IConfiguration configuration)
         {
             _context = dbContext;
+            _configuration = configuration; 
         }
 
         [HttpPost("register")]
@@ -39,9 +44,35 @@ namespace Koreprtycje_.Controllers
             {
                 return BadRequest("Wrong Password!");
             }
-            return Ok("TOKEN");
+            string token = CreateToken(user);
+            return Ok(token);
 
         }
+
+
+        private string CreateToken(User user)
+        {
+            List<Claim> claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Name, user.UserName),
+                new Claim(ClaimTypes.Role, user.GetType().Name),
+            };
+
+            var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(_configuration.GetSection("AppSettings:Token").Value));
+
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
+
+            var token = new JwtSecurityToken(
+                claims: claims,
+                expires: DateTime.Now.AddDays(1),
+                signingCredentials: creds
+            );
+
+            var jwt = new JwtSecurityTokenHandler().WriteToken(token);
+
+            return jwt;
+        }
+
 
         private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
