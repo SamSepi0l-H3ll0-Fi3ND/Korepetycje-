@@ -4,6 +4,10 @@ import Nav from "./components/Nav";
 import Card from "./components/Card";
 import SearchBar from "./components/SearchBar";
 import Subjects from "./components/Subjects";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
+import Footer from "./components/Footer"
+
 function App() {
   return (
     <div className="App">
@@ -11,6 +15,9 @@ function App() {
       <Card></Card>
       <SearchBar></SearchBar>
       <Subjects></Subjects>
+      <SignIn></SignIn>
+      <SignUp></SignUp>
+      <Footer></Footer>
     </div>
   );
 }
