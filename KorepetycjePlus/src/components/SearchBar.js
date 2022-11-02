@@ -10,11 +10,11 @@ const SearchBar = () => {
         <input
           type="text"
           placeholder="Type here"
-          class="input input-bordered border-neutral-700 bg-[#faf9fa] w-full max-w-xs "
+          class="input input-bordered border-neutral-700 bg-[#faf9fa] w-4/5 max-w-xs "
         />
         <button class="btn bg-dark-blue">Szukaj</button>
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center mb-8">
         <a className="text-4xl text-center text-dark-blue font-bold">
           Popularne Przedmioty
         </a>

@@ -8,6 +8,7 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Footer from "./components/Footer"
 
+import Steps from "./components/Steps";
 function App() {
   return (
     <div className="App">
@@ -17,6 +18,7 @@ function App() {
       <Subjects></Subjects>
       <SignIn></SignIn>
       <SignUp></SignUp>
+      <Steps></Steps>
       <Footer></Footer>
     </div>
   );

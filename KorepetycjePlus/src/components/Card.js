@@ -7,11 +7,13 @@ const Card = () => {
           class="max-w-sm rounded-lg shadow-2xl"
         />
         <div className=":m-2 text-[#06283d] md:text-center ">
-          <h1 class="text-5xl font-bold  ">Sranie w banie!</h1>
+          <h1 class="text-5xl font-bold  ">Lorem ipsum!</h1>
           <p class="py-6">
             Lorem pomo to ero cos moko doko emorze. Edke peteke, mosva screen.
           </p>
-          <a class="btn btn-wide rounded-full bg-[#06283d] text-[#dff6ff]">Załóż konto</a>
+          <a class="btn btn-wide rounded-full bg-[#06283d] text-[#dff6ff]">
+            Załóż konto
+          </a>
         </div>
       </div>
     </div>
