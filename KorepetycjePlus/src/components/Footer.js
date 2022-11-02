@@ -6,10 +6,10 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 const Footer = () => {
     return(
         <div class="flex justify-between">
-            <div class="flex ml-20">
-                <FacebookIcon class="footer-icon w-6 mr-4"></FacebookIcon>
-                <InstagramIcon class="footer-icon w-6 mr-4"></InstagramIcon>
-                <TwitterIcon class="footer-icon w-6 mr-4"></TwitterIcon>
+            <div class="flex ml-10 mt-2">
+                <a class="btn btn-ghost"><FacebookIcon class="footer-icon w-6"></FacebookIcon></a>
+                <a class="btn btn-ghost"><InstagramIcon class="footer-icon w-6"></InstagramIcon></a>
+                <a class="btn btn-ghost"><TwitterIcon class="footer-icon w-6"></TwitterIcon></a>
             </div>
             <div class="footer-center mr-10">
                 <p class="flex normal-case text-2xl decoration-white gap-2 hover:text-[#06283d] m-4 font-bold">
