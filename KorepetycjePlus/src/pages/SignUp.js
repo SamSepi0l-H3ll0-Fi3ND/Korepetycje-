@@ -1,13 +1,19 @@
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import VpnKeyIcon from '@mui/icons-material/VpnKey';
-import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import VpnKeyIcon from "@mui/icons-material/VpnKey";
+import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
+import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
+import Nav from "../components/Nav";
 
 const SignUp = () => {
-    return (
-      <div class = "flex justify-center">
-        <div class = "grid rounded-md bg-[#d6f4fe] flex justify-center m-8 w-auto shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">
+  return (
+    <div>
+      <div class="flex justify-center">
+        <div class="grid rounded-md bg-[#d6f4fe] flex justify-center m-8 w-auto shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">
           <div class="pt-6 px-10 text-center mr-4">
-            <p class = "text-4xl text-center text-dark-blue font-bold pt-6 px-20 pb-14">Rejestracja</p>
+            <p class="text-4xl text-center text-dark-blue font-bold pt-6 px-20 pb-14">
+              Rejestracja
+            </p>
           </div>
           <div class="ml-14">
             <p class="ml-20 text-dark-blue font-bold">Nazwa Użytkownika</p>
@@ -53,17 +59,25 @@ const SignUp = () => {
             />
           </div>
           <div class="flex ml-20">
-            <input 
-                type="checkbox"
-                class = "mt-10 checked:bg-[#06283d] required:border-red-500"
-            /> <p class = "mt-10 ml-10 text-dark-blue">Akceptuje regulamin*</p>
+            <input
+              type="checkbox"
+              class="mt-10 checked:bg-[#06283d] required:border-red-500"
+            />{" "}
+            <p class="mt-10 ml-10 text-dark-blue">Akceptuje regulamin*</p>
           </div>
           <div class="flex justify-center mb-16">
-            <button class="btn bg-[#06283d] text-[#dff6ff] justify-center my-14 ml-6 w-48 shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">Zarejestruj się</button>
+            <button class="btn bg-[#06283d] text-[#dff6ff] justify-center my-14 ml-6 w-48 shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">
+              Zarejestruj się
+            </button>
           </div>
+          <p className="text-dark-blue text-center mb-8">
+            <Link to="../register">Jeśli masz już konto, zaloguj się!</Link>
+          </p>
         </div>
       </div>
-    );
-  };
-  
-  export default SignUp;
+      <Footer></Footer>
+    </div>
+  );
+};
+
+export default SignUp;

@@ -2,7 +2,7 @@ import React from "react";
 
 import SchoolIcon from "@mui/icons-material/School";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
@@ -104,9 +104,9 @@ const Nav = () => {
       </div>
       <div class="navbar-end gap-2">
         <button class="btn btn-outline text-[#06283d] border-2">
-          {/* <Link to="../pages/SignIn">Zaloguj się</Link> */}
+          <Link to="../SignIn">Zaloguj się</Link>
         </button>
-        <a class="btn bg-[#06283d] text-[#dff6ff]">Załóż konto</a>
+        <button class="btn bg-[#06283d] text-[#dff6ff]">Załóż konto</button>
       </div>
     </div>
   );
