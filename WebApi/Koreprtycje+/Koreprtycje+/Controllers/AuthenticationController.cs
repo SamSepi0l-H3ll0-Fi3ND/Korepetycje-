@@ -1,6 +1,8 @@
 ﻿using Koreprtycje_.Data;
+using Koreprtycje_.DTO;
 using Koreprtycje_.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -25,12 +27,15 @@ namespace Koreprtycje_.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<User>> Register(UserDto request)
         {
+            User newUser;
             CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
-
-            User newUser = new User() { Address = request.Address, FirstName = request.FirstName, LastName = request.LastName, PasswordHash = passwordHash, PasswordSalt = passwordSalt, UserName = request.UserName, Email=request.Email };
+            if(request.Type == 2)
+            {
+                 newUser = new Tutor() { Address = request.Address, FirstName = request.FirstName, LastName = request.LastName, PasswordHash = passwordHash, PasswordSalt = passwordSalt, UserName = request.UserName, Email = request.Email };
+            }
+            else newUser = new User() { Address = request.Address, FirstName = request.FirstName, LastName = request.LastName, PasswordHash = passwordHash, PasswordSalt = passwordSalt, UserName = request.UserName, Email=request.Email };
             _context.Users.Add(newUser);
             _context.SaveChanges();
-
             return Ok(newUser);
         }
 
@@ -45,6 +50,8 @@ namespace Koreprtycje_.Controllers
                 return BadRequest("Wrong Password!");
             }
             string token = CreateToken(user);
+
+
             return Ok(token);
 
         }
@@ -56,6 +63,7 @@ namespace Koreprtycje_.Controllers
             {
                 new Claim(ClaimTypes.Name, user.UserName),
                 new Claim(ClaimTypes.Role, user.GetType().Name),
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
             };
 
             var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(_configuration.GetSection("AppSettings:Token").Value));
