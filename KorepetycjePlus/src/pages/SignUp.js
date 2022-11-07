@@ -70,9 +70,11 @@ const SignUp = () => {
               Zarejestruj się
             </button>
           </div>
-          <p className="text-dark-blue text-center mb-8">
-            <Link to="../register">Jeśli masz już konto, zaloguj się!</Link>
-          </p>
+          <Link to="../signin">
+            <p className="text-dark-blue text-center mb-8">
+              Jeśli masz już konto, zaloguj się!
+            </p>
+          </Link>
         </div>
       </div>
       <Footer></Footer>

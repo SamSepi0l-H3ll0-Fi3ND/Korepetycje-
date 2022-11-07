@@ -1,15 +1,15 @@
 import React from "react";
-
 import SchoolIcon from "@mui/icons-material/School";
-import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import { Link } from "react-router-dom";
+import LoginIcon from "@mui/icons-material/Login";
+import HowToRegIcon from "@mui/icons-material/HowToReg";
 
 const Nav = () => {
   return (
     <div class="navbar">
       <div class="navbar-start">
         <div class="dropdown">
-          <label tabindex="0" class="btn btn-ghost lg:hidden">
+          <label tabindex="0" class="btn btn-ghost md:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-5 w-5"
@@ -45,7 +45,7 @@ const Nav = () => {
                   <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
                 </svg>
               </a>
-              <ul className="bg-[#fafafa]" class="p-2">
+              <ul className="bg-[#2a303c] p-2">
                 <li>
                   <a>Ścisłe</a>
                 </li>
@@ -60,9 +60,25 @@ const Nav = () => {
             <li>
               <a>Blog</a>
             </li>
+            <li>
+              <Link to="/signin">
+                <button class="btn bg-[#faf9fa] text-[#06283d] border-2 hover:bg-[#faf9fa]">
+                  Zaloguj się
+                  <LoginIcon className="ml-1"></LoginIcon>
+                </button>
+              </Link>
+            </li>
+            <li>
+              <Link to="/register">
+                <button class="btn bg-[#06283d] text-[#dff6ff]">
+                  Załóż konto
+                  <HowToRegIcon className="ml-1"></HowToRegIcon>
+                </button>
+              </Link>
+            </li>
           </ul>
         </div>
-        <a class="btn btn-ghost normal-case text-2xl text-[#06283d] gap-2 ">
+        <a class="btn btn-ghost normal-case text-2xl text-[#06283d] gap-2  ">
           <SchoolIcon></SchoolIcon>
           Korepetycje+
         </a>
@@ -102,11 +118,15 @@ const Nav = () => {
           </li>
         </ul>
       </div>
-      <div class="navbar-end gap-2">
-        <button class="btn btn-outline text-[#06283d] border-2">
-          <Link to="../SignIn">Zaloguj się</Link>
-        </button>
-        <button class="btn bg-[#06283d] text-[#dff6ff]">Załóż konto</button>
+      <div class="invisible md:visible navbar-end gap-2">
+        <Link to="/signin">
+          <button class="btn btn-outline text-[#06283d] border-2">
+            Zaloguj się
+          </button>
+        </Link>
+        <Link to="/register">
+          <button class="btn bg-[#06283d] text-[#dff6ff]">Załóż konto</button>
+        </Link>
       </div>
     </div>
   );
