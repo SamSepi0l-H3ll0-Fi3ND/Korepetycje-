@@ -7,6 +7,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Services.ConcreteServices;
+using Services.Configuration.AutoMapperProfiles;
+using Services.Interfaces;
 using Swashbuckle.AspNetCore.Filters;
 using System.Text;
 
@@ -42,7 +45,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateAudience = false
         };
     });
-        
+
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddTransient(typeof(ILogger), typeof(Logger<Program>));
+
+builder.Services.AddScoped<IAnnouncementService, AnnouncementService>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(
@@ -54,7 +61,6 @@ builder.Services.AddIdentityCore<User>(builder =>
         .AddRoleManager<RoleManager<Role>>()
         .AddUserManager<UserManager<User>>()
         .AddEntityFrameworkStores<ApplicationDbContext>();
-
 
 var app = builder.Build();
 

@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Koreprtycje_.DTO;
 using System.Security.Claims;
+using Services.Interfaces;
 
 namespace Koreprtycje_.Controllers
 {
@@ -19,20 +20,19 @@ namespace Koreprtycje_.Controllers
     public class AnnouncementsController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-        private readonly UserManager<User> _userManager;
+        private readonly IAnnouncementService _announcementService;
 
-
-        public AnnouncementsController(ApplicationDbContext context)
+        public AnnouncementsController(ApplicationDbContext context, IAnnouncementService announcementService )
         {
+            _announcementService = announcementService;
             _context = context;
         }
 
         // GET: api/Announcements
         [HttpGet, Authorize(Roles = "Tutor,Administrator")]
-        public async Task<ActionResult<IEnumerable<Announcement>>> GetAnnouncements()
+        public async Task<IEnumerable<AnnouncementDto>> GetAnnouncements()
         {
-            var id = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            return await _context.Announcements.ToListAsync();
+            return await _announcementService.GetAnnouncements();
         }
         // GET: api/Announcements/5
         [HttpGet("{id}")]

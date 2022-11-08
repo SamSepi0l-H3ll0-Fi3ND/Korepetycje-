@@ -1,0 +1,15 @@
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\bin\Debug\net6.0\DAL.deps.json
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\bin\Debug\net6.0\DAL.dll
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\bin\Debug\net6.0\DAL.pdb
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\bin\Debug\net6.0\Model.dll
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\bin\Debug\net6.0\Model.pdb
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\obj\Debug\net6.0\DAL.csproj.CopyComplete
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\obj\Debug\net6.0\DAL.dll
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\obj\Debug\net6.0\refint\DAL.dll
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\obj\Debug\net6.0\DAL.pdb
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\obj\Debug\net6.0\ref\DAL.dll

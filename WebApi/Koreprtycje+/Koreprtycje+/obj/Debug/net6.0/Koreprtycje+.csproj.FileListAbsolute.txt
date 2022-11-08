@@ -542,3 +542,15 @@ C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Koreprtycje+\bi
 C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Koreprtycje+\bin\Debug\net6.0\Scrutor.dll
 C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Koreprtycje+\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
 C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Koreprtycje+\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Koreprtycje+\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Koreprtycje+\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Koreprtycje+\bin\Debug\net6.0\EntityFramework.SqlServer.dll
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Koreprtycje+\bin\Debug\net6.0\EntityFramework.dll
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Koreprtycje+\bin\Debug\net6.0\Microsoft.AspNet.Identity.Core.dll
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Koreprtycje+\bin\Debug\net6.0\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Koreprtycje+\bin\Debug\net6.0\DAL.dll
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Koreprtycje+\bin\Debug\net6.0\Model.dll
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Koreprtycje+\bin\Debug\net6.0\Services.dll
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Koreprtycje+\bin\Debug\net6.0\Services.pdb
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Koreprtycje+\bin\Debug\net6.0\DAL.pdb
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Koreprtycje+\bin\Debug\net6.0\Model.pdb
