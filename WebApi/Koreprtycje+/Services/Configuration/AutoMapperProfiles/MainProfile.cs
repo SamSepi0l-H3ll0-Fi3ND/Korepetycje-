@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Koreprtycje_.DTO;
 using Koreprtycje_.Models;
+using Model.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,8 @@ namespace Services.Configuration.AutoMapperProfiles
         public MainProfile()
         {
             CreateMap<Announcement, AnnouncementDto>();
+            CreateMap<User, UserLoginDto>();
+            CreateMap<UserRegisterDto, UserLoginDto>();
         }
     }
 }

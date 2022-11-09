@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using Model.DTO;
+using Services.Interfaces;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
@@ -17,88 +19,39 @@ namespace Koreprtycje_.Controllers
     {
         private readonly ApplicationDbContext _context;
         private readonly IConfiguration _configuration;
+        private readonly IAuthenticationService _authenticationService;
 
-        public AuthenticationController(ApplicationDbContext dbContext, IConfiguration configuration)
+        public AuthenticationController(ApplicationDbContext dbContext, IConfiguration configuration, IAuthenticationService authenticationService)
         {
             _context = dbContext;
-            _configuration = configuration; 
+            _configuration = configuration;
+            _authenticationService = authenticationService;
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult<User>> Register(UserDto request)
+        public async Task<ActionResult<string>> Register(UserRegisterDto request)
         {
-            User newUser;
-            CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
-            if(request.Type == 2)
-            {
-                 newUser = new Tutor() { Address = request.Address, FirstName = request.FirstName, LastName = request.LastName, PasswordHash = passwordHash, PasswordSalt = passwordSalt, UserName = request.UserName, Email = request.Email };
-            }
-            else newUser = new User() { Address = request.Address, FirstName = request.FirstName, LastName = request.LastName, PasswordHash = passwordHash, PasswordSalt = passwordSalt, UserName = request.UserName, Email=request.Email };
-            _context.Users.Add(newUser);
-            _context.SaveChanges();
-            return Ok(newUser);
+            var userDto = await _authenticationService.Register(request);
+            var token = await _authenticationService.Login(userDto.UserName, userDto.Password);
+            return Ok(token);
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<string>> Login(UserDto req)
+        public async Task<ActionResult<string>> Login(UserLoginDto req)
         {
-            User user = _context.Users.First(x=> x.UserName == req.UserName);
-            if (user == null)
-                return BadRequest("No user with this name");
-            if(!VerifyPasswordHash(req.Password, user.PasswordHash, user.PasswordSalt))
-            {
-                return BadRequest("Wrong Password!");
-            }
-            string token = CreateToken(user);
 
+            var token = await _authenticationService.Login(req.UserName, req.Password);
 
             return Ok(token);
-
         }
 
 
-        private string CreateToken(User user)
-        {
-            List<Claim> claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.Name, user.UserName),
-                new Claim(ClaimTypes.Role, user.GetType().Name),
-                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
-            };
-
-            var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(_configuration.GetSection("AppSettings:Token").Value));
-
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
-
-            var token = new JwtSecurityToken(
-                claims: claims,
-                expires: DateTime.Now.AddDays(1),
-                signingCredentials: creds
-            );
-
-            var jwt = new JwtSecurityTokenHandler().WriteToken(token);
-
-            return jwt;
-        }
 
 
-        private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
-        {
-            using (var hmac = new HMACSHA512())
-            {
-                passwordSalt = hmac.Key;
-                passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
-            }
-        }
 
-        private bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)
-        {
-            using (var hmac = new HMACSHA512(passwordSalt))
-            {
-                var computedHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
-                return computedHash.SequenceEqual(passwordHash);
-            }
-        }
+
+
+
 
     }
 }
