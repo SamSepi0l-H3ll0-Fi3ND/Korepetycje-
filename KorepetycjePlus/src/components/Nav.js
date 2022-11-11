@@ -29,11 +29,12 @@ const Nav = () => {
             tabindex="0"
             class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
+            {/* Mobile Version of Navbar */}
             <li>
-              <a>Ogłoszenia</a>
+              <a class="btn btn-ghost">Ogłoszenia</a>
             </li>
             <li tabindex="0">
-              <a class="justify-between">
+              <a class="btn btn-ghost">
                 Przedmioty
                 <svg
                   class="fill-current"
@@ -47,18 +48,18 @@ const Nav = () => {
               </a>
               <ul className="bg-[#2a303c] p-2">
                 <li>
-                  <a>Ścisłe</a>
+                  <a class="btn btn-ghost">Ścisłe</a>
                 </li>
                 <li>
-                  <a>Humanistyczne</a>
+                  <a class="btn btn-ghost">Humanistyczne</a>
                 </li>
                 <li>
-                  <a>Języki obce</a>
+                  <a class="btn btn-ghost">Języki obce</a>
                 </li>
               </ul>
             </li>
             <li>
-              <a>Blog</a>
+              <a class="btn btn-ghost">Blog</a>
             </li>
             <li>
               <Link to="/signin">
@@ -83,13 +84,14 @@ const Nav = () => {
           Korepetycje+
         </a>
       </div>
-      <div class="navbar-center hidden lg:flex">
+      {/* PC Version of navbar */}
+      <div class="navbar-center hidden md:flex">
         <ul class="menu menu-horizontal text-[#06283d] text-2xl p-0">
           <li>
-            <a>Ogłoszenia</a>
+            <a class="btn btn-ghost">Ogłoszenia</a>
           </li>
           <li tabindex="0">
-            <a>
+            <a class="btn btn-ghost">
               Przedmioty
               <svg
                 class="fill-current"
@@ -103,18 +105,18 @@ const Nav = () => {
             </a>
             <ul className="bg-[#fafafa]" class="p-2">
               <li>
-                <a>Ścisłe</a>
+                <a class="btn btn-ghost">Ścisłe</a>
               </li>
               <li>
-                <a>Humanistyczne</a>
+                <a class="btn btn-ghost">Humanistyczne</a>
               </li>
               <li>
-                <a>Języki obce</a>
+                <a class="btn btn-ghost">Języki obce</a>
               </li>
             </ul>
           </li>
           <li>
-            <a>Blog</a>
+            <a class="btn btn-ghost">Blog</a>
           </li>
         </ul>
       </div>
