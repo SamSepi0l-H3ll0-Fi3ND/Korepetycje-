@@ -14,9 +14,23 @@ namespace Services.Configuration.AutoMapperProfiles
     {
         public MainProfile()
         {
-            CreateMap<Announcement, AnnouncementDto>();
             CreateMap<User, UserLoginDto>();
+            CreateMap<User, UserDto>();
+            CreateMap<UserDto, User>();
+
+
             CreateMap<UserRegisterDto, UserLoginDto>();
+
+            CreateMap<AnnouncementDto, Announcement>();
+            CreateMap<Announcement, AnnouncementDto>();
+
+            CreateMap<AnnouncementCreate, Announcement>();
+
+            CreateMap<SubjectDto, Subject>();
+            CreateMap<Subject, SubjectDto>();
+
+            CreateMap<TagDto, Tag>();
+            CreateMap<Tag, TagDto>();
         }
     }
 }

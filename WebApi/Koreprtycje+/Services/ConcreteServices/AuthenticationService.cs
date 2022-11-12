@@ -89,7 +89,7 @@ namespace Services.ConcreteServices
                 }
 
                 await DbContext.Users.AddAsync(newUser);
-                DbContext.SaveChanges();
+                await DbContext.SaveChangesAsync();
                 var newUserDto = Mapper.Map<UserLoginDto>(userRegister);
 
                 return newUserDto;

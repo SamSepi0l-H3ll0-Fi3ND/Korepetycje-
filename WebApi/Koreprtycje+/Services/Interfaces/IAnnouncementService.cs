@@ -1,4 +1,5 @@
 ﻿using Koreprtycje_.DTO;
+using Model.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,8 @@ namespace Services.Interfaces
 {
     public interface IAnnouncementService
     {
-        public Task<IEnumerable<AnnouncementDto>> GetAnnouncements(); 
+        public Task<IEnumerable<AnnouncementDto>> GetAnnouncements();
+        public Task<AnnouncementDto> GetAnnouncementById(int id);
+        public Task<int> PostAnnouncement(AnnouncementCreate announcementDto);
     }
 }

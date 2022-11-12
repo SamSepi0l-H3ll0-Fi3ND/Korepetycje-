@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Model.DTO;
 
 namespace Services.ConcreteServices
 {
@@ -17,6 +18,23 @@ namespace Services.ConcreteServices
     {
         public AnnouncementService(ApplicationDbContext dbContext, ILogger logger, IMapper mapper) : base(dbContext, logger, mapper)
         {
+        }
+
+        public async Task<AnnouncementDto> GetAnnouncementById(int id)
+        {
+            try
+            {
+                var announcement = await DbContext.Announcements.FirstAsync(x => x.Id == id);
+                if (announcement == null)
+                    throw new Exception("No announcement with this ID");
+                var announcementDTO = Mapper.Map<AnnouncementDto>(announcement);
+                return announcementDTO;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex, ex.Message);
+                throw;
+            }    
         }
 
         public async Task<IEnumerable<AnnouncementDto>> GetAnnouncements()
@@ -29,7 +47,28 @@ namespace Services.ConcreteServices
             }
             catch (Exception ex)
             {
-                throw ex;
+                Logger.LogError(ex, ex.Message);
+                throw;
+            }
+        }
+
+        public async Task<int> PostAnnouncement(AnnouncementCreate announcementDto)
+        {
+            try
+            {
+                if(announcementDto == null)
+                    throw new ArgumentNullException($"Dto parameter is null");
+                var announcement = Mapper.Map<Announcement>(announcementDto);
+                var ID = await DbContext.Announcements.AddAsync(announcement);
+                await DbContext.SaveChangesAsync();
+
+                return ID.Entity.Id;
+
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex, ex.Message);
+                throw;
             }
         }
     }

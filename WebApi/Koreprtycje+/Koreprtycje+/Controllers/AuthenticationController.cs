@@ -45,13 +45,5 @@ namespace Koreprtycje_.Controllers
             return Ok(token);
         }
 
-
-
-
-
-
-
-
-
     }
 }

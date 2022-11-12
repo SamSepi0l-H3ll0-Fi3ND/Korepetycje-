@@ -21,5 +21,6 @@ namespace Koreprtycje_.Models
         public decimal Price { get; set; }
         public int LessonLength { get; set; }
         public List<Tag> Tags { get; set; }
+
     }
 }

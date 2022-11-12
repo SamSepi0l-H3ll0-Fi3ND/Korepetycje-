@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Identity;
 using Koreprtycje_.DTO;
 using System.Security.Claims;
 using Services.Interfaces;
+using Model.DTO;
 
 namespace Koreprtycje_.Controllers
 {
@@ -29,16 +30,16 @@ namespace Koreprtycje_.Controllers
         }
 
         // GET: api/Announcements
-        [HttpGet, Authorize(Roles = "Tutor,Administrator")]
+        [HttpGet]
         public async Task<IEnumerable<AnnouncementDto>> GetAnnouncements()
         {
             return await _announcementService.GetAnnouncements();
         }
         // GET: api/Announcements/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Announcement>> GetAnnouncement(int id)
+        public async Task<ActionResult<AnnouncementDto>> GetAnnouncement(int id)
         {
-            var announcement = await _context.Announcements.FindAsync(id);
+            var announcement = await _announcementService.GetAnnouncementById(id);
 
             if (announcement == null)
             {
@@ -81,24 +82,13 @@ namespace Koreprtycje_.Controllers
 
         // POST: api/Announcements
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Announcement>> PostAnnouncement(AnnouncementDto announcement)
+        [HttpPost, Authorize(Roles = "Tutor,Administrator,Client")]
+        public async Task<ActionResult<AnnouncementDto>> PostAnnouncement(AnnouncementCreate announcement)
         {
+            announcement.UserId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            var announcementId = await _announcementService.PostAnnouncement(announcement);
 
-            var id = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var newAnnouncement = new Announcement()
-            {
-                UserId = Convert.ToInt32(id),
-                Type = announcement.Type,
-                SubjectId = announcement.SubjectId,
-                Description = announcement.Description,
-                Price = announcement.Price,
-                LessonLength = announcement.LessonLength
-            };
-            _context.Announcements.Add(newAnnouncement);
-            await _context.SaveChangesAsync();
-
-            return Ok(announcement);
+            return await _announcementService.GetAnnouncementById(announcementId);
         }
 
         // DELETE: api/Announcements/5
