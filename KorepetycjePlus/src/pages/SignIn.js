@@ -1,6 +1,5 @@
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Footer from "../components/Footer";
-import Nav from "../components/Nav";
 import VpnKeyIcon from "@mui/icons-material/VpnKey";
 import { Link } from "react-router-dom";
 const SignIn = () => {
@@ -50,7 +49,7 @@ const SignIn = () => {
         </div>
       </div>
       <div>
-      <Footer></Footer>
+        <Footer></Footer>
       </div>
     </div>
   );

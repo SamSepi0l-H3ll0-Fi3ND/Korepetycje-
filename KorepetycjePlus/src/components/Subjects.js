@@ -16,8 +16,8 @@ import TheatersIcon from "@mui/icons-material/Theaters";
 const Subjects = () => {
   return (
     <div>
-      <div class="flex justify-center overflow-x-auto">
-        <table class="table w-4/5">
+      <div class="flex justify-center overflow-x-auto bg-light-blue ">
+        <table class="table w-4/5 bg-light-blue">
           <thead className="text-2lg">
             <tr>
               <th >Ścisłe</th>
