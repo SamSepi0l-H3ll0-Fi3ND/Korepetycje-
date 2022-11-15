@@ -2,8 +2,29 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Footer from "../components/Footer";
 import VpnKeyIcon from "@mui/icons-material/VpnKey";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 const SignIn = () => {
+  
+  const [Username, setUsername] = useState(null);
+  const [password, setPassword]= useState(null);
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  function loginSubmit(e) {
+    e.preventDefault();
+  }
+  
+  
+  
   return (
+    <form onSubmit={loginSubmit}>
     <div>
       <div className="h-screen">
         <div class="flex justify-center">
@@ -22,6 +43,7 @@ const SignIn = () => {
                 type="text"
                 placeholder="Username"
                 class="input input-bordered border-neutral-700 bg-[#faf9fa] w-50 max-w-xs mt-2 ml-4 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
+                onChange={(e)=> setUsername(e.target.value)}
               />
             </div>
             <div class="ml-14">
@@ -33,6 +55,7 @@ const SignIn = () => {
                 type="password"
                 placeholder="Password"
                 class="input input-bordered border-neutral-700 bg-[#faf9fa] w-50 max-w-xs mt-2 ml-4 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <div class="flex justify-center mb-8">
@@ -52,6 +75,7 @@ const SignIn = () => {
         <Footer></Footer>
       </div>
     </div>
+    </form>
   );
 };
 
