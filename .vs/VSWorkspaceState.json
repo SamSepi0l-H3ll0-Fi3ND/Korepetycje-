@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\WebApi"
+    "\\WebApi",
+    "\\WebApi\\Koreprtycje+",
+    "\\WebApi\\Koreprtycje+\\Model",
+    "\\WebApi\\Koreprtycje+\\Model\\DTO"
   ],
+  "SelectedNode": "\\WebApi\\Koreprtycje+\\Model\\DTO\\AnnouncementDto.cs",
   "PreviewInSolutionExplorer": false
 }

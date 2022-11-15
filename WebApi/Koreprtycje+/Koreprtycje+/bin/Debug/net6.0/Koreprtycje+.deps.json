@@ -2462,6 +2462,7 @@
         "dependencies": {
           "Microsoft.AspNet.Identity.EntityFramework": "2.2.3",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.10",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.10",
           "Model": "1.0.0"
         },
         "runtime": {

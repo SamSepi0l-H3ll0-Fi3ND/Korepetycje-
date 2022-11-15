@@ -82,7 +82,7 @@ namespace Koreprtycje_.Controllers
 
         // POST: api/Announcements
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost, Authorize(Roles = "Tutor,Administrator,Client")]
+        [HttpPost/*, Authorize(Roles = "Tutor,Administrator,Client")*/]
         public async Task<ActionResult<AnnouncementDto>> PostAnnouncement(AnnouncementCreate announcement)
         {
             announcement.UserId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));

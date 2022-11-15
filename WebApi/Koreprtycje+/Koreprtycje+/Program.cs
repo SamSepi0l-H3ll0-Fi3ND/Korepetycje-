@@ -15,6 +15,11 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(policyBuilder =>
+    policyBuilder.AddDefaultPolicy(policy =>
+        policy.WithOrigins("*").AllowAnyHeader().AllowAnyHeader())
+);
+
 // Add services to the container.
 builder.Services.AddHttpContextAccessor();
 
@@ -72,8 +77,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors();
 app.UseHttpsRedirection();
-
+//app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
