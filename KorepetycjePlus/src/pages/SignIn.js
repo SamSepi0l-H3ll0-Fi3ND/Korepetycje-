@@ -1,10 +1,11 @@
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Footer from "../components/Footer";
 import VpnKeyIcon from "@mui/icons-material/VpnKey";
-import { Link } from "react-router-dom";
+import { json, Link } from "react-router-dom";
 import Cookies from "universal-cookie";
 import { useState } from "react";
 import API from "../env";
+import { TrySharp } from "@mui/icons-material";
 const SignIn = () => {
   const [Username, setUsername] = useState(null);
   const [password, setPassword] = useState(null);
@@ -13,20 +14,21 @@ const SignIn = () => {
     e.preventDefault();
 
     const SetCookies = new Cookies();
-    //localhost:7193/api/Authentication/login
+    //localhost:7193/api/Authentication/login https://localhost:7193/api/Announcements
+
     try {
       const response = await fetch(`${API}/api/Authentication/login`, {
         method: "POST",
         headers: {
-          accept: "text/plain",
-          "Content-Type": "application/json",
+          'accept': 'text/plain',
+          'Content-Type': 'application/json',
         },
-        body: {
+        body: JSON.stringify({
           userName: Username,
           password: password,
-        },
-      });
-      console.log(response);
+      })
+      }).then(r => console.log(r.text()))
+      
     } catch (error) {
       console.log(error, error.message);
     }
