@@ -13,5 +13,6 @@ namespace Services.Interfaces
         public Task<IEnumerable<AnnouncementDto>> GetAnnouncements();
         public Task<AnnouncementDto> GetAnnouncementById(int id);
         public Task<int> PostAnnouncement(AnnouncementCreate announcementDto);
+        public void DeleteAnnouncement(int announcementId, int userId);
     }
 }

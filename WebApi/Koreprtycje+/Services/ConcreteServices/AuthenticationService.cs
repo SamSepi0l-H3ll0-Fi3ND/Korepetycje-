@@ -12,17 +12,35 @@ using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.Configuration;
 using Koreprtycje_.DTO;
+using Microsoft.AspNetCore.Http;
 
 namespace Services.ConcreteServices
 {
     public class AuthenticationService : BaseService, IAuthenticationService
     {
         private readonly IConfiguration _configuration;
-        public AuthenticationService(ApplicationDbContext dbContext, ILogger logger, IMapper mapper, IConfiguration configuration ) : base(dbContext, logger, mapper)
+
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+        public AuthenticationService(ApplicationDbContext dbContext, ILogger logger, IMapper mapper, IConfiguration configuration, IHttpContextAccessor httpContextAccessor) : base(dbContext, logger, mapper)
         {
             _configuration = configuration;
+            _httpContextAccessor = httpContextAccessor;
         }
 
+        public object GetMe()
+        {
+            
+            if(_httpContextAccessor.HttpContext != null)
+            {
+                var userId = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var userName = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.Name);
+                var userRole = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.Role);
+                return new { userId, userName, userRole };
+            }
+            else
+                return null;
+        }
         public async Task<string> Login(string login, string password)
         {
             try

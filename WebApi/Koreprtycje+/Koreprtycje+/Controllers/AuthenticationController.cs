@@ -1,6 +1,7 @@
 ﻿using Koreprtycje_.Data;
 using Koreprtycje_.DTO;
 using Koreprtycje_.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -27,6 +28,13 @@ namespace Koreprtycje_.Controllers
             _configuration = configuration;
             _authenticationService = authenticationService;
         }
+        [HttpGet, Authorize]
+        public ActionResult<object> GetMe()
+        {
+            var user = _authenticationService.GetMe();
+            return Ok(user);
+        }
+
 
         [HttpPost("register")]
         public async Task<ActionResult<string>> Register(UserRegisterDto request)

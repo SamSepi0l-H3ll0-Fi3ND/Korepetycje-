@@ -12,5 +12,6 @@ namespace Services.Interfaces
     {
         public Task<string> Login(string login, string password);
         public Task<UserLoginDto> Register(UserRegisterDto userRegister);
+        public object GetMe();
     }
 }

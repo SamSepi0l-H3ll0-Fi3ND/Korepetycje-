@@ -20,6 +20,28 @@ namespace Services.ConcreteServices
         {
         }
 
+        public async void DeleteAnnouncement(int announcementId, int userId)
+        {
+            try
+            {
+                if(announcementId == null)
+                    throw new ArgumentNullException("Id can't be null");
+
+                var announcementToDelete = DbContext.FindAsync<Announcement>(announcementId).Result;
+                if (announcementToDelete == null)
+                    throw new ArgumentNullException("There is no announcement with this Id");
+                if (announcementToDelete.UserId != userId)
+                    if (DbContext.Users.FindAsync(userId).Result.GetType() != typeof(Administrator))
+                        throw new ArgumentException("User is not author or administrator");
+                DbContext.Remove(announcementToDelete);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex, ex.Message);
+                throw;
+            }
+        }
+
         public async Task<AnnouncementDto> GetAnnouncementById(int id)
         {
             try
