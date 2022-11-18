@@ -5,7 +5,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import { Link } from "react-router-dom";
 const Footer = () => {
   return (
-    <div class="flex justify-between">
+    <div class="flex justify-between border-t border-dark-blue rounded-none border-r-none ">
       <div class="flex ml-10 mt-2">
         <a class="btn btn-ghost">
           <FacebookIcon class="footer-icon w-6"></FacebookIcon>

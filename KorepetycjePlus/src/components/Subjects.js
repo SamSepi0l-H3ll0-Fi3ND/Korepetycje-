@@ -20,7 +20,7 @@ const Subjects = () => {
         <div className="text-2xl font-bold bg-light-blue px-16 py-2 underline underline-offset-8">
           Ścisłe
         </div>
-        <div className="text-2xl font-bold bg-light-blue px-16 py-2 underline underline-offset-8">
+        <div className="text-2xl font-bold bg-light-blue  px-16 py-2 underline underline-offset-8">
           Artystyczne
         </div>
         <div className="text-2xl font-bold bg-light-blue px-16 py-2 underline underline-offset-8">
