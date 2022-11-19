@@ -16,6 +16,7 @@ const Dashboard = () => {
       <Steps></Steps>
       <StepsEarn></StepsEarn>
       <Footer></Footer>
+ 
     </div>
   );
 };
