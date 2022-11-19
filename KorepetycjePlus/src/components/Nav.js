@@ -84,15 +84,17 @@ const Nav = () => {
           </div>
           <a class="btn btn-ghost normal-case text-2xl text-[#06283d] gap-2  ">
             <SchoolIcon></SchoolIcon>
-            Korepetycje+
+            <Link to="/">Korepetycje+</Link>
           </a>
         </div>
         {/* PC Version of navbar */}
         <div class="navbar-center hidden md:flex">
           <ul class="menu menu-horizontal text-[#06283d] text-2xl p-0">
-            <li>
-              <a class="btn btn-ghost">Ogłoszenia</a>
-            </li>
+            <Link to="/announcements">
+              <li>
+                <a class="btn btn-ghost">Ogłoszenia</a>
+              </li>
+            </Link>
             <li tabindex="0">
               <a class="btn btn-ghost">
                 Przedmioty
