@@ -8,7 +8,7 @@ import Nav from "../components/Nav";
 const SignUp = () => {
   return (
     <div>
-      <div class="flex justify-center">
+      <div class="flex h-screen justify-center">
         <div class="grid rounded-md bg-[#d6f4fe] flex justify-center m-8 w-auto shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">
           <div class="pt-6 px-10 text-center mr-4">
             <p class="text-4xl text-center text-dark-blue font-bold pt-6 px-20 pb-14">

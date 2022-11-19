@@ -1,6 +1,7 @@
 import SignalCellularAltIcon from "@mui/icons-material/SignalCellularAlt";
 import ImportContactsIcon from "@mui/icons-material/ImportContacts";
 import MoneyIcon from "@mui/icons-material/Money";
+
 const StepsEarn = () => {
   return (
     <div className="bg-[]">

@@ -20,15 +20,18 @@ const SignIn = () => {
       const response = await fetch(`${API}/api/Authentication/login`, {
         method: "POST",
         headers: {
-          'accept': 'text/plain',
-          'Content-Type': 'application/json',
+          accept: "text/plain",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           userName: Username,
           password: password,
-      })
-      }).then(r => console.log(r.text()))
+        }),
+      });
+      const token = await response.text();
+      localStorage.setItem("Tajny numerek", token);
       
+
     } catch (error) {
       console.log(error, error.message);
     }
