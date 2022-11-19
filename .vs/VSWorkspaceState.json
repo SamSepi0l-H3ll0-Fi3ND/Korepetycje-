@@ -3,9 +3,12 @@
     "",
     "\\WebApi",
     "\\WebApi\\Koreprtycje+",
+    "\\WebApi\\Koreprtycje+\\DAL",
     "\\WebApi\\Koreprtycje+\\Model",
-    "\\WebApi\\Koreprtycje+\\Model\\DTO"
+    "\\WebApi\\Koreprtycje+\\Services",
+    "\\WebApi\\Koreprtycje+\\Services\\ConcreteServices",
+    "\\WebApi\\Koreprtycje+\\WebApplication1"
   ],
-  "SelectedNode": "\\WebApi\\Koreprtycje+\\Model\\DTO\\AnnouncementDto.cs",
+  "SelectedNode": "\\WebApi\\Koreprtycje+",
   "PreviewInSolutionExplorer": false
 }

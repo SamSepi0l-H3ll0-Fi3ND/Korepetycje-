@@ -63,7 +63,7 @@ namespace DAL.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(14,2)");
 
                     b.Property<int>("SubjectId")
                         .HasColumnType("int");

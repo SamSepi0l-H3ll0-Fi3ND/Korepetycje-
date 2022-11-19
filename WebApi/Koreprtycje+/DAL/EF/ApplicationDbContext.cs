@@ -30,6 +30,11 @@ namespace Koreprtycje_.Data
                 .HasValue<Tutor>((int)RoleValue.Tutor);
 
             builder.Entity<Announcement>()
+                .Property(p => p.Price)
+                .HasColumnType("decimal(14,2)");
+            
+
+            builder.Entity<Announcement>()
                 .HasOne(u => u.User)
                 .WithMany(a => a.Announcements)
                 .HasForeignKey(a => a.UserId)

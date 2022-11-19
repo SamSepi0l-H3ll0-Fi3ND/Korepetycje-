@@ -13,3 +13,18 @@ C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\obj\Debug\n
 C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\obj\Debug\net6.0\refint\DAL.dll
 C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\obj\Debug\net6.0\DAL.pdb
 C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\obj\Debug\net6.0\ref\DAL.dll
+E:\PCZ\Semestr 7\Korepetycje_Plus\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\bin\Debug\net6.0\DAL.deps.json
+E:\PCZ\Semestr 7\Korepetycje_Plus\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\bin\Debug\net6.0\DAL.dll
+E:\PCZ\Semestr 7\Korepetycje_Plus\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\bin\Debug\net6.0\DAL.pdb
+E:\PCZ\Semestr 7\Korepetycje_Plus\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\bin\Debug\net6.0\Model.dll
+E:\PCZ\Semestr 7\Korepetycje_Plus\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\bin\Debug\net6.0\Model.pdb
+E:\PCZ\Semestr 7\Korepetycje_Plus\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+E:\PCZ\Semestr 7\Korepetycje_Plus\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+E:\PCZ\Semestr 7\Korepetycje_Plus\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+E:\PCZ\Semestr 7\Korepetycje_Plus\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+E:\PCZ\Semestr 7\Korepetycje_Plus\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+E:\PCZ\Semestr 7\Korepetycje_Plus\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\obj\Debug\net6.0\DAL.csproj.CopyComplete
+E:\PCZ\Semestr 7\Korepetycje_Plus\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\obj\Debug\net6.0\DAL.dll
+E:\PCZ\Semestr 7\Korepetycje_Plus\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\obj\Debug\net6.0\refint\DAL.dll
+E:\PCZ\Semestr 7\Korepetycje_Plus\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\obj\Debug\net6.0\DAL.pdb
+E:\PCZ\Semestr 7\Korepetycje_Plus\Korepetycje_Plus\WebApi\Koreprtycje+\DAL\obj\Debug\net6.0\ref\DAL.dll
