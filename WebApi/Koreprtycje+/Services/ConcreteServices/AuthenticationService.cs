@@ -13,19 +13,21 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.Configuration;
 using Koreprtycje_.DTO;
 using Microsoft.AspNetCore.Http;
+using Model.Models;
 
 namespace Services.ConcreteServices
 {
     public class AuthenticationService : BaseService, IAuthenticationService
     {
         private readonly IConfiguration _configuration;
-
         private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IUserService _userService;
 
-        public AuthenticationService(ApplicationDbContext dbContext, ILogger logger, IMapper mapper, IConfiguration configuration, IHttpContextAccessor httpContextAccessor) : base(dbContext, logger, mapper)
+        public AuthenticationService(ApplicationDbContext dbContext, ILogger logger, IMapper mapper, IConfiguration configuration, IHttpContextAccessor httpContextAccessor, IUserService userService) : base(dbContext, logger, mapper)
         {
             _configuration = configuration;
             _httpContextAccessor = httpContextAccessor;
+            _userService = userService;
         }
 
         public object GetMe()
@@ -41,7 +43,7 @@ namespace Services.ConcreteServices
             else
                 return null;
         }
-        public async Task<string> Login(string login, string password)
+        public async Task<Tuple<string, int>> Login(string login, string password)
         {
             try
             {
@@ -55,7 +57,7 @@ namespace Services.ConcreteServices
                 }
                 string token = CreateToken(user);
 
-                return token;
+                return Tuple.Create(token, user.Id);
             }
             catch (Exception ex)
             {
@@ -63,6 +65,26 @@ namespace Services.ConcreteServices
                 throw;
             }
         }
+
+        public async Task<RefreshToken> GenerateRefreshToken(int userId)
+        {
+            var refreshToken = new RefreshToken
+            {
+                Token = Convert.ToBase64String(RandomNumberGenerator.GetBytes(64)),
+                Expires = DateTime.Now.AddDays(7),
+                Created = DateTime.Now
+            };
+
+            var user = DbContext.Users.FindAsync(userId).Result;
+            user.RefreshToken = refreshToken.Token;
+            user.TokenCreated = refreshToken.Created;
+            user.TokenExpires = refreshToken.Expires;
+            DbContext.Update(user);
+            await DbContext.SaveChangesAsync();
+            return refreshToken;
+            
+        }
+
 
         public async Task<UserLoginDto> Register(UserRegisterDto userRegister)
         {
@@ -118,7 +140,28 @@ namespace Services.ConcreteServices
                 throw;
             }
         }
+        public async Task<string> RefreshToken(string refreshToken, int userId)
+        {
+            try
+            {
+                var user = DbContext.Users.FindAsync(userId).Result;
+                if (!user.RefreshToken.Equals(refreshToken))
+                    throw new UnauthorizedAccessException("Invalid Refresh Token,");
+                else if(user.TokenExpires < DateTime.Now)
+                {
+                    throw new UnauthorizedAccessException("Token expired.");
+                }
 
+                string token = CreateToken(user);
+                return token;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex, ex.Message);
+                throw;
+            }
+
+        }
         private string CreateToken(User user)
         {
             List<Claim> claims = new List<Claim>
@@ -160,5 +203,7 @@ namespace Services.ConcreteServices
                 return computedHash.SequenceEqual(passwordHash);
             }
         }
+
+
     }
 }

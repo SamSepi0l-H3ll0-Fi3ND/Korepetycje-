@@ -9,6 +9,9 @@ namespace Koreprtycje_.Models
         public string Address{ get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
+        public string RefreshToken { get; set; } = string.Empty;
+        public DateTime TokenCreated { get; set; }
+        public DateTime TokenExpires { get; set; }
         public virtual List<Announcement> Announcements { get; set; }
         //public virtual List<Conversation> Conversations { get; set; }
         //public virtual List<int> Favorites { get; set; }

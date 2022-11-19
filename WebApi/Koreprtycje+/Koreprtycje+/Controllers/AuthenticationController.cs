@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using Model.DTO;
+using Model.Models;
 using Services.Interfaces;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -18,16 +19,17 @@ namespace Koreprtycje_.Controllers
     [ApiController]
     public class AuthenticationController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
         private readonly IConfiguration _configuration;
         private readonly IAuthenticationService _authenticationService;
+        private readonly IUserService _userService;
 
-        public AuthenticationController(ApplicationDbContext dbContext, IConfiguration configuration, IAuthenticationService authenticationService)
+        public AuthenticationController(IConfiguration configuration, IAuthenticationService authenticationService, IUserService userService)
         {
-            _context = dbContext;
             _configuration = configuration;
             _authenticationService = authenticationService;
+            _userService = userService;
         }
+
         [HttpGet, Authorize]
         public ActionResult<object> GetMe()
         {
@@ -35,7 +37,7 @@ namespace Koreprtycje_.Controllers
             return Ok(user);
         }
 
-
+        
         [HttpPost("register")]
         public async Task<ActionResult<string>> Register(UserRegisterDto request)
         {
@@ -49,9 +51,33 @@ namespace Koreprtycje_.Controllers
         {
 
             var token = await _authenticationService.Login(req.UserName, req.Password);
+            var refreshToken = _authenticationService.GenerateRefreshToken(token.Item2);
+            SetRefreshToken(refreshToken.Result, token.Item2);
 
-            return Ok(token);
+            return Ok(token.Item1);
         }
 
+        [HttpPost("refresh-token")]
+        public async Task<ActionResult<string>> RefreshToken()
+        {
+            var refreshToken = Request.Cookies["refreshToken"];
+            var userId = int.Parse(Request.Cookies["User"]);
+            var token = _authenticationService.RefreshToken(refreshToken, userId);
+            var newRefreshToken = _authenticationService.GenerateRefreshToken(userId);
+            SetRefreshToken(newRefreshToken.Result, userId);
+
+            return token.Result;
+        }
+
+        private void SetRefreshToken(RefreshToken newRefreshToken, int userId)
+        {
+            var cookieOptions = new CookieOptions
+            {
+                HttpOnly = true,
+                Expires = newRefreshToken.Expires
+            };
+            Response.Cookies.Append("refreshToken", newRefreshToken.Token, cookieOptions);
+            Response.Cookies.Append("User", userId.ToString(), cookieOptions);
+        }
     }
 }
