@@ -7,7 +7,7 @@ const StepsEarn = () => {
       <div>
         <p className="flex justify-center text-3xl mt-16 pt-8 pb-4 font-semibold text-dark-blue">
           {" "}
-          Jak to wygląda?{" "}
+          Co dzięki nam zyskasz?{" "}
         </p>
       </div>
       <div className="flex justify-center ">
