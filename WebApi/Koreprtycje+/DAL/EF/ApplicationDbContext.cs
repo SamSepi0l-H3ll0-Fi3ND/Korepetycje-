@@ -28,6 +28,10 @@ namespace Koreprtycje_.Data
                 .HasValue<Client>((int)RoleValue.Client)
                 .HasValue<Administrator>((int)RoleValue.Administrator)
                 .HasValue<Tutor>((int)RoleValue.Tutor);
+
+            builder.Entity<Announcement>()
+                .Property(p => p.Price)
+                .HasColumnType("decimal(14,2)");
             
             //builder.Entity<Review>()
             //    .HasOne(r => r.Tutor)

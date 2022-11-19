@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Services\\Services.csproj": {}
+    "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Services\\Services.csproj": {}
   },
   "projects": {
-    "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\DAL\\DAL.csproj": {
+    "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\DAL\\DAL.csproj",
+        "projectUniqueName": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\DAL\\DAL.csproj",
-        "packagesPath": "C:\\Users\\erago\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\DAL\\obj\\",
+        "projectPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\Roxxx\\.nuget\\packages\\",
+        "outputPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\erago\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Roxxx\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Model\\Model.csproj"
+              "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Model\\Model.csproj": {
+                "projectPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Model\\Model.csproj"
               }
             }
           }
@@ -63,7 +63,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -72,21 +73,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Model\\Model.csproj": {
+    "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Model\\Model.csproj",
+        "projectUniqueName": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Model\\Model.csproj",
-        "packagesPath": "C:\\Users\\erago\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Model\\obj\\",
+        "projectPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Model\\Model.csproj",
+        "packagesPath": "C:\\Users\\Roxxx\\.nuget\\packages\\",
+        "outputPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\erago\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Roxxx\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -127,7 +128,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -136,21 +138,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Services\\Services.csproj": {
+    "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Services\\Services.csproj",
+        "projectUniqueName": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Services\\Services.csproj",
-        "packagesPath": "C:\\Users\\erago\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Services\\obj\\",
+        "projectPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\Roxxx\\.nuget\\packages\\",
+        "outputPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\erago\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Roxxx\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -164,11 +166,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\DAL\\DAL.csproj": {
-                "projectPath": "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\DAL\\DAL.csproj"
+              "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\DAL\\DAL.csproj": {
+                "projectPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\DAL\\DAL.csproj"
               },
-              "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Model\\Model.csproj"
+              "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Model\\Model.csproj": {
+                "projectPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Model\\Model.csproj"
               }
             }
           }
@@ -206,7 +208,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -215,7 +218,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
