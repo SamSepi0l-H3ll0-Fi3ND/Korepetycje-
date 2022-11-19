@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2UdFLi7vF668O73CBCZ4GuufsOnx/VWMDYc4JoHgHCgWsbzv1iQr39IKhHkcEBiwJfxb8ZtqBA01PNz7BkV5oA==",
+  "dgSpecHash": "Gad9Scd4esprcBm5IN1/SwhFzQXy6uAaKJgdbRO/fUJkqNup+zT51cmrFMAo3r0mgULsegFczuGBf2NjuNnUgw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Koreprtycje+\\Koreprtycje+.csproj",
+  "projectFilePath": "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Koreprtycje+\\Korepetycje+.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\erago\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\erago\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

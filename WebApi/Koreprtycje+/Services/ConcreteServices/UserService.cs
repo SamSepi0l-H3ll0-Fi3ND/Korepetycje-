@@ -26,10 +26,11 @@ namespace Services.ConcreteServices
             {
                 if(id == null)
                     throw new ArgumentNullException("Id can't be null");
-                var user = await DbContext.Users.FirstOrDefaultAsync(x=>x.Id == id);
+                var user = await DbContext.Users.FirstOrDefaultAsync(x => x.Id == id);
                 if (user == null)
                     throw new Exception("No user with this id");
                 var userDto = Mapper.Map<UserDto>(user);
+
                 return userDto;
             }
             catch (Exception ex)

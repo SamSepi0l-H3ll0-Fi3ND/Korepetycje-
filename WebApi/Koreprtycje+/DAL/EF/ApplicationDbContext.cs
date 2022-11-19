@@ -28,7 +28,14 @@ namespace Koreprtycje_.Data
                 .HasValue<Client>((int)RoleValue.Client)
                 .HasValue<Administrator>((int)RoleValue.Administrator)
                 .HasValue<Tutor>((int)RoleValue.Tutor);
-            
+
+            builder.Entity<Announcement>()
+                .HasOne(u => u.User)
+                .WithMany(a => a.Announcements)
+                .HasForeignKey(a => a.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+
             //builder.Entity<Review>()
             //    .HasOne(r => r.Tutor)
             //    .WithMany(t => t.Reviews)

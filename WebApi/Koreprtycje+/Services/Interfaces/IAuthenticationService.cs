@@ -16,5 +16,6 @@ namespace Services.Interfaces
         public object GetMe();
         public Task<RefreshToken> GenerateRefreshToken(int userId);
         public Task<string> RefreshToken(string refreshToken, int userId);
+        
     }
 }

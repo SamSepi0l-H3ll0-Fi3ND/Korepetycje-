@@ -10284,9 +10284,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Koreprtycje+\\Koreprtycje+.csproj",
-      "projectName": "Koreprtycje+",
-      "projectPath": "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Koreprtycje+\\Koreprtycje+.csproj",
+      "projectUniqueName": "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Koreprtycje+\\Korepetycje+.csproj",
+      "projectName": "Korepetycje+",
+      "projectPath": "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Koreprtycje+\\Korepetycje+.csproj",
       "packagesPath": "C:\\Users\\erago\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\erago\\source\\repos\\Korepetycje_Plus\\WebApi\\Koreprtycje+\\Koreprtycje+\\obj\\",
       "projectStyle": "PackageReference",

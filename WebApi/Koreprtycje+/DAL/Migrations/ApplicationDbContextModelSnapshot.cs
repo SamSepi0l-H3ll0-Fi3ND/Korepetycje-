@@ -44,7 +44,7 @@ namespace DAL.Migrations
 
                     b.HasIndex("TutorID");
 
-                    b.ToTable("Achievements");
+                    b.ToTable("Achievements", (string)null);
                 });
 
             modelBuilder.Entity("Koreprtycje_.Models.Announcement", b =>
@@ -81,7 +81,7 @@ namespace DAL.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Announcements");
+                    b.ToTable("Announcements", (string)null);
                 });
 
             modelBuilder.Entity("Koreprtycje_.Models.Role", b =>
@@ -135,7 +135,7 @@ namespace DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Subjects");
+                    b.ToTable("Subjects", (string)null);
                 });
 
             modelBuilder.Entity("Koreprtycje_.Models.Tag", b =>
@@ -157,7 +157,7 @@ namespace DAL.Migrations
 
                     b.HasIndex("AnnouncementId");
 
-                    b.ToTable("Tags");
+                    b.ToTable("Tags", (string)null);
                 });
 
             modelBuilder.Entity("Koreprtycje_.Models.User", b =>
