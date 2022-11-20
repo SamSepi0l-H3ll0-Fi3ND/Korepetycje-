@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Model.DTO;
 using Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace Koreprtycje_.Controllers
 {
@@ -19,10 +21,11 @@ namespace Koreprtycje_.Controllers
             _tutorService = tutorService;
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult> GetUser(int id)
+        [HttpGet,Authorize]
+        public async Task<ActionResult> GetUser()
         {
-            var user = _userService.GetUserById(id).Result;
+            var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            var user = _userService.GetUserById(userId).Result;
             if (user == null)
             {
                 return NotFound("User not found");
