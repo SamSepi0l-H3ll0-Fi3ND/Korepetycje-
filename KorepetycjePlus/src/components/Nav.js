@@ -4,9 +4,16 @@ import { Link } from "react-router-dom";
 import LoginIcon from "@mui/icons-material/Login";
 import HowToRegIcon from "@mui/icons-material/HowToReg";
 import LogoutIcon from "@mui/icons-material/Logout";
-
+import { useState } from "react";
 const Nav = () => {
-  const token = "Tu jest Token logowania Łukasza";
+  const [token, setToken] = useState(() =>
+    localStorage.getItem("Tajny numerek")
+  );
+
+  const LogOut = () => {
+    localStorage.removeItem("Tajny numerek");
+    setToken(null);
+  };
   return (
     <>
       <div class="navbar">
@@ -127,13 +134,18 @@ const Nav = () => {
         </div>
         {token && (
           <div class="invisible md:visible navbar-end gap-2">
-            <button class="btn btn-outline text-[#06283d] border-2">
-              <LogoutIcon></LogoutIcon> Wyloguj się
-            </button>
+            <Link to="/">
+              <button
+                class="btn btn-outline text-[#06283d] border-2"
+                onClick={() => LogOut()}
+              >
+                <LogoutIcon></LogoutIcon> Wyloguj się
+              </button>
+            </Link>
           </div>
         )}
         {!token && (
-          <>
+          <div class="invisible md:visible navbar-end gap-2">
             <Link to="/signin">
               <button class="btn btn-outline text-[#06283d] border-2">
                 Zaloguj się
@@ -144,7 +156,7 @@ const Nav = () => {
                 Załóż konto
               </button>
             </Link>
-          </>
+          </div>
         )}
       </div>
     </>
