@@ -5,15 +5,14 @@ import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import API from "../env";
 import { Token } from "@mui/icons-material";
+import setUser, { useEffect } from "react";
+import { useState } from "react";
 const UserInfo = () => {
-  const user = {
-    userName: "GigaCHAD",
-    firstName: "Jakub",
-    lastName: "Michal",
-    email: "bartekhasik@gmail.com",
-    address: "Witów 112",
-  };
+  const[user, setUser] = useState([])
   try {
+  useEffect(() =>{
+    
+
     const response = fetch(`${API}/api/user/`, {
       method: "GET",
       headers: {
@@ -21,9 +20,12 @@ const UserInfo = () => {
         accept: "text/plain",
         "Content-Type": "application/json",
       },
-    });
-    const resp = response.json;
-    console.log(resp);
+    }).then((response) => response.json())
+      .then((data) => {
+        setUser(data);
+      })
+      return () => response
+    },[])
   } catch (error) {
     console.log(error, error.message);
   }
