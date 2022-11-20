@@ -6,13 +6,10 @@ const UserEditInfo = () => {
     userName: "Kuba",
   };
   return (
-    <div class="card w-96  bg-dark-blue w-1/3 rounded-none shadow-xl">
+    <div class="card w-96 bg-dark-blue w-1/3 rounded-none shadow-xl">
       <div className="flex justify-between">
         <div className="text-start">
           <Logo></Logo>
-        </div>
-        <div className="text-end pt-4 pr-6 ">
-          <SettingsIcon></SettingsIcon>
         </div>
       </div>
       <div class="flex flex-col  space-y-4 card-body">

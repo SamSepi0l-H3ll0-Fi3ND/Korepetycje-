@@ -4,6 +4,8 @@ import SignUp from "./pages/SignUp";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Announcements from "./pages/Announcements";
+import UserInfo from "./user/UserInfo";
+import UserEditInfo from "./user/UserEditInfo";
 
 function App() {
   return (
@@ -12,7 +14,9 @@ function App() {
         <Route path="/" exact element={<Dashboard />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/register" element={<SignUp />} />
-        <Route path="/announcements" element={<Announcements/>}/>
+        <Route path="/announcements" element={<Announcements />} />
+        <Route path="/userinfo" element={<UserInfo />} />
+        <Route path="/useredit" element={<UserEditInfo />} />
       </Routes>
     </Router>
   );

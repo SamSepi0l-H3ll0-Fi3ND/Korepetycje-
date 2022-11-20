@@ -5,7 +5,6 @@ import Steps from "../components/Steps";
 import Subjects from "../components/Subjects";
 import Footer from "../components/Footer";
 import StepsEarn from "../components/StepsEarn";
-import UserInfo from "../user/UserInfo";
 
 const Dashboard = () => {
   return (
@@ -17,7 +16,6 @@ const Dashboard = () => {
       <Steps></Steps>
       <StepsEarn></StepsEarn>
       <Footer></Footer>
-      {/* <UserInfo></UserInfo> */}
     </div>
   );
 };

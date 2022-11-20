@@ -125,24 +125,28 @@ const Nav = () => {
             </li>
           </ul>
         </div>
-        <div class="invisible md:visible navbar-end gap-2">
-          <button class="btn btn-outline text-[#06283d] border-2">
-          <LogoutIcon></LogoutIcon>  Wyloguj się 
-          </button>
-        </div>
-      </div>
-      {!token && (
-        <>
-          <Link to="/signin">
+        {token && (
+          <div class="invisible md:visible navbar-end gap-2">
             <button class="btn btn-outline text-[#06283d] border-2">
-              Zaloguj się
+              <LogoutIcon></LogoutIcon> Wyloguj się
             </button>
-          </Link>
-          <Link to="/register">
-            <button class="btn bg-[#06283d] text-[#dff6ff]">Załóż konto</button>
-          </Link>
-        </>
-      )}
+          </div>
+        )}
+        {!token && (
+          <>
+            <Link to="/signin">
+              <button class="btn btn-outline text-[#06283d] border-2">
+                Zaloguj się
+              </button>
+            </Link>
+            <Link to="/register">
+              <button class="btn bg-[#06283d] text-[#dff6ff]">
+                Załóż konto
+              </button>
+            </Link>
+          </>
+        )}
+      </div>
     </>
   );
 };
