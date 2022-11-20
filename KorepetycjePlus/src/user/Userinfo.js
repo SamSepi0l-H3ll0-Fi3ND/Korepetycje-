@@ -3,6 +3,8 @@ import Logo from "../components/Logo";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
+import API from "../env";
+import { Token } from "@mui/icons-material";
 const UserInfo = () => {
   const user = {
     userName: "GigaCHAD",
@@ -11,6 +13,20 @@ const UserInfo = () => {
     email: "bartekhasik@gmail.com",
     address: "Witów 112",
   };
+  try {
+    const response = fetch(`${API}/api/user/`, {
+      method: "GET",
+      headers: {
+        Authorization: "bearer " + localStorage.getItem("Tajny numerek"),
+        accept: "text/plain",
+        "Content-Type": "application/json",
+      },
+    });
+    const resp = response.json;
+    console.log(resp);
+  } catch (error) {
+    console.log(error, error.message);
+  }
   return (
     <div className="Background__userinfo">
       <Nav></Nav>

@@ -71,11 +71,9 @@ const SignIn = () => {
                 />
               </div>
               <div class="flex justify-center mb-8">
-                <Link to="/">
-                  <button class="btn bg-[#06283d] text-[#dff6ff] justify-center my-14 ml-6 w-48 shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">
-                    Zaloguj się
-                  </button>
-                </Link>
+                <button class="btn bg-[#06283d] text-[#dff6ff] justify-center my-14 ml-6 w-48 shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">
+                  Zaloguj się
+                </button>
               </div>
               <p className="text-dark-blue text-center mb-8">
                 <Link to="../register">

@@ -5,6 +5,7 @@ import LoginIcon from "@mui/icons-material/Login";
 import HowToRegIcon from "@mui/icons-material/HowToReg";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { useState } from "react";
+import AccountBoxIcon from "@mui/icons-material/AccountBox";
 const Nav = () => {
   const [token, setToken] = useState(() =>
     localStorage.getItem("Tajny numerek")
@@ -140,6 +141,11 @@ const Nav = () => {
                 onClick={() => LogOut()}
               >
                 <LogoutIcon></LogoutIcon> Wyloguj się
+              </button>
+            </Link>
+            <Link to="/userinfo">
+              <button class="btn bg-[#06283d] text-[#dff6ff]">
+                <AccountBoxIcon /> Twój profil
               </button>
             </Link>
           </div>

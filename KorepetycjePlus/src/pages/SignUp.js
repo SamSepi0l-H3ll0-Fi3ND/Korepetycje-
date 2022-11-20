@@ -155,11 +155,9 @@ const SignUp = () => {
               <p class="mt-10 ml-10 text-dark-blue">Akceptuje regulamin*</p>
             </div>
             <div class="flex justify-center mb-16">
-              <Link to="/singin">
-                <button class="btn bg-[#06283d] text-[#dff6ff] justify-center my-14 ml-6 w-48 shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">
-                  Zarejestruj się
-                </button>
-              </Link>
+              <button class="btn bg-[#06283d] text-[#dff6ff] justify-center my-14 ml-6 w-48 shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">
+                Zarejestruj się
+              </button>
             </div>
             <Link to="../signin">
               <p className="text-dark-blue text-center mb-8">
