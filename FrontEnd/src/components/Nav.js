@@ -43,7 +43,9 @@ const Nav = () => {
               {/* Mobile Version of Navbar */}
               <Link to="/announcements">
                 <li>
-                  <a class="btn btn-outline bg-white text-[#06283d] border-2">Ogłoszenia</a>
+                  <a class="btn btn-outline bg-white text-[#06283d] border-2">
+                    Ogłoszenia
+                  </a>
                 </li>
               </Link>
               <li tabindex="0">
@@ -61,18 +63,26 @@ const Nav = () => {
                 </a>
                 <ul className="bg-[#2a303c] gap-2 p-2">
                   <li>
-                    <a class="btn btn-outline bg-light-blue text-[#06283d] border-info border-2 ">Ścisłe</a>
+                    <a class="btn btn-outline bg-light-blue text-[#06283d] border-info border-2 ">
+                      Ścisłe
+                    </a>
                   </li>
                   <li>
-                    <a class="btn btn-outline bg-light-blue text-[#06283d] border-info border-2">Humanistyczne</a>
+                    <a class="btn btn-outline bg-light-blue text-[#06283d] border-info border-2">
+                      Humanistyczne
+                    </a>
                   </li>
                   <li>
-                    <a class="btn btn-outline bg-light-blue text-[#06283d] border-info border-2">Języki obce</a>
+                    <a class="btn btn-outline bg-light-blue text-[#06283d] border-info border-2">
+                      Języki obce
+                    </a>
                   </li>
                 </ul>
               </li>
               <li>
-                <a class="btn btn-outline bg-white text-[#06283d] border-2">Blog</a>
+                <a class="btn btn-outline bg-white text-[#06283d] border-2">
+                  Blog
+                </a>
               </li>
               <li>
                 <Link to="/signin">
