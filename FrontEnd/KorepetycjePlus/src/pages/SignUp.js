@@ -7,8 +7,8 @@ import { useState, useRef } from "react";
 import API from "../env";
 import { useNavigate } from "react-router-dom";
 
-const navigate = useNavigate();
 const SignUp = () => {
+  const navigate = useNavigate();
   const [Username, setUsername] = useState(null);
   const [Password, setPassword] = useState(null);
   const [FirstName, setFirstname] = useState(null);

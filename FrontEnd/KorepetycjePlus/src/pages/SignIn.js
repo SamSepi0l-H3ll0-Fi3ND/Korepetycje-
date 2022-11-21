@@ -7,11 +7,10 @@ import { useState } from "react";
 import API from "../env";
 import { useNavigate } from "react-router-dom";
 
-const navigate = useNavigate();
 const SignIn = () => {
+  const navigate = useNavigate();
   const [Username, setUsername] = useState(null);
   const [password, setPassword] = useState(null);
-  s;
 
   async function loginSubmit(e) {
     e.preventDefault();

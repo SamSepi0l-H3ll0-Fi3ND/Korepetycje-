@@ -4,7 +4,7 @@ import SignUp from "./pages/SignUp";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Announcements from "./pages/Announcements";
-import UserInfo from "./user/UserInfo";
+import UserInfo from "./user/Userinfo";
 import UserEditInfo from "./user/UserEditInfo";
 
 function App() {
