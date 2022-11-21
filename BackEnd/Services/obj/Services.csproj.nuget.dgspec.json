@@ -1,0 +1,226 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Services\\Services.csproj": {}
+  },
+  "projects": {
+    "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\DAL\\DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\DAL\\DAL.csproj",
+        "projectName": "DAL",
+        "projectPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\Roxxx\\.nuget\\packages\\",
+        "outputPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\DAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Roxxx\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj": {
+                "projectPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNet.Identity.EntityFramework": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj",
+        "projectName": "Model",
+        "projectPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj",
+        "packagesPath": "C:\\Users\\Roxxx\\.nuget\\packages\\",
+        "outputPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Model\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Roxxx\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNet.Identity.EntityFramework": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Services\\Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Services\\Services.csproj",
+        "projectName": "Services",
+        "projectPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\Roxxx\\.nuget\\packages\\",
+        "outputPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Roxxx\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\DAL\\DAL.csproj": {
+                "projectPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\DAL\\DAL.csproj"
+              },
+              "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj": {
+                "projectPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.25.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
