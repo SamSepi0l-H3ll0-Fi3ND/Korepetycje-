@@ -1,0 +1,24 @@
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Model\obj\Debug\net6.0\Model.csproj.AssemblyReference.cache
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Model\obj\Debug\net6.0\Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Model\obj\Debug\net6.0\Model.AssemblyInfoInputs.cache
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Model\obj\Debug\net6.0\Model.AssemblyInfo.cs
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Model\obj\Debug\net6.0\Model.csproj.CoreCompileInputs.cache
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Model\bin\Debug\net6.0\Model.deps.json
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Model\bin\Debug\net6.0\Model.dll
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Model\bin\Debug\net6.0\Model.pdb
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Model\obj\Debug\net6.0\Model.dll
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Model\obj\Debug\net6.0\refint\Model.dll
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Model\obj\Debug\net6.0\Model.pdb
+C:\Users\erago\source\repos\Korepetycje_Plus\WebApi\Koreprtycje+\Model\obj\Debug\net6.0\ref\Model.dll
+E:\PCZ\Semestr 7\Korepetycje_Plus\Korepetycje_Plus\WebApi\Koreprtycje+\Model\bin\Debug\net6.0\Model.deps.json
+E:\PCZ\Semestr 7\Korepetycje_Plus\Korepetycje_Plus\WebApi\Koreprtycje+\Model\bin\Debug\net6.0\Model.dll
+E:\PCZ\Semestr 7\Korepetycje_Plus\Korepetycje_Plus\WebApi\Koreprtycje+\Model\bin\Debug\net6.0\Model.pdb
+E:\PCZ\Semestr 7\Korepetycje_Plus\Korepetycje_Plus\WebApi\Koreprtycje+\Model\obj\Debug\net6.0\Model.csproj.AssemblyReference.cache
+E:\PCZ\Semestr 7\Korepetycje_Plus\Korepetycje_Plus\WebApi\Koreprtycje+\Model\obj\Debug\net6.0\Model.GeneratedMSBuildEditorConfig.editorconfig
+E:\PCZ\Semestr 7\Korepetycje_Plus\Korepetycje_Plus\WebApi\Koreprtycje+\Model\obj\Debug\net6.0\Model.AssemblyInfoInputs.cache
+E:\PCZ\Semestr 7\Korepetycje_Plus\Korepetycje_Plus\WebApi\Koreprtycje+\Model\obj\Debug\net6.0\Model.AssemblyInfo.cs
+E:\PCZ\Semestr 7\Korepetycje_Plus\Korepetycje_Plus\WebApi\Koreprtycje+\Model\obj\Debug\net6.0\Model.csproj.CoreCompileInputs.cache
+E:\PCZ\Semestr 7\Korepetycje_Plus\Korepetycje_Plus\WebApi\Koreprtycje+\Model\obj\Debug\net6.0\Model.dll
+E:\PCZ\Semestr 7\Korepetycje_Plus\Korepetycje_Plus\WebApi\Koreprtycje+\Model\obj\Debug\net6.0\refint\Model.dll
+E:\PCZ\Semestr 7\Korepetycje_Plus\Korepetycje_Plus\WebApi\Koreprtycje+\Model\obj\Debug\net6.0\Model.pdb
+E:\PCZ\Semestr 7\Korepetycje_Plus\Korepetycje_Plus\WebApi\Koreprtycje+\Model\obj\Debug\net6.0\ref\Model.dll
