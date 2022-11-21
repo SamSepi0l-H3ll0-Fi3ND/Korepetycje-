@@ -41,9 +41,11 @@ const Nav = () => {
               class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               {/* Mobile Version of Navbar */}
-              <li>
-                <a class="btn btn-ghost">Ogłoszenia</a>
-              </li>
+              <Link to="/announcements">
+                <li>
+                  <a class="btn btn-ghost">Ogłoszenia</a>
+                </li>
+              </Link>
               <li tabindex="0">
                 <a class="btn btn-ghost">
                   Przedmioty
