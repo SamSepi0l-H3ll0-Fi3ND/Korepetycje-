@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import { useState, useRef } from "react";
 import API from "../env";
+import { useNavigate } from "react-router-dom";
 
+const navigate = useNavigate();
 const SignUp = () => {
   const [Username, setUsername] = useState(null);
   const [Password, setPassword] = useState(null);
@@ -36,6 +38,7 @@ const SignUp = () => {
           type: type,
         }),
       });
+      navigate("/");
     } catch (error) {
       console.log(error, error.message);
     }

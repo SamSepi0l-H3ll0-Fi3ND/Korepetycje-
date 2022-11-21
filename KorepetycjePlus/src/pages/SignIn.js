@@ -5,10 +5,13 @@ import { json, Link } from "react-router-dom";
 import Cookies from "universal-cookie";
 import { useState } from "react";
 import API from "../env";
-import { TrySharp } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
+
+const navigate = useNavigate();
 const SignIn = () => {
   const [Username, setUsername] = useState(null);
   const [password, setPassword] = useState(null);
+  s;
 
   async function loginSubmit(e) {
     e.preventDefault();
@@ -30,6 +33,7 @@ const SignIn = () => {
       });
       const token = await response.text();
       localStorage.setItem("Tajny numerek", token);
+      navigate(-1);
     } catch (error) {
       console.log(error, error.message);
     }
