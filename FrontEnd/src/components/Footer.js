@@ -6,22 +6,16 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div class="grid grid-cols-3  border-t border-dark-blue rounded-none border-r-none w-full ">
-      <div class="grid grid-cols-3 justify-items-center  invisible sm:visible ">
-        <div className="">
-          <a class="btn btn-ghost ">
-            <FacebookIcon class="footer-icon w-6"></FacebookIcon>
-          </a>
-        </div>
-        <div>
-          <a class="btn btn-ghost">
-            <InstagramIcon class="footer-icon w-6"></InstagramIcon>
-          </a>
-        </div>
-        <div>
-          <a class="btn btn-ghost">
-            <TwitterIcon class="footer-icon w-6"></TwitterIcon>
-          </a>
-        </div>
+      <div class="grid grid-flow-col pl-16 gap-8 justify-start invisible sm:visible ">
+        <a class="grid place-items-center">
+          <FacebookIcon class="footer-icon w-8"></FacebookIcon>
+        </a>
+        <a class="grid place-items-center">
+          <InstagramIcon class="footer-icon w-8"></InstagramIcon>
+        </a>
+        <a class="grid place-items-center">
+          <TwitterIcon class="footer-icon w-8"></TwitterIcon>
+        </a>
       </div>
       <div class="grid  content-center">
         <Link to="../">
