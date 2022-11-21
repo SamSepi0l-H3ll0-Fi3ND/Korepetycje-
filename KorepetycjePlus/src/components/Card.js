@@ -11,9 +11,11 @@ const Card = () => {
           <p class="py-6">
             Lorem pomo to ero cos moko doko emorze. Edke peteke, mosva screen.
           </p>
-          <a class="btn btn-wide rounded-full bg-[#06283d] text-[#dff6ff]">
-            Załóż konto
-          </a>
+          <Link to="/register">
+            <a class="btn btn-wide rounded-full bg-[#06283d] text-[#dff6ff]">
+              Załóż konto
+            </a>
+          </Link>
         </div>
       </div>
     </div>
