@@ -43,11 +43,11 @@ const Nav = () => {
               {/* Mobile Version of Navbar */}
               <Link to="/announcements">
                 <li>
-                  <a class="btn btn-ghost">Ogłoszenia</a>
+                  <a class="btn btn-outline bg-white text-[#06283d] border-2">Ogłoszenia</a>
                 </li>
               </Link>
               <li tabindex="0">
-                <a class="btn btn-ghost">
+                <a class="btn btn-outline bg-white text-[#06283d] border-2">
                   Przedmioty
                   <svg
                     class="fill-current"
@@ -59,40 +59,40 @@ const Nav = () => {
                     <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
                   </svg>
                 </a>
-                <ul className="bg-[#2a303c] p-2">
+                <ul className="bg-[#2a303c] gap-2 p-2">
                   <li>
-                    <a class="btn btn-ghost">Ścisłe</a>
+                    <a class="btn btn-outline bg-light-blue text-[#06283d] border-info border-2 ">Ścisłe</a>
                   </li>
                   <li>
-                    <a class="btn btn-ghost">Humanistyczne</a>
+                    <a class="btn btn-outline bg-light-blue text-[#06283d] border-info border-2">Humanistyczne</a>
                   </li>
                   <li>
-                    <a class="btn btn-ghost">Języki obce</a>
+                    <a class="btn btn-outline bg-light-blue text-[#06283d] border-info border-2">Języki obce</a>
                   </li>
                 </ul>
               </li>
               <li>
-                <a class="btn btn-ghost">Blog</a>
+                <a class="btn btn-outline bg-white text-[#06283d] border-2">Blog</a>
               </li>
               <li>
                 <Link to="/signin">
-                  <button class="btn bg-[#faf9fa] text-[#06283d] border-2 hover:bg-[#faf9fa]">
+                  <button class="btn bg-[#faf9fa] text-[#06283d] border-2 hover:bg-[#faf9fa] w-full">
                     Zaloguj się
-                    <LoginIcon className="ml-1"></LoginIcon>
+                    <LoginIcon className=""></LoginIcon>
                   </button>
                 </Link>
               </li>
               <li>
                 <Link to="/register">
-                  <button class="btn bg-[#06283d] text-[#dff6ff]">
+                  <button class="btn bg-[#06283d] text-[#dff6ff] w-full">
                     Załóż konto
-                    <HowToRegIcon className="ml-1"></HowToRegIcon>
+                    <HowToRegIcon className=""></HowToRegIcon>
                   </button>
                 </Link>
               </li>
             </ul>
           </div>
-          <a class="btn btn-ghost normal-case text-2xl text-[#06283d] gap-2  ">
+          <a class="btn btn-ghost normal-case text-2xl text-[#06283d] gap-2   ">
             <SchoolIcon></SchoolIcon>
             <Link to="/">Korepetycje+</Link>
           </a>
