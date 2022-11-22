@@ -13,7 +13,7 @@ const UserInfo = () => {
   useEffect(() =>{
     
 
-    const response = fetch(`${API}/api/user/`, {
+    const response = fetch(`${API}/user/`, {
       method: "GET",
       headers: {
         Authorization: "bearer " + localStorage.getItem("Tajny numerek"),

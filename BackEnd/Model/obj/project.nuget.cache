@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/Dd81smZT11pw2v4q81FWdWI2em0C3mjCVNbMJrEV2UNh6Rwp9lDcMmWZKqBe6usfYdp7wQfIuCBCSKf4uYw9A==",
+  "dgSpecHash": "PE4/l8Kwg0eNZAlFBK7wrxGr3LyVnhHYWx6u6UB9Y+D+c+aHmi/GX54s7wa/MI16DnVv0y/X5OqdENy77Lq1Kw==",
   "success": true,
-  "projectFilePath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj",
+  "projectFilePath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Roxxx\\.nuget\\packages\\entityframework\\6.1.0\\entityframework.6.1.0.nupkg.sha512",
     "C:\\Users\\Roxxx\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.3\\microsoft.aspnet.identity.core.2.2.3.nupkg.sha512",

@@ -661,11 +661,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj",
+      "projectUniqueName": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj",
       "projectName": "Model",
-      "projectPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj",
+      "projectPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj",
       "packagesPath": "C:\\Users\\Roxxx\\.nuget\\packages\\",
-      "outputPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Model\\obj\\",
+      "outputPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\Model\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Roxxx\\AppData\\Roaming\\NuGet\\NuGet.Config",

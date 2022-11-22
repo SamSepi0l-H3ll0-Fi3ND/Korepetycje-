@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Services\\Services.csproj": {}
+    "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\Services\\Services.csproj": {}
   },
   "projects": {
-    "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\DAL\\DAL.csproj": {
+    "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\DAL\\DAL.csproj",
+        "projectUniqueName": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\DAL\\DAL.csproj",
+        "projectPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\DAL\\DAL.csproj",
         "packagesPath": "C:\\Users\\Roxxx\\.nuget\\packages\\",
-        "outputPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\DAL\\obj\\",
+        "outputPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Roxxx\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj": {
-                "projectPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj"
+              "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj": {
+                "projectPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj"
               }
             }
           }
@@ -77,14 +77,14 @@
         }
       }
     },
-    "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj": {
+    "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj",
+        "projectUniqueName": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj",
+        "projectPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj",
         "packagesPath": "C:\\Users\\Roxxx\\.nuget\\packages\\",
-        "outputPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Model\\obj\\",
+        "outputPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Roxxx\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -142,14 +142,14 @@
         }
       }
     },
-    "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Services\\Services.csproj": {
+    "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Services\\Services.csproj",
+        "projectUniqueName": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Services\\Services.csproj",
+        "projectPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\Services\\Services.csproj",
         "packagesPath": "C:\\Users\\Roxxx\\.nuget\\packages\\",
-        "outputPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Services\\obj\\",
+        "outputPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Roxxx\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -166,11 +166,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\DAL\\DAL.csproj": {
-                "projectPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\DAL\\DAL.csproj"
+              "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\DAL\\DAL.csproj": {
+                "projectPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\DAL\\DAL.csproj"
               },
-              "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj": {
-                "projectPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj"
+              "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj": {
+                "projectPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj"
               }
             }
           }

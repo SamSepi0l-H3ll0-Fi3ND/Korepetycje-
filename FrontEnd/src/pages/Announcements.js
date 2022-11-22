@@ -1,11 +1,34 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Nav from "../components/Nav";
 import Ad from "../components/Ad";
 import Footer from "../components/Footer";
+import API from "../env";
 
 const Announcements = () => {
 
     const [inputValue, setInputValue] = useState("");
+    const [data, setData] = useState([]);
+    useEffect(() => {
+        try {
+            const response = fetch(`${API}/Announcements`, {
+                method : "GET",
+                headers : {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            }).then(response => response.json())
+            .then(data => setData(data));
+        } catch (error) {
+            console.error(error);
+        }
+    }, []);
+
+    function generateAds() {
+        return data.map(oneJson => {
+            return <Ad adData={oneJson}/>
+        });
+    };
+    
 
     return( 
         <div>
@@ -49,9 +72,9 @@ const Announcements = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="flex justify-center m-10">
-                    <Ad/>
+                </div> 
+                <div class="flex flex-col justify-center m-10">
+                    {generateAds()}
                 </div>
             </div>
             <Footer/>

@@ -43,3 +43,18 @@ E:\PCZ\Semestr 7\Korepetycje_Plus\test\Korepetycje_Plus\BackEnd\DAL\obj\Debug\ne
 E:\PCZ\Semestr 7\Korepetycje_Plus\test\Korepetycje_Plus\BackEnd\DAL\obj\Debug\net6.0\refint\DAL.dll
 E:\PCZ\Semestr 7\Korepetycje_Plus\test\Korepetycje_Plus\BackEnd\DAL\obj\Debug\net6.0\DAL.pdb
 E:\PCZ\Semestr 7\Korepetycje_Plus\test\Korepetycje_Plus\BackEnd\DAL\obj\Debug\net6.0\ref\DAL.dll
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\DAL\bin\Debug\net6.0\DAL.deps.json
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\DAL\bin\Debug\net6.0\DAL.dll
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\DAL\bin\Debug\net6.0\DAL.pdb
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\DAL\bin\Debug\net6.0\Model.dll
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\DAL\bin\Debug\net6.0\Model.pdb
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\DAL\obj\Debug\net6.0\DAL.csproj.CopyComplete
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\DAL\obj\Debug\net6.0\DAL.dll
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\DAL\obj\Debug\net6.0\refint\DAL.dll
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\DAL\obj\Debug\net6.0\DAL.pdb
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\DAL\obj\Debug\net6.0\ref\DAL.dll

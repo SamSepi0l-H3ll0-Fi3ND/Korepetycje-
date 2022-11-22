@@ -34,3 +34,15 @@ E:\PCZ\Semestr 7\Korepetycje_Plus\test\Korepetycje_Plus\BackEnd\Model\obj\Debug\
 E:\PCZ\Semestr 7\Korepetycje_Plus\test\Korepetycje_Plus\BackEnd\Model\obj\Debug\net6.0\refint\Model.dll
 E:\PCZ\Semestr 7\Korepetycje_Plus\test\Korepetycje_Plus\BackEnd\Model\obj\Debug\net6.0\Model.pdb
 E:\PCZ\Semestr 7\Korepetycje_Plus\test\Korepetycje_Plus\BackEnd\Model\obj\Debug\net6.0\ref\Model.dll
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Model\bin\Debug\net6.0\Model.deps.json
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Model\bin\Debug\net6.0\Model.dll
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Model\bin\Debug\net6.0\Model.pdb
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Model\obj\Debug\net6.0\Model.csproj.AssemblyReference.cache
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Model\obj\Debug\net6.0\Model.GeneratedMSBuildEditorConfig.editorconfig
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Model\obj\Debug\net6.0\Model.AssemblyInfoInputs.cache
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Model\obj\Debug\net6.0\Model.AssemblyInfo.cs
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Model\obj\Debug\net6.0\Model.csproj.CoreCompileInputs.cache
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Model\obj\Debug\net6.0\Model.dll
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Model\obj\Debug\net6.0\refint\Model.dll
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Model\obj\Debug\net6.0\Model.pdb
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Model\obj\Debug\net6.0\ref\Model.dll

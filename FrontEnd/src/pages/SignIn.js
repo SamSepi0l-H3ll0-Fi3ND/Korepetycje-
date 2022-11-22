@@ -19,7 +19,7 @@ const SignIn = () => {
     //localhost:7193/api/Authentication/login https://localhost:7193/api/Announcements
 
     try {
-      const response = await fetch(`${API}/api/Authentication/login`, {
+      const response = await fetch(`${API}/Authentication/login`, {
         method: "POST",
         headers: {
           accept: "text/plain",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5tL/LmdVNCIPQnWo69kCiUyKE2RRXhxeTqSK5Cj+oetioY1c33bHWJPvfvoEl6dYyWcwUdaerUZVA0wqrlW3ng==",
+  "dgSpecHash": "VuRZSJScuqFu/DlfMzbHLbQTs4nc0VRXd+YZcARQYbBl5dZdXCPqlmDed4u8otAtsRK4O20iBLyDZotm1kIhww==",
   "success": true,
-  "projectFilePath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Koreprtycje+\\Korepetycje+.csproj",
+  "projectFilePath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\Koreprtycje+\\Korepetycje+.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Roxxx\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\Roxxx\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
@@ -201,12 +201,6 @@
     "C:\\Users\\Roxxx\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
   "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\test\\Korepetycje_Plus\\BackEnd\\Koreprtycje+\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    },
     {
       "code": "NU1701",
       "level": "Warning",

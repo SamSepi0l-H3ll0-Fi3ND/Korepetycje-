@@ -22,7 +22,7 @@ const SignUp = () => {
   async function registerSubmit(e) {
     e.preventDefault();
     try {
-      const response = await fetch(`${API}/api/Authentication/register`, {
+      const response = await fetch(`${API}/Authentication/register`, {
         method: "POST",
         headers: {
           accept: "text/plain",

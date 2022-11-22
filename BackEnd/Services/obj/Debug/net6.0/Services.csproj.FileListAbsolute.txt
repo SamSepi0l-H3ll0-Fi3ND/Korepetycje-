@@ -49,3 +49,20 @@ E:\PCZ\Semestr 7\Korepetycje_Plus\test\Korepetycje_Plus\BackEnd\Services\obj\Deb
 E:\PCZ\Semestr 7\Korepetycje_Plus\test\Korepetycje_Plus\BackEnd\Services\obj\Debug\net6.0\refint\Services.dll
 E:\PCZ\Semestr 7\Korepetycje_Plus\test\Korepetycje_Plus\BackEnd\Services\obj\Debug\net6.0\Services.pdb
 E:\PCZ\Semestr 7\Korepetycje_Plus\test\Korepetycje_Plus\BackEnd\Services\obj\Debug\net6.0\ref\Services.dll
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Services\bin\Debug\net6.0\Services.deps.json
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Services\bin\Debug\net6.0\Services.dll
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Services\bin\Debug\net6.0\Services.pdb
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Services\bin\Debug\net6.0\DAL.dll
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Services\bin\Debug\net6.0\Model.dll
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Services\bin\Debug\net6.0\DAL.pdb
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Services\bin\Debug\net6.0\Model.pdb
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Services\obj\Debug\net6.0\Services.csproj.AssemblyReference.cache
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Services\obj\Debug\net6.0\Services.GeneratedMSBuildEditorConfig.editorconfig
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Services\obj\Debug\net6.0\Services.AssemblyInfoInputs.cache
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Services\obj\Debug\net6.0\Services.AssemblyInfo.cs
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Services\obj\Debug\net6.0\Services.csproj.CoreCompileInputs.cache
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Services\obj\Debug\net6.0\Services.csproj.CopyComplete
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Services\obj\Debug\net6.0\Services.dll
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Services\obj\Debug\net6.0\refint\Services.dll
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Services\obj\Debug\net6.0\Services.pdb
+E:\PCZ\Semestr 7\Korepetycje_Plus\Nowy folder\Korepetycje_Plus\BackEnd\Services\obj\Debug\net6.0\ref\Services.dll
