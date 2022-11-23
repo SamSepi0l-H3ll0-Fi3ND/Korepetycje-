@@ -41,35 +41,35 @@ const SignIn = () => {
   return (
     <form onSubmit={loginSubmit}>
       <div>
-        <div className="h-screen">
-          <div class="flex justify-center">
-            <div class="grid rounded-md bg-[#d6f4fe] flex justify-center m-8  w-auto shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">
+        <div className="min-h-screen">
+          <div class="flex justify-center mb-20">
+            <div class="grid sm:rounded-md bg-[#d6f4fe] flex justify-center sm:mt-20 mt-4 w-screen sm:w-auto shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">
               <div class="pt-6 px-10 text-center mr-4">
-                <p class="text-4xl text-center text-dark-blue font-bold pt-6 px-20 pb-14">
+                <p class="text-4xl text-center text-dark-blue font-bold pt-6 sm:px-20 pb-14">
                   Logowanie
                 </p>
               </div>
-              <div class="ml-14">
-                <p class="ml-20 text-dark-blue font-bold">Nazwa Użytkownika</p>
+              <div class="sm:ml-12">
+                <p class="ml-16 sm:ml-20 text-dark-blue font-bold">Nazwa Użytkownika</p>
               </div>
               <div class="flex">
-                <AccountCircleIcon class="justify-center w-16 ml-12"></AccountCircleIcon>
+                <AccountCircleIcon class="justify-center w-12 sm:w-16 sm:ml-12"></AccountCircleIcon>
                 <input
                   type="text"
                   placeholder="Username"
-                  class="input input-bordered border-neutral-700 bg-[#faf9fa] w-50 max-w-xs mt-2 ml-4 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
+                  class="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-s mt-2 ml-4 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
                   onChange={(e) => setUsername(e.target.value)}
                 />
               </div>
               <div class="ml-14">
-                <p class="ml-20 text-dark-blue font-bold">Hasło</p>
+                <p class="ml-16 sm:ml-20 text-dark-blue font-bold">Hasło</p>
               </div>
               <div class="flex">
-                <VpnKeyIcon class="justify-center w-16 ml-12"></VpnKeyIcon>
+                <VpnKeyIcon class="justify-center w-12 sm:w-16 sm:ml-12"></VpnKeyIcon>
                 <input
                   type="password"
                   placeholder="Password"
-                  class="input input-bordered border-neutral-700 bg-[#faf9fa] w-50 max-w-xs mt-2 ml-4 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
+                  class="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-s mt-2 ml-4 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
