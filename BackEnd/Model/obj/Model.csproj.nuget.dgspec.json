@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj": {}
+    "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\BackEnd\\Model\\Model.csproj": {}
   },
   "projects": {
-    "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj": {
+    "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\BackEnd\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj",
+        "projectUniqueName": "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\BackEnd\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj",
-        "packagesPath": "C:\\Users\\Roxxx\\.nuget\\packages\\",
-        "outputPath": "E:\\PCZ\\Semestr 7\\Korepetycje_Plus\\Nowy folder\\Korepetycje_Plus\\BackEnd\\Model\\obj\\",
+        "projectPath": "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\BackEnd\\Model\\Model.csproj",
+        "packagesPath": "C:\\Users\\erago\\.nuget\\packages\\",
+        "outputPath": "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\BackEnd\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Roxxx\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\erago\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,8 +55,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -65,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

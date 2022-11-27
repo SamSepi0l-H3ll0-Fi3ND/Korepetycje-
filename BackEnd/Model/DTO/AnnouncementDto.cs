@@ -6,8 +6,9 @@ namespace Koreprtycje_.DTO
     {
         public int Id { get; set; }
         public int UserId { get; set; }
+        public UserDto User { get; set; }   
         public string Type { get; set; }
-        public int SubjectId { get; set; }
+        public SubjectDto Subject { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
         public int LessonLength { get; set; }

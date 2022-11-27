@@ -63,7 +63,10 @@ namespace Services.ConcreteServices
         {
             try
             {
-                var announcements = await DbContext.Announcements.ToListAsync<Announcement>();
+                var announcements = await DbContext.Announcements
+                    .Include(u => u.User)
+                    .Include(s => s.Subject)
+                    .ToListAsync<Announcement>();
                 var announcementsDto = Mapper.Map<IEnumerable<AnnouncementDto>>(announcements);
                 return announcementsDto;
             }
