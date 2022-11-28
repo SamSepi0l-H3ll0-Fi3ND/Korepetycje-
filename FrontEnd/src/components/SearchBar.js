@@ -2,9 +2,9 @@ const SearchBar = () => {
   return (
     <div>
       <div className="flex justify-center mt-8 mb-6">
-        <a className="text-4xl text-center text-dark-blue font-bold">
+        <span className="text-4xl text-center text-dark-blue font-bold">
           Czego chciałbyś się nauczyć?
-        </a>
+        </span>
       </div>
       <div className="flex justify-center mt-8 mb-6">
           <input
@@ -15,9 +15,9 @@ const SearchBar = () => {
           <button class="btn bg-dark-blue text-[#dff6ff] rounded-none rounded-r-3xl w-1/3 sm:w-1/6 lg:w-1/12">Szukaj</button>
       </div>
       <div className="flex justify-center mb-8">
-        <a className="text-4xl text-center text-dark-blue font-bold">
+        <span className="text-4xl text-center text-dark-blue font-bold">
           Popularne Przedmioty
-        </a>
+        </span>
       </div>
     </div>
   );

@@ -7,15 +7,15 @@ const Footer = () => {
   return (
     <div class="grid grid-cols-3  border-t border-dark-blue rounded-none border-r-none w-full ">
       <div class="grid grid-flow-col pl-16 gap-8 justify-start invisible sm:visible ">
-        <a class="grid place-items-center">
+        <span class="grid place-items-center">
           <FacebookIcon class="footer-icon w-8"></FacebookIcon>
-        </a>
-        <a class="grid place-items-center">
+        </span>
+        <span class="grid place-items-center">
           <InstagramIcon class="footer-icon w-8"></InstagramIcon>
-        </a>
-        <a class="grid place-items-center">
+        </span>
+        <span class="grid place-items-center">
           <TwitterIcon class="footer-icon w-8"></TwitterIcon>
-        </a>
+        </span>
       </div>
       <div class="grid  content-center">
         <Link to="../">

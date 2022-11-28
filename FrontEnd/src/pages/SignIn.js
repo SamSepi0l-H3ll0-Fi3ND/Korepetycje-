@@ -1,7 +1,7 @@
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import Footer from "../components/Footer";
 import VpnKeyIcon from "@mui/icons-material/VpnKey";
-import { json, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Cookies from "universal-cookie";
 import { useState } from "react";
 import API from "../env";
@@ -50,7 +50,9 @@ const SignIn = () => {
                 </p>
               </div>
               <div class="sm:ml-12">
-                <p class="ml-16 sm:ml-20 text-dark-blue font-bold">Nazwa Użytkownika</p>
+                <p class="ml-16 sm:ml-20 text-dark-blue font-bold">
+                  Nazwa Użytkownika
+                </p>
               </div>
               <div class="flex">
                 <AccountCircleIcon class="justify-center w-12 sm:w-16 sm:ml-12"></AccountCircleIcon>
