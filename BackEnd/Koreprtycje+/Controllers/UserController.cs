@@ -31,7 +31,7 @@ namespace Koreprtycje_.Controllers
             if (user.GetType().Equals(RoleValue.Tutor))
                 return Ok(_tutorService.GetTutor(id));
 
-            return BadRequest();
+            return Ok(user);
         }
     }
 }
