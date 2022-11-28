@@ -43,13 +43,13 @@ const Nav = () => {
               {/* Mobile Version of Navbar */}
               <Link to="/announcements">
                 <li>
-                  <a class="btn btn-outline bg-white text-[#06283d] border-2">
+                  <span class="btn btn-outline bg-white text-[#06283d] border-2">
                     Ogłoszenia
-                  </a>
+                  </span>
                 </li>
               </Link>
               <li tabindex="0">
-                <a class="btn btn-outline bg-white text-[#06283d] border-2">
+                <span class="btn btn-outline bg-white text-[#06283d] border-2">
                   Przedmioty
                   <svg
                     class="fill-current"
@@ -60,29 +60,29 @@ const Nav = () => {
                   >
                     <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
                   </svg>
-                </a>
+                </span>
                 <ul className="bg-[#2a303c] gap-2 p-2">
                   <li>
-                    <a class="btn btn-outline bg-light-blue text-[#06283d] border-info border-2 ">
+                    <span class="btn btn-outline bg-light-blue text-[#06283d] border-info border-2 ">
                       Ścisłe
-                    </a>
+                    </span>
                   </li>
                   <li>
-                    <a class="btn btn-outline bg-light-blue text-[#06283d] border-info border-2">
+                    <span class="btn btn-outline bg-light-blue text-[#06283d] border-info border-2">
                       Humanistyczne
-                    </a>
+                    </span>
                   </li>
                   <li>
-                    <a class="btn btn-outline bg-light-blue text-[#06283d] border-info border-2">
+                    <span class="btn btn-outline bg-light-blue text-[#06283d] border-info border-2">
                       Języki obce
-                    </a>
+                    </span>
                   </li>
                 </ul>
               </li>
               <li>
-                <a class="btn btn-outline bg-white text-[#06283d] border-2">
+                <span class="btn btn-outline bg-white text-[#06283d] border-2">
                   Blog
-                </a>
+                </span>
               </li>
               <li>
                 <Link to="/signin">
@@ -102,21 +102,21 @@ const Nav = () => {
               </li>
             </ul>
           </div>
-          <a class="btn btn-ghost normal-case text-2xl text-[#06283d] gap-2   ">
+          <span class="btn btn-ghost normal-case text-2xl text-[#06283d] gap-2   ">
             <SchoolIcon></SchoolIcon>
             <Link to="/">Korepetycje+</Link>
-          </a>
+          </span>
         </div>
         {/* PC Version of navbar */}
         <div class="navbar-center hidden md:flex">
           <ul class="menu menu-horizontal text-[#06283d] text-2xl p-0">
             <Link to="/announcements">
               <li>
-                <a class="btn btn-ghost">Ogłoszenia</a>
+                <span class="btn btn-ghost">Ogłoszenia</span>
               </li>
             </Link>
             <li tabindex="0">
-              <a class="btn btn-ghost">
+              <span class="btn btn-ghost">
                 Przedmioty
                 <svg
                   class="fill-current"
@@ -127,21 +127,21 @@ const Nav = () => {
                 >
                   <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
                 </svg>
-              </a>
+              </span>
               <ul className="bg-[#fafafa]" class="p-2">
                 <li>
-                  <a class="btn btn-ghost">Ścisłe</a>
+                  <span class="btn btn-ghost">Ścisłe</span>
                 </li>
                 <li>
-                  <a class="btn btn-ghost">Humanistyczne</a>
+                  <span class="btn btn-ghost">Humanistyczne</span>
                 </li>
                 <li>
-                  <a class="btn btn-ghost">Języki obce</a>
+                  <span class="btn btn-ghost">Języki obce</span>
                 </li>
               </ul>
             </li>
             <li>
-              <a class="btn btn-ghost">Blog</a>
+              <span class="btn btn-ghost">Blog</span>
             </li>
           </ul>
         </div>

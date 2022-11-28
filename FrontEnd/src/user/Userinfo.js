@@ -1,31 +1,28 @@
 import SettingsIcon from "@mui/icons-material/Settings";
 import Logo from "../components/Logo";
 import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import API from "../env";
-import { Token } from "@mui/icons-material";
-import setUser, { useEffect } from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 const UserInfo = () => {
-  const[user, setUser] = useState([])
+  const [user, setUser] = useState([]);
   try {
-  useEffect(() =>{
-    
-
-    const response = fetch(`${API}/user/`, {
-      method: "GET",
-      headers: {
-        Authorization: "bearer " + localStorage.getItem("Tajny numerek"),
-        accept: "text/plain",
-        "Content-Type": "application/json",
-      },
-    }).then((response) => response.json())
-      .then((data) => {
-        setUser(data);
+    useEffect(() => {
+      const response = fetch(`${API}/user/`, {
+        method: "GET",
+        headers: {
+          Authorization: "bearer " + localStorage.getItem("Tajny numerek"),
+          accept: "text/plain",
+          "Content-Type": "application/json",
+        },
       })
-      return () => response
-    },[])
+        .then((response) => response.json())
+        .then((data) => {
+          setUser(data);
+        });
+      return () => response;
+    }, []);
   } catch (error) {
     console.log(error, error.message);
   }

@@ -1,6 +1,5 @@
 import Logo from "../components/Logo";
 import Nav from "../components/Nav";
-import SettingsIcon from "@mui/icons-material/Settings";
 const UserEditInfo = () => {
   const user = {
     userName: "Kuba",
@@ -83,10 +82,10 @@ const UserEditInfo = () => {
             </div>
             <div class=" grid grid-cols-2 gap-4">
               <button class="btn btn-success text-white border-2">
-                Zapisz zmiany 
+                Zapisz zmiany
               </button>
               <button class="btn bg-white text-dark-blue border-info border-2">
-               Przejdź do profilu
+                Przejdź do profilu
               </button>
             </div>
           </div>
