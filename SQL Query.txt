@@ -1,0 +1,32 @@
+HASŁO DO KONT: haslo
+
+SET IDENTITY_INSERT [dbo].[AspNetUsers] ON
+INSERT INTO [dbo].[AspNetUsers] ([Id], [FirstName], [LastName], [Address], [PasswordHash], [PasswordSalt], [RefreshToken], [TokenCreated], [TokenExpires], [UserType], [Description], [Rate], [Education], [UserName], [NormalizedUserName], [Email], [NormalizedEmail], [EmailConfirmed], [SecurityStamp], [ConcurrencyStamp], [PhoneNumber], [PhoneNumberConfirmed], [TwoFactorEnabled], [LockoutEnd], [LockoutEnabled], [AccessFailedCount]) VALUES (1, N'klient1', N'klient1', N'Klientowo1', <Binary Data>, <Binary Data>, N'', N'0001-01-01 00:00:00', N'0001-01-01 00:00:00', 3, NULL, NULL, NULL, N'klient1', NULL, N'k1@k1.k1', NULL, 0, NULL, N'95bf5501-9463-4ebc-8384-c4df287af90d', NULL, 0, 0, NULL, 0, 0)
+INSERT INTO [dbo].[AspNetUsers] ([Id], [FirstName], [LastName], [Address], [PasswordHash], [PasswordSalt], [RefreshToken], [TokenCreated], [TokenExpires], [UserType], [Description], [Rate], [Education], [UserName], [NormalizedUserName], [Email], [NormalizedEmail], [EmailConfirmed], [SecurityStamp], [ConcurrencyStamp], [PhoneNumber], [PhoneNumberConfirmed], [TwoFactorEnabled], [LockoutEnd], [LockoutEnabled], [AccessFailedCount]) VALUES (2, N'klient2', N'klient2', N'Klientowo2', <Binary Data>, <Binary Data>, N'', N'0001-01-01 00:00:00', N'0001-01-01 00:00:00', 3, NULL, NULL, NULL, N'klient2', NULL, N'k2@k2.k2', NULL, 0, NULL, N'2ed93c5d-5fe9-4816-ade0-17a5eacf8b8f', NULL, 0, 0, NULL, 0, 0)
+INSERT INTO [dbo].[AspNetUsers] ([Id], [FirstName], [LastName], [Address], [PasswordHash], [PasswordSalt], [RefreshToken], [TokenCreated], [TokenExpires], [UserType], [Description], [Rate], [Education], [UserName], [NormalizedUserName], [Email], [NormalizedEmail], [EmailConfirmed], [SecurityStamp], [ConcurrencyStamp], [PhoneNumber], [PhoneNumberConfirmed], [TwoFactorEnabled], [LockoutEnd], [LockoutEnabled], [AccessFailedCount]) VALUES (3, N'tutor1', N'tutor1', N'Tutorowo1', <Binary Data>, <Binary Data>, N'', N'0001-01-01 00:00:00', N'0001-01-01 00:00:00', 2, NULL, 0, NULL, N'tutor1', NULL, N't1@t1.t1', NULL, 0, NULL, N'460aff27-491d-4a77-b889-f5c26c7b198d', NULL, 0, 0, NULL, 0, 0)
+INSERT INTO [dbo].[AspNetUsers] ([Id], [FirstName], [LastName], [Address], [PasswordHash], [PasswordSalt], [RefreshToken], [TokenCreated], [TokenExpires], [UserType], [Description], [Rate], [Education], [UserName], [NormalizedUserName], [Email], [NormalizedEmail], [EmailConfirmed], [SecurityStamp], [ConcurrencyStamp], [PhoneNumber], [PhoneNumberConfirmed], [TwoFactorEnabled], [LockoutEnd], [LockoutEnabled], [AccessFailedCount]) VALUES (4, N'tutor2', N'tutor2', N'Tutorowo2', <Binary Data>, <Binary Data>, N'', N'0001-01-01 00:00:00', N'0001-01-01 00:00:00', 2, NULL, 0, NULL, N'tutor2', NULL, N't2@t2.t2', NULL, 0, NULL, N'd8c445f2-9b8b-4888-a747-7ea562fc89ac', NULL, 0, 0, NULL, 0, 0)
+INSERT INTO [dbo].[AspNetUsers] ([Id], [FirstName], [LastName], [Address], [PasswordHash], [PasswordSalt], [RefreshToken], [TokenCreated], [TokenExpires], [UserType], [Description], [Rate], [Education], [UserName], [NormalizedUserName], [Email], [NormalizedEmail], [EmailConfirmed], [SecurityStamp], [ConcurrencyStamp], [PhoneNumber], [PhoneNumberConfirmed], [TwoFactorEnabled], [LockoutEnd], [LockoutEnabled], [AccessFailedCount]) VALUES (5, N'admin', N'admin', N'Adminowo', <Binary Data>, <Binary Data>, N'', N'0001-01-01 00:00:00', N'0001-01-01 00:00:00', 0, NULL, NULL, NULL, N'admin', NULL, N'ad@ad.ad', NULL, 0, NULL, N'4162c6a1-664e-4344-b5fb-ed334e6afbff', NULL, 0, 0, NULL, 0, 0)
+SET IDENTITY_INSERT [dbo].[AspNetUsers] OFF
+
+SET IDENTITY_INSERT [dbo].[Subjects] ON
+INSERT INTO [dbo].[Subjects] ([Id], [Name], [Category]) VALUES (1, N'Matematyka', N'Ścisłe')
+INSERT INTO [dbo].[Subjects] ([Id], [Name], [Category]) VALUES (3, N'Chemia', N'Ścisłe')
+INSERT INTO [dbo].[Subjects] ([Id], [Name], [Category]) VALUES (4, N'Biologia', N'Ścisłe')
+INSERT INTO [dbo].[Subjects] ([Id], [Name], [Category]) VALUES (5, N'Polski', N'Humanistyczne')
+INSERT INTO [dbo].[Subjects] ([Id], [Name], [Category]) VALUES (6, N'Historia', N'Humanistyczne')
+INSERT INTO [dbo].[Subjects] ([Id], [Name], [Category]) VALUES (7, N'Filozofia', N'Humanistyczne')
+INSERT INTO [dbo].[Subjects] ([Id], [Name], [Category]) VALUES (8, N'Angielski', N'Humanistyczne')
+INSERT INTO [dbo].[Subjects] ([Id], [Name], [Category]) VALUES (9, N'Niemiecka', N'Humanistyczne')
+INSERT INTO [dbo].[Subjects] ([Id], [Name], [Category]) VALUES (10, N'Algebra', N'Ścisłe')
+SET IDENTITY_INSERT [dbo].[Subjects] OFF
+
+SET IDENTITY_INSERT [dbo].[Announcements] ON
+INSERT INTO [dbo].[Announcements] ([Id], [UserId], [Type], [SubjectId], [Description], [Price], [LessonLength]) VALUES (4, 1, N'Uczen', 1, N'Szukam korkow z matematyki', CAST(0.00 AS Decimal(14, 2)), 0)
+INSERT INTO [dbo].[Announcements] ([Id], [UserId], [Type], [SubjectId], [Description], [Price], [LessonLength]) VALUES (11, 1, N'Uczeń', 3, N'Szukam korków ', CAST(0.00 AS Decimal(14, 2)), 0)
+INSERT INTO [dbo].[Announcements] ([Id], [UserId], [Type], [SubjectId], [Description], [Price], [LessonLength]) VALUES (12, 2, N'Uczen', 6, N'Szukam korkow 2', CAST(0.00 AS Decimal(14, 2)), 0)
+INSERT INTO [dbo].[Announcements] ([Id], [UserId], [Type], [SubjectId], [Description], [Price], [LessonLength]) VALUES (13, 2, N'Uczen', 8, N'Szukam korkow 2', CAST(0.00 AS Decimal(14, 2)), 0)
+INSERT INTO [dbo].[Announcements] ([Id], [UserId], [Type], [SubjectId], [Description], [Price], [LessonLength]) VALUES (14, 3, N'Korepetytor', 3, N'Daje korepetycje', CAST(40.00 AS Decimal(14, 2)), 1)
+INSERT INTO [dbo].[Announcements] ([Id], [UserId], [Type], [SubjectId], [Description], [Price], [LessonLength]) VALUES (15, 3, N'Korepetytor', 6, N'Daje korepetycje', CAST(50.00 AS Decimal(14, 2)), 1)
+INSERT INTO [dbo].[Announcements] ([Id], [UserId], [Type], [SubjectId], [Description], [Price], [LessonLength]) VALUES (17, 4, N'Korepetytor', 3, N'Daje korepetycje', CAST(55.00 AS Decimal(14, 2)), 1)
+INSERT INTO [dbo].[Announcements] ([Id], [UserId], [Type], [SubjectId], [Description], [Price], [LessonLength]) VALUES (21, 4, N'Korepetytor', 8, N'Daje korepetycje 2', CAST(80.00 AS Decimal(14, 2)), 2)
+SET IDENTITY_INSERT [dbo].[Announcements] OFF

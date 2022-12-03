@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rTJZl6VoAw1FW0iZOqrA6mwwjaS02+x8muWNd0KZuTJcqb/t8p0Mn/RH7pF+djposN/s1K/sn/ZGtGL6+A3NJA==",
+  "dgSpecHash": "0gSlv1kdu38yAd8t/P0guxWrzTJ0rHcVDkrWI7wjso/Dwrx02AxgCDbl1O6cwbJ+AfMGs+NP5v453BCBYPHSrA==",
   "success": true,
-  "projectFilePath": "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\BackEnd\\DAL\\DAL.csproj",
+  "projectFilePath": "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\Korepetycje_Plus\\BackEnd\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\erago\\.nuget\\packages\\entityframework\\6.1.0\\entityframework.6.1.0.nupkg.sha512",
     "C:\\Users\\erago\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.3\\microsoft.aspnet.identity.core.2.2.3.nupkg.sha512",

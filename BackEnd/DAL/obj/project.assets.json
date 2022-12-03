@@ -2039,11 +2039,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\BackEnd\\DAL\\DAL.csproj",
+      "projectUniqueName": "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\Korepetycje_Plus\\BackEnd\\DAL\\DAL.csproj",
       "projectName": "DAL",
-      "projectPath": "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\BackEnd\\DAL\\DAL.csproj",
+      "projectPath": "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\Korepetycje_Plus\\BackEnd\\DAL\\DAL.csproj",
       "packagesPath": "C:\\Users\\erago\\.nuget\\packages\\",
-      "outputPath": "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\BackEnd\\DAL\\obj\\",
+      "outputPath": "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\Korepetycje_Plus\\BackEnd\\DAL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\erago\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2060,8 +2060,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\BackEnd\\Model\\Model.csproj": {
-              "projectPath": "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\BackEnd\\Model\\Model.csproj"
+            "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj": {
+              "projectPath": "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj"
             }
           }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uWYF4iQTg3TGImFjcsdvcplN5jOD1cwH1m1Ksy7DpDpFmoI0RoRghyaZhrxVefkMRTVYBn70rmWka+M403ZV6A==",
+  "dgSpecHash": "YUKSo36tQYkBtjcTzg3k6M/Xci6bjmayG1mJ8LMVlJNEm1jOrnvlsJUGeu1dDHRp7C9OyUgkx1mfR2FRY2Ya9g==",
   "success": true,
-  "projectFilePath": "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\BackEnd\\Koreprtycje+\\Korepetycje+.csproj",
+  "projectFilePath": "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\Korepetycje_Plus\\BackEnd\\Koreprtycje+\\Korepetycje+.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\erago\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\erago\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

@@ -10,5 +10,7 @@ namespace Services.Interfaces
     public interface IUserService
     {
         public Task<UserDto> GetUserById(int id);
+
+        public Task<Boolean> UpdateUser(UserModify user);
     }
 }

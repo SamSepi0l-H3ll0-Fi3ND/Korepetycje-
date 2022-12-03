@@ -70,6 +70,13 @@ namespace Koreprtycje_.Controllers
             return Ok("Announcement removed");
         }
 
+        [HttpPut, Authorize]
+        public async Task<ActionResult> UpdateAnnouncement(AnnouncementModify announcement)
+        {
+            var currentUserId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            await _announcementService.UpdateAnnouncement(announcement, currentUserId);
 
+            return Ok("Announcement modified");
+        }
     }
 }

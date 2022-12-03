@@ -19,10 +19,13 @@ namespace Services.Configuration.AutoMapperProfiles
             CreateMap<User, UserDto>();
             CreateMap<UserDto, User>();
             CreateMap<UserRegisterDto, UserLoginDto>();
+            CreateMap<User, UserModify>().ReverseMap();
+
 
             CreateMap<AnnouncementDto, Announcement>();
             CreateMap<Announcement, AnnouncementDto>();
             CreateMap<AnnouncementCreate, Announcement>();
+            CreateMap<AnnouncementModify, Announcement>().ReverseMap();
 
             CreateMap<SubjectDto, Subject>();
             CreateMap<Subject, SubjectDto>();

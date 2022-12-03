@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kxyEWpNyK2c0YllYPNmeIvvfwY20Im28kDfcewrrvZLTSFt6FWxpWEiejc5l1imPztAL7idsT5gi894+EBgx/A==",
+  "dgSpecHash": "v6j41FpjHnxlU6l6s+aoZ5/Ak86B7lwCFeD8LySbd2jBpCWg3iCWV0L65Y/zBue2C7f5YSZ0HFzu8ySnMQ/o+w==",
   "success": true,
-  "projectFilePath": "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\BackEnd\\Model\\Model.csproj",
+  "projectFilePath": "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\Korepetycje_Plus\\BackEnd\\Model\\Model.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\erago\\.nuget\\packages\\entityframework\\6.1.0\\entityframework.6.1.0.nupkg.sha512",
     "C:\\Users\\erago\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.3\\microsoft.aspnet.identity.core.2.2.3.nupkg.sha512",

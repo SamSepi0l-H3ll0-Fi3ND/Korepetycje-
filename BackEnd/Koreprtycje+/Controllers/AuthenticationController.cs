@@ -54,7 +54,7 @@ namespace Koreprtycje_.Controllers
             var refreshToken = _authenticationService.GenerateRefreshToken(token.Item2);
             SetRefreshToken(refreshToken.Result, token.Item2);
 
-            return Ok(token.Item2);
+            return Ok(token.Item1);
         }
 
         [HttpPost("refresh-token")]

@@ -10284,11 +10284,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\BackEnd\\Koreprtycje+\\Korepetycje+.csproj",
+      "projectUniqueName": "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\Korepetycje_Plus\\BackEnd\\Koreprtycje+\\Korepetycje+.csproj",
       "projectName": "Korepetycje+",
-      "projectPath": "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\BackEnd\\Koreprtycje+\\Korepetycje+.csproj",
+      "projectPath": "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\Korepetycje_Plus\\BackEnd\\Koreprtycje+\\Korepetycje+.csproj",
       "packagesPath": "C:\\Users\\erago\\.nuget\\packages\\",
-      "outputPath": "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\BackEnd\\Koreprtycje+\\obj\\",
+      "outputPath": "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\Korepetycje_Plus\\BackEnd\\Koreprtycje+\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\erago\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -10305,8 +10305,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\BackEnd\\Services\\Services.csproj": {
-              "projectPath": "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\BackEnd\\Services\\Services.csproj"
+            "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\Korepetycje_Plus\\BackEnd\\Services\\Services.csproj": {
+              "projectPath": "D:\\Studencki Bełkot\\7sem\\Projekt zespołowy\\Projekt\\Korepetycje_Plus\\BackEnd\\Services\\Services.csproj"
             }
           }
         }

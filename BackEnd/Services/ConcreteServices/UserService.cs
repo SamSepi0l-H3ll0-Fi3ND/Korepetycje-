@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Koreprtycje_.Data;
+using Koreprtycje_.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Model.DTO;
@@ -34,6 +35,29 @@ namespace Services.ConcreteServices
                 return userDto;
             }
             catch (Exception ex)
+            {
+                Logger.LogError(ex, ex.Message);
+                throw;
+            }
+        }
+
+        public async Task<Boolean> UpdateUser(UserModify user)
+        {
+            try 
+            {
+                var userModel = await DbContext.Users.FirstOrDefaultAsync(x => x.Id == user.Id);
+                userModel.Address = user.Address;
+                userModel.PhoneNumber = user.PhoneNumber;
+                userModel.FirstName = user.FirstName;
+                userModel.LastName = user.LastName;
+                userModel.Email = user.Email;
+                
+                DbContext.Users.Update(userModel);
+                await DbContext.SaveChangesAsync();
+                return true;
+
+            }
+              catch (Exception ex)
             {
                 Logger.LogError(ex, ex.Message);
                 throw;

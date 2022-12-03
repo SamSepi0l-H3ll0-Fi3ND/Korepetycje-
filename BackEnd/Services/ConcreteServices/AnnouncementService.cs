@@ -96,5 +96,28 @@ namespace Services.ConcreteServices
                 throw;
             }
         }
+
+        public async Task<Boolean> UpdateAnnouncement(AnnouncementModify announcementModification, int userId)
+        {
+            try
+            {
+                if (announcementModification == null)
+                    throw new ArgumentNullException($"Dto parameter is null");
+                if (userId != announcementModification.UserId)
+                    throw new ArgumentException("User is not author of the announcement");
+                var announcement = await DbContext.Announcements.FirstOrDefaultAsync(x =>x.Id == announcementModification.Id);
+                announcement.LessonLength = announcementModification.LessonLength;
+                announcement.Price = announcementModification.Price;
+                announcement.Description = announcementModification.Description;
+                DbContext.Announcements.Update(announcement);
+                await DbContext.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex, ex.Message);
+                throw;
+            }
+        }
     }
 }

@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Model.DTO;
 using Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace Koreprtycje_.Controllers
 {
@@ -32,6 +34,15 @@ namespace Koreprtycje_.Controllers
                 return Ok(_tutorService.GetTutor(id));
 
             return Ok(user);
+        }
+
+        [HttpPut, Authorize]
+        public async Task<ActionResult> UpdateUser(UserModify user)
+        {
+            user.Id = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            var update = await _userService.UpdateUser(user);
+
+            return Ok("User modified");
         }
     }
 }
