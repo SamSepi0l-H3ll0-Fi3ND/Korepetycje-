@@ -5,9 +5,12 @@ import Footer from "../components/Footer";
 import API from "../env";
 
 const Announcements = () => {
-  const [price, setPrice] = useState("");
   const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("");
+  const [subject, setSubject] = useState("");
+  const [price, setPrice] = useState(40);
   const [data, setData] = useState([]);
+
   useEffect(() => {
     try {
       const response = fetch(`${API}/Announcements`, {
@@ -25,10 +28,18 @@ const Announcements = () => {
   }, []);
 
   function generateAds() {
-    return data.filter((item) => {
-      console.log(item.user.firstName + item.user.lastName);
-      return search.toLowerCase() === '' ? item : (item.user.firstName + ' ' + item.user.lastName).toLowerCase().includes(search)
-      
+    return data
+    .filter((item) => {
+      return search.toLowerCase() === '' ? item : (item.user.firstName + ' ' + item.user.lastName).toLowerCase().includes(search.toLowerCase());
+    })
+    .filter((item) => {
+      return category === '' ? item : item.subject.category === category;
+    })
+    .filter((item) => {
+      return subject === '' ? item : item.subject.name === subject;
+    })
+    .filter((item) => {
+      return price <= item.price ? item : false
     })
     .map((oneJson) => {
       return <Ad adData={oneJson} />;
@@ -58,37 +69,46 @@ const Announcements = () => {
             <div class="flex justify-center">
               <div class="max-w-xl">
                 <div class="pb-6">
-                  <select class="m-6 rounded-full">
+                  <select class="m-6 rounded-full" onChange={(e) => setCategory(e.target.value)}>
                     <option value="" selected disabled hidden>
                       Kategoria
                     </option>
-                    <option value="volvo">Ścisłe</option>
-                    <option value="saab">Humanistyczne</option>
+                    <option value="">Wszystkie</option>
+                    <option value="Ścisłe">Ścisłe</option>
+                    <option value="Humanistyczne">Humanistyczne</option>
+                    <option value="Przyrodnicze">Przyrodnicze</option>
+                    <option value="Obce">Obce</option>
                   </select>
-                  <select class="m-6 rounded-full">
+                  <select class="m-6 rounded-full" onChange={(e) => setSubject(e.target.value)}>
                     <option value="" selected disabled hidden>
                       Przedmiot
                     </option>
-                    <option value="volvo">Matematyka</option>
-                    <option value="saab">Polski</option>
-                    <option value="opel">Biologia</option>
-                    <option value="audi">Chemia</option>
+                    <option value="">Wszystkie</option>
+                    <option value="Matematyka">Matematyka</option>
+                    <option value="Polski">Polski</option>
+                    <option value="Biologia">Biologia</option>
+                    <option value="Chemia">Chemia</option>
+                    <option value="Historia">Historia</option>
+                    <option value="WOS">WOS</option>
+                    <option value="Angielski">Angielski</option>
+                    <option value="Niemiecki">Niemiecki</option>
+                    <option value="Algebra">Algebra</option>
                   </select>
                   <select class="m-6 rounded-full">
                     <option value="" selected disabled hidden>
                       Województwo
                     </option>
-                    <option value="volvo">Śląsk</option>
+                    <option value="Śląsk">Śląsk</option>
                   </select>
                 </div>
                 <div class="flex flex-col justify-center pb-10">
                   <p class="text-[#06283d] text-center pb-2">
-                    Cena(zł) <span id="price">{price}</span>
+                    Cena od: <span id="price">{price}zł</span>
                   </p>
                   <input
                     type="range"
                     onChange={(e) => setPrice(e.target.value)}
-                    min="1"
+                    min="0"
                     max="1000"
                     id="slider"
                     class="range range-primary bg-[#7c6fde]"

@@ -7,6 +7,7 @@ namespace Koreprtycje_.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Address{ get; set; }
+        public double Rate { get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
         public string RefreshToken { get; set; } = string.Empty;

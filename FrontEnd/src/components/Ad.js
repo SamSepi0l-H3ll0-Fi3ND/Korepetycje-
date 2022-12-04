@@ -27,13 +27,13 @@ const Ad = (props) => {
             <p class="text-2xl ml-2">{adData.user.lastName}</p>
           </div>
         </div>
-        <div class="flex flex-col basis-8/12">
+        <div class="flex flex-col basis-9/12">
           <div class="flex justify-left mt-4">
             <p class="text-2xl ml-6">{adData.subject.name}</p>
           </div>
           <div class="flex justify-left p-6">{<p>{adData.description}</p>}</div>
         </div>
-        <div class="flex flex-col m-4 basis-3/12">
+        <div class="flex flex-col m-4 basis-2/12">
           <div class="flex flex-col mt-2">
             <div class="flex justify-center m-2">
               <MonetizationOnIcon /> {adData.price}zł / {adData.lessonLength}{" "}
@@ -48,8 +48,8 @@ const Ad = (props) => {
               <MessageIcon /> Wyślij wiadomość
             </div>
             <div class="flex justify-center m-2">
-              <LocationOnIcon /> Lokalizacja
-              <StarIcon /> Ocena (Ile opinii)
+              <LocationOnIcon /> {adData.user.address} 
+              <StarIcon /> {adData.user.rate}
             </div>
           </div>
         </div>
