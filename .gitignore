@@ -2,12 +2,15 @@
 FrontEnd/node_modules
 
 # .vs
-BackEnd/.vs
-/.vs
+.vs/
 
-#BackEnd bin i obj
-BackEnd/*/bin/
+#node_modules glowne
+KorepetycjePlus
+
+#BackEnd vs, obj i bin
+BackEnd/.vs/
 BackEnd/*/obj/
+BackEnd/*/bin/
 
-#BackEnd Migrations
-BackEnd/DAL/Migrations
+#BackEnd migrations
+BackEnd/DAL/Migrations/
