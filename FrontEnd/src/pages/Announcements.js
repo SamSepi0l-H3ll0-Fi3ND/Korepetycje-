@@ -5,7 +5,8 @@ import Footer from "../components/Footer";
 import API from "../env";
 
 const Announcements = () => {
-  const [inputValue, setInputValue] = useState("");
+  const [price, setPrice] = useState("");
+  const [search, setSearch] = useState("");
   const [data, setData] = useState([]);
   useEffect(() => {
     try {
@@ -24,7 +25,12 @@ const Announcements = () => {
   }, []);
 
   function generateAds() {
-    return data.map((oneJson) => {
+    return data.filter((item) => {
+      console.log(item.user.firstName + item.user.lastName);
+      return search.toLowerCase() === '' ? item : (item.user.firstName + ' ' + item.user.lastName).toLowerCase().includes(search)
+      
+    })
+    .map((oneJson) => {
       return <Ad adData={oneJson} />;
     });
   }
@@ -41,6 +47,7 @@ const Announcements = () => {
             <div className="flex justify-center mt-8 mb-6">
               <input
                 type="text"
+                onChange={(e) => setSearch(e.target.value)}
                 placeholder="Szukaj korepetycji"
                 class="input input-bordered border-neutral-700 bg-[#faf9fa] w-4/5 max-w-3xl rounded-none rounded-l-3xl text-[#06283d]"
               />
@@ -76,11 +83,11 @@ const Announcements = () => {
                 </div>
                 <div class="flex flex-col justify-center pb-10">
                   <p class="text-[#06283d] text-center pb-2">
-                    Cena(zł) <span id="price">{inputValue}</span>
+                    Cena(zł) <span id="price">{price}</span>
                   </p>
                   <input
                     type="range"
-                    onChange={(e) => setInputValue(e.target.value)}
+                    onChange={(e) => setPrice(e.target.value)}
                     min="1"
                     max="1000"
                     id="slider"
