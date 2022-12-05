@@ -128,7 +128,7 @@ const Nav = () => {
                   <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
                 </svg>
               </span>
-              <ul className="bg-[#fafafa]" class="p-2">
+              <ul className="bg-white p-2">
                 <li>
                   <span class="btn btn-ghost">Ścisłe</span>
                 </li>
@@ -141,7 +141,9 @@ const Nav = () => {
               </ul>
             </li>
             <li>
-              <span class="btn btn-ghost">Blog</span>
+              <Link to="/addAnnouncements" class="btn btn-ghost">
+                <span >Dodaj ogłoszenie</span>
+              </Link>
             </li>
           </ul>
         </div>
