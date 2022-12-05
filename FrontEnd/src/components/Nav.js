@@ -81,7 +81,7 @@ const Nav = () => {
               </li>
               <li>
                 <span class="btn btn-outline bg-white text-[#06283d] border-2">
-                  Blog
+                  Dodaj ogłoszenie
                 </span>
               </li>
               <li>

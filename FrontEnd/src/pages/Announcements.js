@@ -109,7 +109,7 @@ const Announcements = () => {
                     type="range"
                     onChange={(e) => setPrice(e.target.value)}
                     min="0"
-                    max="1000"
+                    max="100"
                     id="slider"
                     class="range range-primary bg-[#7c6fde]"
                   ></input>
