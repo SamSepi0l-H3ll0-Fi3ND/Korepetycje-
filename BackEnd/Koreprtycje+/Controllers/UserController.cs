@@ -21,17 +21,17 @@ namespace Koreprtycje_.Controllers
             _tutorService = tutorService;
         }
 
-        [HttpGet("{id}")]
+        [HttpGet, Authorize]
         public async Task<ActionResult> GetUser(int id)
         {
-            var user = _userService.GetUserById(id).Result;
+            var user = _userService.GetUserById(int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier))).Result;
             if (user == null)
             {
                 return NotFound("User not found");
             }
 
-            if (user.GetType().Equals(RoleValue.Tutor))
-                return Ok(_tutorService.GetTutor(id));
+            //if (user.GetType().Equals(RoleValue.Tutor))
+            //    return Ok(_tutorService.GetTutor(id));
 
             return Ok(user);
         }
