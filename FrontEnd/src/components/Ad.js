@@ -6,7 +6,7 @@ import StarIcon from "@mui/icons-material/Star";
 
 const Ad = (props) => {
   const { adData } = props;
-  console.log(adData);
+
 
   return (
     <div

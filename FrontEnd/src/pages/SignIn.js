@@ -32,7 +32,7 @@ const SignIn = () => {
       });
       const token = await response.text();
       localStorage.setItem("Tajny numerek", token);
-      navigate(-1);
+      navigate("/");
     } catch (error) {
       console.log(error, error.message);
     }
