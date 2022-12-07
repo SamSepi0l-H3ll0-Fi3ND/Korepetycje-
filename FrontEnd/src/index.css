@@ -17,3 +17,57 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  pointer-events: all;
+  width: 24px;
+  height: 24px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px #C6C6C6;
+  cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+  -webkit-appearance: none;
+  pointer-events: all;
+  width: 24px;
+  height: 24px;
+  background-color: #06283d;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px #C6C6C6;
+  cursor: pointer;  
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+  background: #f7f7f7;
+}
+
+input[type=range]::-webkit-slider-thumb:active {
+  box-shadow: inset 0 0 3px #06283d, 0 0 9px #06283d;
+  -webkit-box-shadow: inset 0 0 3px #06283d, 0 0 9px #06283d;
+}
+
+input[type="range"] {
+  -webkit-appearance: none; 
+  appearance: none;
+  height: 10px;
+  width: 520px;
+  position: absolute;
+  background-color: #06283d;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+@media (max-width: 620px) {
+  input[type="range"] {
+    width: 85%;
+    margin-left: 20px;
+  }
+}
+
+#lower {
+  height: 0;
+  z-index: 1;
+}

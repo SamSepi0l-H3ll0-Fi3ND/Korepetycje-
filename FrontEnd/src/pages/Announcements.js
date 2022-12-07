@@ -8,7 +8,8 @@ const Announcements = () => {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("");
   const [subject, setSubject] = useState("");
-  const [price, setPrice] = useState(40);
+  const [price, setfromPrice] = useState(50);
+  const [price2, settoPrice] = useState(50);
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -39,7 +40,25 @@ const Announcements = () => {
       return subject === '' ? item : item.subject.name === subject;
     })
     .filter((item) => {
-      return price <= item.price ? item : false
+
+      var lowerSlider = document.querySelector('#lower');
+      var upperSlider = document.querySelector('#upper');
+      var lowerVal = parseInt(lowerSlider.value);
+      var upperVal = parseInt(upperSlider.value);
+
+      lowerSlider.oninput = function() {     
+        if (lowerVal > upperVal - 4) {
+            upperSlider.value = lowerVal + 4;
+        }
+      };
+
+      upperSlider.oninput = function() {
+        if (upperVal < lowerVal + 4) {
+            lowerSlider.value = upperVal - 4;
+        }
+      };
+
+      return price <= item.price && price2 >= item.price ? item : false
     })
     .map((oneJson) => {
       return <Ad adData={oneJson} />;
@@ -48,9 +67,9 @@ const Announcements = () => {
 
   return (
     <div>
-      <div class="min-h-screen w-screen">
+      <div class="min-h-screen w-full">
         <Nav />
-        <div class="bg-[#a0bdcf] w-screen">
+        <div class="bg-[#a0bdcf] w-full">
           <div>
             <p class="text-3xl text-[#06283d] flex justify-center pt-16">
               Przeglądaj korepetytorów...
@@ -102,16 +121,22 @@ const Announcements = () => {
                   </select>
                 </div>
                 <div class="flex flex-col justify-center pb-10">
-                  <p class="text-[#06283d] text-center pb-2">
-                    Cena od: <span id="price">{price}zł</span>
+                  <p class="text-[#06283d] text-center pb-14">
+                    Cena od <span id="price">{price}zł do {price2}zł</span>
                   </p>
                   <input
                     type="range"
-                    onChange={(e) => setPrice(e.target.value)}
+                    onChange={(e) => setfromPrice(e.target.value)}
                     min="0"
                     max="100"
-                    id="slider"
-                    class="range range-primary bg-[#7c6fde]"
+                    id="lower"
+                  ></input>
+                  <input
+                    type="range"
+                    onChange={(e) => settoPrice(e.target.value)}
+                    min="0"
+                    max="100"
+                    id="upper"
                   ></input>
                 </div>
               </div>

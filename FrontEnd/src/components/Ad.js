@@ -13,8 +13,8 @@ const Ad = (props) => {
       class="h-auto bg-[#d0dfe9] rounded-md w-auto shadow-[0_0_16px_0_rgba(0,0,0,0.5)] text-dark-blue m-3"
       id={`Ad${adData.id}`}
     >
-      <div class="flex sm:flex-row">
-        <div class="flex flex-col justify-center basis-1/12">
+      <div class="flex flex-col sm:flex-row">
+        <div class="flex flex-col justify-center sm:basis-1/12">
           <div class="flex justify-center mt-4">
             <img
               src="https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-High-Quality-Image.png"
@@ -27,13 +27,13 @@ const Ad = (props) => {
             <p class="text-2xl ml-2">{adData.user.lastName}</p>
           </div>
         </div>
-        <div class="flex flex-col basis-9/12">
-          <div class="flex justify-left mt-4">
+        <div class="flex sm:flex-col sm:basis-9/12">
+          <div class="flex sm:justify-left mt-4">
             <p class="text-2xl ml-6">{adData.subject.name}</p>
           </div>
           <div class="flex justify-left p-6">{<p>{adData.description}</p>}</div>
         </div>
-        <div class="flex flex-col m-4 basis-2/12">
+        <div class="flex flex-col m-4 sm:basis-2/12">
           <div class="flex flex-col mt-2">
             <div class="flex justify-center m-2">
               <MonetizationOnIcon /> {adData.price}zł / {adData.lessonLength}{" "}
