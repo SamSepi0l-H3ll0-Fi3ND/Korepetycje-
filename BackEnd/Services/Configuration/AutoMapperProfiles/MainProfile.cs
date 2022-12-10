@@ -34,10 +34,16 @@ namespace Services.Configuration.AutoMapperProfiles
             CreateMap<Tag, TagDto>();
 
             CreateMap<Tutor, TutorDto>();
-            CreateMap<TutorDto, Tutor>();
+            CreateMap<TutorDto, Tutor>()
+                .ForMember(dest => dest.Reviews, x => x.MapFrom(src => src.Reviews));
 
             CreateMap<Achievement, AchievementDto>();
             CreateMap<AchievementDto, AchievementDto>();
+
+            CreateMap<Review, ReviewDto>()
+                .ForMember(dest => dest.Author, x => x.MapFrom(src => src.Client.FirstName + src.Client.LastName));
+            CreateMap<ReviewCreateDto, Review>();
+
         }
     }
 }

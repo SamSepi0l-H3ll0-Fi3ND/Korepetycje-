@@ -36,6 +36,17 @@ namespace Koreprtycje_.Controllers
             return Ok(user);
         }
 
+        [HttpGet("get-tutor")]
+        public async Task<ActionResult> GetTutor(int id)
+        {
+            var tutor = _tutorService.GetTutor(id).Result;
+            if (tutor == null)
+            {
+                return NotFound("tutor not found");
+            }
+            return Ok(tutor);
+        }
+
         [HttpPut, Authorize]
         public async Task<ActionResult> UpdateUser(UserModify user)
         {

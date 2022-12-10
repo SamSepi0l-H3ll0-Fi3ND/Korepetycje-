@@ -84,6 +84,39 @@ namespace DAL.Migrations
                     b.ToTable("Announcements");
                 });
 
+            modelBuilder.Entity("Koreprtycje_.Models.Review", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("ClientId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Rate")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TutorId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClientId");
+
+                    b.HasIndex("TutorId");
+
+                    b.ToTable("Reviews");
+                });
+
             modelBuilder.Entity("Koreprtycje_.Models.Role", b =>
                 {
                     b.Property<int>("Id")
@@ -425,6 +458,25 @@ namespace DAL.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Koreprtycje_.Models.Review", b =>
+                {
+                    b.HasOne("Koreprtycje_.Models.Client", "Client")
+                        .WithMany()
+                        .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Koreprtycje_.Models.Tutor", "Tutor")
+                        .WithMany("Reviews")
+                        .HasForeignKey("TutorId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Client");
+
+                    b.Navigation("Tutor");
+                });
+
             modelBuilder.Entity("Koreprtycje_.Models.Tag", b =>
                 {
                     b.HasOne("Koreprtycje_.Models.Announcement", null)
@@ -496,6 +548,8 @@ namespace DAL.Migrations
             modelBuilder.Entity("Koreprtycje_.Models.Tutor", b =>
                 {
                     b.Navigation("Achievements");
+
+                    b.Navigation("Reviews");
                 });
 #pragma warning restore 612, 618
         }

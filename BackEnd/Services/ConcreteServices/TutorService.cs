@@ -28,6 +28,7 @@ namespace Services.ConcreteServices
                 var tutor = await DbContext.Users.OfType<Tutor>()
                         .Include(a => a.Announcements)
                         .Include(a => a.Achievements)
+                        .Include(r => r.Reviews)
                         .FirstOrDefaultAsync(x => x.Id == id);
                         
                 if (tutor == null)

@@ -14,6 +14,8 @@ namespace Model.Models
         public string LastName { get; set; }
         public string Address { get; set; }
         public string Email { get; set; }
+        public IList<ReviewDto> Reviews { get; set; }
+
         public IList<AnnouncementDto> Announcements { get; set; }
         public IList<AchievementDto> Achivements { get; set; }
 

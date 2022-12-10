@@ -10,7 +10,7 @@ namespace Koreprtycje_.Data
         public virtual DbSet<Announcement> Announcements { get; set; }
         public virtual DbSet<Achievement> Achievements { get; set; }
         //public virtual DbSet<Conversation> Conversations { get; set; }
-        //public virtual DbSet<Review> Reviews { get; set; }
+        public virtual DbSet<Review> Reviews { get; set; }
         public virtual DbSet<Subject> Subjects { get; set; }
         public virtual DbSet<Tag> Tags { get; set; }
 
@@ -40,12 +40,17 @@ namespace Koreprtycje_.Data
                 .HasForeignKey(a => a.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
+            builder.Entity<Tutor>()
+                .HasMany(r => r.Reviews)
+                .WithOne(t => t.Tutor)
+                .OnDelete(DeleteBehavior.Cascade);
 
-            //builder.Entity<Review>()
-            //    .HasOne(r => r.Tutor)
-            //    .WithMany(t => t.Reviews)
-            //    .HasForeignKey(r => r.TutorId)
-            //    .OnDelete(DeleteBehavior.Cascade);
+            builder.Entity<Review>()
+                .HasOne(r => r.Tutor)
+                .WithMany(t => t.Reviews)
+                .HasForeignKey(r => r.TutorId)
+                .OnDelete(DeleteBehavior.Restrict);
+
 
 
             //builder.Entity<Conversation>()
