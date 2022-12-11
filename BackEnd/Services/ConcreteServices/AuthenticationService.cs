@@ -47,7 +47,7 @@ namespace Services.ConcreteServices
         {
             try
             {
-                var user = await DbContext.Users.FirstAsync<User>(x => x.UserName == login);
+                var user = await DbContext.Users.FirstOrDefaultAsync<User>(x => x.UserName == login);
                 if (user == null)
                     throw new Exception("No user with this username");
 
