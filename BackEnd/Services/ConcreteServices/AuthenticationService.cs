@@ -15,6 +15,7 @@ using Koreprtycje_.DTO;
 using Microsoft.AspNetCore.Http;
 using Model.Models;
 using Microsoft.AspNetCore.Identity;
+using System.Text.Json;
 
 namespace Services.ConcreteServices
 {
@@ -119,7 +120,7 @@ namespace Services.ConcreteServices
                 }
                 else
                 {
-                    throw new Exception(string.Join(System.Environment.NewLine, result.Errors.Select(x => x.Description)));
+                    throw new Exception(JsonSerializer.Serialize(string.Join("<br>", result.Errors.Select(x => x.Description))));
                 }
 
                 //await DbContext.Users.AddAsync(newUser);

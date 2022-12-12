@@ -1,14 +1,13 @@
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import VpnKeyIcon from "@mui/icons-material/VpnKey";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
-import HomeIcon from '@mui/icons-material/Home';
+import HomeIcon from "@mui/icons-material/Home";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Info from "../components/Info";
-import { useState, useRef} from "react";
+import { useState, useRef } from "react";
 import API from "../env";
 import { useNavigate } from "react-router-dom";
-
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -22,13 +21,11 @@ const SignUp = () => {
   var [response, setResponse] = useState();
 
   const selectRef = useRef("");
-  var res;
-
 
   async function registerSubmit(e) {
     e.preventDefault();
     try {
-      response = await fetch(`${API}/Authentication/register`, {
+      const response = await fetch(`${API}/Authentication/register`, {
         method: "POST",
         headers: {
           accept: "text/plain",
@@ -43,22 +40,29 @@ const SignUp = () => {
           address: Address,
           type: type,
         }),
-      })
-      .then((response) => {
-        setResponse(response);
-        if(response.status === 200) {
-          navigate("/signin");
-        }else{
-          
-        }
-      })
-      res = await response.text();
-      setResponse(res);
-      console.log(res)
+      });
+      // .then((response) => response.json())
+      // .then((data) => {
+      //   console.log(data);
+      //   if (data.status === 200) {
+      //     setResponse(data);
+      //     navigate("/signin");
+      //   } else {
+      //   }
+      // });
+      const data = await response.json();
+      if (response.status === 200) {
+        navigate("/signin");
+      }
+      setResponse(data);
+
+      // console.log(data);
+      // res = await response.text();
+      // setResponse(res);
+      // console.log(res);
     } catch (error) {
       console.log(error, error.message);
     }
-    
   }
 
   return (
@@ -73,7 +77,9 @@ const SignUp = () => {
                 </p>
               </div>
               <div class="sm:ml-12">
-                <p class="ml-16 sm:ml-20 text-dark-blue font-bold">Nazwa Użytkownika</p>
+                <p class="ml-16 sm:ml-20 text-dark-blue font-bold">
+                  Nazwa Użytkownika
+                </p>
               </div>
               <div class="flex">
                 <AccountCircleIcon class="justify-center w-12 sm:w-16 sm:ml-12"></AccountCircleIcon>
@@ -119,7 +125,9 @@ const SignUp = () => {
                 />
               </div>
               <div class="sm:ml-12">
-                <p class="ml-16 sm:ml-20 text-dark-blue font-bold">Adres e-mail</p>
+                <p class="ml-16 sm:ml-20 text-dark-blue font-bold">
+                  Adres e-mail
+                </p>
               </div>
               <div class="flex">
                 <AlternateEmailIcon class="justify-center w-12 sm:w-16 sm:ml-12"></AlternateEmailIcon>
@@ -143,7 +151,9 @@ const SignUp = () => {
                 />
               </div>
               <div class="sm:ml-12">
-                <p class="ml-16 sm:ml-20 text-dark-blue font-bold">Potwierdź hasło</p>
+                <p class="ml-16 sm:ml-20 text-dark-blue font-bold">
+                  Potwierdź hasło
+                </p>
               </div>
               <div class="flex sm:ml-12">
                 <input
@@ -153,7 +163,9 @@ const SignUp = () => {
                 />
               </div>
               <div class="sm:ml-12 mt-2">
-                <p class="ml-16 sm:ml-20 text-dark-blue font-bold">Typ konta:</p>
+                <p class="ml-16 sm:ml-20 text-dark-blue font-bold">
+                  Typ konta:
+                </p>
               </div>
               <div class="flex sm:ml-12">
                 <select
@@ -161,11 +173,15 @@ const SignUp = () => {
                   ref={selectRef}
                   onChange={() => setType(selectRef.current.value)}
                 >
-                  <option value="" selected disabled hidden>Select account type</option>
+                  <option value="" selected disabled hidden>
+                    Select account type
+                  </option>
                   <option value="1" class="text-dark-blue">
                     Korepetytor
                   </option>
-                  <option value="2" class="text-dark-blue">Uczeń</option>
+                  <option value="2" class="text-dark-blue">
+                    Uczeń
+                  </option>
                 </select>
               </div>
               <div class="flex ml-4">
@@ -173,14 +189,17 @@ const SignUp = () => {
                   type="checkbox"
                   class="sm:mt-10 mt-2 sm:ml-12 ml-4 checked:bg-[#06283d] required:border-red-500"
                 />{" "}
-                <p class="sm:mt-10 mt-2 sm:ml-12 ml-6 text-dark-blue">Akceptuje <a class="underline underline-offset-2">regulamin*</a></p>
+                <p class="sm:mt-10 mt-2 sm:ml-12 ml-6 text-dark-blue">
+                  Akceptuje{" "}
+                  <a class="underline underline-offset-2">regulamin*</a>
+                </p>
               </div>
-              <div class="flex justify-center">
-                <button class="btn bg-[#06283d] text-[#dff6ff] justify-center sm:my-14 my-2 ml-4 w-48 shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">
+              <div class="flex justify-center h-1/3">
+                <button class="btn bg-[#06283d] text-[#dff6ff] justify-center sm:mt-8 my-2 ml-4 w-48 shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">
                   Zarejestruj się
                 </button>
               </div>
-              {response && (<Info responseData = {response}></Info>)}
+              {response && <Info responseData={response}></Info>}
               <Link to="../signin">
                 <p className="text-dark-blue text-center mb-8">
                   Jeśli masz już konto, zaloguj się!

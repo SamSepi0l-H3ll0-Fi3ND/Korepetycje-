@@ -12,6 +12,7 @@ using Services.Interfaces;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
+using System.Text.Json;
 
 namespace Koreprtycje_.Controllers
 {
@@ -57,12 +58,19 @@ namespace Koreprtycje_.Controllers
         [HttpPost("login")]
         public async Task<ActionResult> Login(UserLoginDto req)
         {
+            try
+            {
+                var token = await _authenticationService.Login(req.UserName, req.Password);
+                var refreshToken = _authenticationService.GenerateRefreshToken(token.Item2);
+                SetRefreshToken(refreshToken.Result, token.Item2);
+                return Ok(token.Item1);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(JsonSerializer.Serialize(ex.Message));
+            }
+            
 
-            var token = await _authenticationService.Login(req.UserName, req.Password);
-            var refreshToken = _authenticationService.GenerateRefreshToken(token.Item2);
-            SetRefreshToken(refreshToken.Result, token.Item2);
-
-            return Ok(token.Item1);
         }
 
         [HttpPost("refresh-token")]

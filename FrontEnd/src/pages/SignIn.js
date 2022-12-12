@@ -6,11 +6,13 @@ import Cookies from "universal-cookie";
 import { useState } from "react";
 import API from "../env";
 import { useNavigate } from "react-router-dom";
+import Info from "../components/Info";
 
 const SignIn = () => {
   const navigate = useNavigate();
   const [Username, setUsername] = useState(null);
   const [password, setPassword] = useState(null);
+  var [response, setResponse] = useState();
 
   async function loginSubmit(e) {
     e.preventDefault();
@@ -29,6 +31,8 @@ const SignIn = () => {
           password: password,
         }),
       });
+      const data = await response.json();
+      setResponse(data);
       if (!response.ok) throw new Error(response.status);
       else {
         const token = await response.text();
@@ -78,10 +82,11 @@ const SignIn = () => {
                 />
               </div>
               <div class="flex justify-center mb-8">
-                <button class="btn bg-[#06283d] text-[#dff6ff] justify-center my-14 ml-6 w-48 shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">
+                <button class="btn bg-[#06283d] text-[#dff6ff] justify-center mt-8 ml-6 w-48 shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">
                   Zaloguj się
                 </button>
               </div>
+              {response && <Info responseData={response}></Info>}
               <p className="text-dark-blue text-center mb-8">
                 <Link to="../register">
                   Jeśli nie masz jeszcze konta, zarejestruj się!
