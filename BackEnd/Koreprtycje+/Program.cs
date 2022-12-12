@@ -69,7 +69,8 @@ builder.Services.AddIdentityCore<User>(builder =>
         .AddRoles<Role>()
         .AddRoleManager<RoleManager<Role>>()
         .AddUserManager<UserManager<User>>()
-        .AddEntityFrameworkStores<ApplicationDbContext>();
+        .AddEntityFrameworkStores<ApplicationDbContext>()
+        .AddSignInManager<SignInManager<User>>();
 
 var app = builder.Build();
 

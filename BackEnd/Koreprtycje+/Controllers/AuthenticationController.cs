@@ -22,12 +22,14 @@ namespace Koreprtycje_.Controllers
         private readonly IConfiguration _configuration;
         private readonly IAuthenticationService _authenticationService;
         private readonly IUserService _userService;
+        private readonly UserManager<User> _userManager;
 
-        public AuthenticationController(IConfiguration configuration, IAuthenticationService authenticationService, IUserService userService)
+        public AuthenticationController(IConfiguration configuration, IAuthenticationService authenticationService, IUserService userService, UserManager<User> userManager)
         {
             _configuration = configuration;
             _authenticationService = authenticationService;
             _userService = userService;
+            _userManager = userManager;
         }
 
         [HttpGet, Authorize]

@@ -14,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Koreprtycje_.DTO;
 using Microsoft.AspNetCore.Http;
 using Model.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace Services.ConcreteServices
 {
@@ -22,12 +23,16 @@ namespace Services.ConcreteServices
         private readonly IConfiguration _configuration;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IUserService _userService;
+        private readonly UserManager<User> _userManager;
+        private readonly SignInManager<User> _signInManager;
 
-        public AuthenticationService(ApplicationDbContext dbContext, ILogger logger, IMapper mapper, IConfiguration configuration, IHttpContextAccessor httpContextAccessor, IUserService userService) : base(dbContext, logger, mapper)
+        public AuthenticationService(ApplicationDbContext dbContext, ILogger logger, IMapper mapper, IConfiguration configuration, IHttpContextAccessor httpContextAccessor, IUserService userService, UserManager<User> userManager, SignInManager<User> signInManager) : base(dbContext, logger, mapper)
         {
             _configuration = configuration;
             _httpContextAccessor = httpContextAccessor;
             _userService = userService;
+            _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         public object GetMe()
@@ -65,27 +70,6 @@ namespace Services.ConcreteServices
                 throw;
             }
         }
-
-        public async Task<RefreshToken> GenerateRefreshToken(int userId)
-        {
-            var refreshToken = new RefreshToken
-            {
-                Token = Convert.ToBase64String(RandomNumberGenerator.GetBytes(64)),
-                Expires = DateTime.Now.AddDays(7),
-                Created = DateTime.Now
-            };
-
-            var user = DbContext.Users.FindAsync(userId).Result;
-            user.RefreshToken = refreshToken.Token;
-            user.TokenCreated = refreshToken.Created;
-            user.TokenExpires = refreshToken.Expires;
-            DbContext.Update(user);
-            await DbContext.SaveChangesAsync();
-            return refreshToken;
-            
-        }
-
-
         public async Task<UserLoginDto> Register(UserRegisterDto userRegister)
         {
             try
@@ -128,8 +112,18 @@ namespace Services.ConcreteServices
                         Email = userRegister.Email };
                 }
 
-                await DbContext.Users.AddAsync(newUser);
-                await DbContext.SaveChangesAsync();
+                var result = await _userManager.CreateAsync(newUser, userRegister.Password);
+                if(result.Succeeded)
+                {
+
+                }
+                else
+                {
+                    throw new Exception(string.Join(System.Environment.NewLine, result.Errors.Select(x => x.Description)));
+                }
+
+                //await DbContext.Users.AddAsync(newUser);
+                //await DbContext.SaveChangesAsync();
                 var newUserDto = Mapper.Map<UserLoginDto>(userRegister);
 
                 return newUserDto;
@@ -140,6 +134,26 @@ namespace Services.ConcreteServices
                 throw;
             }
         }
+
+        public async Task<RefreshToken> GenerateRefreshToken(int userId)
+        {
+            var refreshToken = new RefreshToken
+            {
+                Token = Convert.ToBase64String(RandomNumberGenerator.GetBytes(64)),
+                Expires = DateTime.Now.AddDays(7),
+                Created = DateTime.Now
+            };
+
+            var user = DbContext.Users.FindAsync(userId).Result;
+            user.RefreshToken = refreshToken.Token;
+            user.TokenCreated = refreshToken.Created;
+            user.TokenExpires = refreshToken.Expires;
+            DbContext.Update(user);
+            await DbContext.SaveChangesAsync();
+            return refreshToken;
+            
+        }
+
         public async Task<string> RefreshToken(string refreshToken, int userId)
         {
             try
@@ -162,6 +176,7 @@ namespace Services.ConcreteServices
             }
 
         }
+
         private string CreateToken(User user)
         {
             List<Claim> claims = new List<Claim>
