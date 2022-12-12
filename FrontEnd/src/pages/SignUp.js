@@ -4,7 +4,8 @@ import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import HomeIcon from '@mui/icons-material/Home';
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
-import { useState, useRef } from "react";
+import Info from "../components/Info";
+import { useState, useRef} from "react";
 import API from "../env";
 import { useNavigate } from "react-router-dom";
 
@@ -18,13 +19,16 @@ const SignUp = () => {
   const [Email, setEmail] = useState(null);
   const [Address, setAddress] = useState(null);
   const [type, setType] = useState(2);
+  var [response, setResponse] = useState();
 
   const selectRef = useRef("");
+  var res;
+
 
   async function registerSubmit(e) {
     e.preventDefault();
     try {
-      const response = await fetch(`${API}/Authentication/register`, {
+      response = await fetch(`${API}/Authentication/register`, {
         method: "POST",
         headers: {
           accept: "text/plain",
@@ -39,12 +43,24 @@ const SignUp = () => {
           address: Address,
           type: type,
         }),
-      });
-      navigate("/signin");
+      })
+      .then((response) => {
+        setResponse(response);
+        if(response.status === 200) {
+          navigate("/signin");
+        }else{
+          
+        }
+      })
+      res = await response.text();
+      setResponse(res);
+      console.log(res)
     } catch (error) {
       console.log(error, error.message);
     }
+    
   }
+
   return (
     <form onSubmit={registerSubmit}>
       <div>
@@ -164,6 +180,7 @@ const SignUp = () => {
                   Zarejestruj się
                 </button>
               </div>
+              {response && (<Info responseData = {response}></Info>)}
               <Link to="../signin">
                 <p className="text-dark-blue text-center mb-8">
                   Jeśli masz już konto, zaloguj się!

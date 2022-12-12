@@ -3,13 +3,12 @@ import Nav from "../components/Nav";
 import Ad from "../components/Ad";
 import Footer from "../components/Footer";
 import API from "../env";
+import Slider from '@mui/material/Slider';
 
 const Announcements = () => {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("");
   const [subject, setSubject] = useState("");
-  const [price, setfromPrice] = useState(50);
-  const [price2, settoPrice] = useState(50);
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -28,6 +27,27 @@ const Announcements = () => {
     }
   }, []);
 
+  function valuetext(value) {
+    return `${value}zł`;
+  }
+  
+  const minDistance = 1;
+  
+  const [value1, setValue1] = useState([20, 60]);
+
+  const handleChange1 = (event, newValue, activeThumb) => {
+    if (!Array.isArray(newValue)) {
+      return;
+    }
+
+    if (activeThumb === 0) {
+      setValue1([Math.min(newValue[0], value1[1] - minDistance), value1[1]]);
+    } else {
+      setValue1([value1[0], Math.max(newValue[1], value1[0] + minDistance)]);
+    }
+  };
+  
+
   function generateAds() {
     return data
     .filter((item) => {
@@ -40,25 +60,7 @@ const Announcements = () => {
       return subject === '' ? item : item.subject.name === subject;
     })
     .filter((item) => {
-
-      var lowerSlider = document.querySelector('#lower');
-      var upperSlider = document.querySelector('#upper');
-      var lowerVal = parseInt(lowerSlider.value);
-      var upperVal = parseInt(upperSlider.value);
-
-      lowerSlider.oninput = function() {     
-        if (lowerVal > upperVal - 4) {
-            upperSlider.value = lowerVal + 4;
-        }
-      };
-
-      upperSlider.oninput = function() {
-        if (upperVal < lowerVal + 4) {
-            lowerSlider.value = upperVal - 4;
-        }
-      };
-
-      return price <= item.price && price2 >= item.price ? item : false
+      return value1[0] <= item.price && value1[1] >= item.price ? item : false
     })
     .map((oneJson) => {
       return <Ad adData={oneJson} />;
@@ -121,23 +123,17 @@ const Announcements = () => {
                   </select>
                 </div>
                 <div class="flex flex-col justify-center pb-10">
-                  <p class="text-[#06283d] text-center pb-14">
-                    Cena od <span id="price">{price}zł do {price2}zł</span>
+                  <p class="text-[#06283d] text-center">
+                    Cena od <span id="price">{value1[0]} zł do {value1[1]} zł</span>
                   </p>
-                  <input
-                    type="range"
-                    onChange={(e) => setfromPrice(e.target.value)}
-                    min="0"
-                    max="100"
-                    id="lower"
-                  ></input>
-                  <input
-                    type="range"
-                    onChange={(e) => settoPrice(e.target.value)}
-                    min="0"
-                    max="100"
-                    id="upper"
-                  ></input>
+                  <Slider
+                    getAriaLabel={() => 'Minimum distance shift'}
+                    value={value1}
+                    onChange={handleChange1}
+                    valueLabelDisplay="auto"
+                    getAriaValueText={valuetext}
+                    disableSwap
+                  />
                 </div>
               </div>
             </div>

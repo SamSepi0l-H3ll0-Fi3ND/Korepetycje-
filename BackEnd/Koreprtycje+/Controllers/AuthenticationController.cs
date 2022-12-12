@@ -43,9 +43,15 @@ namespace Koreprtycje_.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<string>> Register(UserRegisterDto request)
         {
-            var userDto = await _authenticationService.Register(request);
-            var token = await _authenticationService.Login(userDto.UserName, userDto.Password);
-            return Ok(token);
+            try {
+                var userDto = await _authenticationService.Register(request);
+                var token = await _authenticationService.Login(userDto.UserName, userDto.Password);
+                return Ok(token);
+            }catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            
         }
 
         [HttpPost("login")]
