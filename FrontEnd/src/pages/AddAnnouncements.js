@@ -46,7 +46,7 @@ const AddAnnouncements = () => {
             <p>W tym miejscu stworzysz ogłoszenie</p>
           </div>
         </div>
-        <div className=" grid justify-items-center  grid-cols-3 gap-4 w-full bg-light-blue h-2/6 text-dark-blue px-6 py-6  border-solid border-8 border-white">
+        <div className=" grid justify-items-center  grid-cols-3 gap-4 w-full bg-light-blue h-1/2 text-dark-blue px-6 py-6  border-solid border-8 border-white">
           <div className="justify-items-center w-full space-y-7">
             <p className="text-2xl text-center">Przedmiot:</p>
             <select

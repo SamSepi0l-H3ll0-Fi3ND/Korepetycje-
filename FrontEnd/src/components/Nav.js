@@ -48,37 +48,6 @@ const Nav = () => {
                   </span>
                 </li>
               </Link>
-              <li tabindex="0">
-                <span class="btn btn-outline bg-white text-[#06283d] border-2">
-                  Przedmioty
-                  <svg
-                    class="fill-current"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                  </svg>
-                </span>
-                <ul className="bg-[#2a303c] gap-2 p-2">
-                  <li>
-                    <span class="btn btn-outline bg-light-blue text-[#06283d] border-info border-2 ">
-                      Ścisłe
-                    </span>
-                  </li>
-                  <li>
-                    <span class="btn btn-outline bg-light-blue text-[#06283d] border-info border-2">
-                      Humanistyczne
-                    </span>
-                  </li>
-                  <li>
-                    <span class="btn btn-outline bg-light-blue text-[#06283d] border-info border-2">
-                      Języki obce
-                    </span>
-                  </li>
-                </ul>
-              </li>
               <li>
                 <span class="btn btn-outline bg-white text-[#06283d] border-2">
                   Dodaj ogłoszenie
@@ -115,34 +84,9 @@ const Nav = () => {
                 <span class="btn btn-ghost">Ogłoszenia</span>
               </li>
             </Link>
-            <li tabindex="0">
-              <span class="btn btn-ghost">
-                Przedmioty
-                <svg
-                  class="fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-                </svg>
-              </span>
-              <ul className="bg-white p-2">
-                <li>
-                  <span class="btn btn-ghost">Ścisłe</span>
-                </li>
-                <li>
-                  <span class="btn btn-ghost">Humanistyczne</span>
-                </li>
-                <li>
-                  <span class="btn btn-ghost">Języki obce</span>
-                </li>
-              </ul>
-            </li>
             <li>
               <Link to="/addAnnouncements" class="btn btn-ghost">
-                <span >Dodaj ogłoszenie</span>
+                <span>Dodaj ogłoszenie</span>
               </Link>
             </li>
           </ul>
