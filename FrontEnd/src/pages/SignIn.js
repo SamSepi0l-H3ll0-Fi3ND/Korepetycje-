@@ -16,7 +16,6 @@ const SignIn = () => {
     e.preventDefault();
 
     const SetCookies = new Cookies();
-    //localhost:7193/api/Authentication/login https://localhost:7193/api/Announcements
 
     try {
       const response = await fetch(`${API}/Authentication/login`, {
@@ -30,9 +29,12 @@ const SignIn = () => {
           password: password,
         }),
       });
-      const token = await response.text();
-      localStorage.setItem("Tajny numerek", token);
-      navigate("/");
+      if (!response.ok) throw new Error(response.status);
+      else {
+        const token = await response.text();
+        localStorage.setItem("Tajny numerek", token);
+        navigate("/");
+      }
     } catch (error) {
       console.log(error, error.message);
     }
