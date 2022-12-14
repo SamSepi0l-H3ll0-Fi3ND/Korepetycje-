@@ -11,19 +11,17 @@ import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const navigate = useNavigate();
-  const [Username, setUsername] = useState(null);
-  const [Password, setPassword] = useState(null);
-  const [FirstName, setFirstname] = useState(null);
-  const [Lastname, setLastname] = useState(null);
-  const [Email, setEmail] = useState(null);
-  const [Address, setAddress] = useState(null);
-  const [type, setType] = useState(2);
   var [response, setResponse] = useState();
 
   const selectRef = useRef("");
 
   async function registerSubmit(e) {
+    const formdata = new FormData(e.target);
+    var jsonObject = {};
+    formdata.forEach((value, key) => (jsonObject[key] = value));
+    console.log(formdata.get("firstname"));
     e.preventDefault();
+
     try {
       const response = await fetch(`${API}/Authentication/register`, {
         method: "POST",
@@ -31,35 +29,14 @@ const SignUp = () => {
           accept: "text/plain",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          userName: Username,
-          password: Password,
-          firstName: FirstName,
-          lastName: Lastname,
-          email: Email,
-          address: Address,
-          type: type,
-        }),
+        body: JSON.stringify(jsonObject),
       });
-      // .then((response) => response.json())
-      // .then((data) => {
-      //   console.log(data);
-      //   if (data.status === 200) {
-      //     setResponse(data);
-      //     navigate("/signin");
-      //   } else {
-      //   }
-      // });
+
       const data = await response.json();
       if (response.status === 200) {
         navigate("/signin");
       }
       setResponse(data);
-
-      // console.log(data);
-      // res = await response.text();
-      // setResponse(res);
-      // console.log(res);
     } catch (error) {
       console.log(error, error.message);
     }
@@ -81,13 +58,13 @@ const SignUp = () => {
                   Nazwa Użytkownika
                 </p>
               </div>
-              <div class="flex">
+              <div class="flex flex-nowrap">
                 <AccountCircleIcon class="justify-center w-12 sm:w-16 sm:ml-12"></AccountCircleIcon>
                 <input
                   type="text"
+                  name="username"
                   placeholder="Username"
                   class="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-s mt-2 ml-4 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
-                  onChange={(e) => setUsername(e.target.value)}
                 />
               </div>
               <div class="sm:ml-12">
@@ -95,10 +72,10 @@ const SignUp = () => {
               </div>
               <div class="flex sm:ml-12">
                 <input
+                  name="firstname"
                   type="text"
                   placeholder="Firstname"
                   class="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-xs mt-2 ml-16 sm:ml-20 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
-                  onChange={(e) => setFirstname(e.target.value)}
                 />
               </div>
               <div class="sm:ml-12">
@@ -106,10 +83,10 @@ const SignUp = () => {
               </div>
               <div class="flex sm:ml-12">
                 <input
+                  name="lastname"
                   type="text"
                   placeholder="Lastname"
                   class="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-xs mt-2 ml-16 sm:ml-20 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
-                  onChange={(e) => setLastname(e.target.value)}
                 />
               </div>
               <div class="sm:ml-12">
@@ -118,10 +95,10 @@ const SignUp = () => {
               <div class="flex">
                 <HomeIcon class="justify-center w-12 sm:w-16 sm:ml-12"></HomeIcon>
                 <input
+                  name="address"
                   type="text"
                   placeholder="Address"
                   class="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-xs mt-2 ml-4 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
-                  onChange={(e) => setAddress(e.target.value)}
                 />
               </div>
               <div class="sm:ml-12">
@@ -132,10 +109,10 @@ const SignUp = () => {
               <div class="flex">
                 <AlternateEmailIcon class="justify-center w-12 sm:w-16 sm:ml-12"></AlternateEmailIcon>
                 <input
+                  name="email"
                   type="text"
                   placeholder="Email"
                   class="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-xs mt-2 ml-4 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
-                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div class="sm:ml-12">
@@ -144,10 +121,10 @@ const SignUp = () => {
               <div class="flex">
                 <VpnKeyIcon class="justify-center w-12 sm:w-16 sm:ml-12"></VpnKeyIcon>
                 <input
+                  name="password"
                   type="password"
                   placeholder="Password"
                   class="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-xs mt-2 ml-4 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
-                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
               <div class="sm:ml-12">
@@ -171,7 +148,6 @@ const SignUp = () => {
                 <select
                   class="ml-16 sm:ml-20 my-2 rounded-md shadow-[0_0_16px_0_rgba(0,0,0,0.7)]"
                   ref={selectRef}
-                  onChange={() => setType(selectRef.current.value)}
                 >
                   <option value="" selected disabled hidden>
                     Select account type
