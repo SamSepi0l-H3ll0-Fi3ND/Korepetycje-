@@ -460,7 +460,7 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("Koreprtycje_.Models.Review", b =>
                 {
-                    b.HasOne("Koreprtycje_.Models.Client", "Client")
+                    b.HasOne("Koreprtycje_.Models.User", "Client")
                         .WithMany()
                         .HasForeignKey("ClientId")
                         .OnDelete(DeleteBehavior.Cascade)
