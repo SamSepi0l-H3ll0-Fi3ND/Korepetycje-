@@ -1,4 +1,5 @@
 using Koreprtycje_.Data;
+using Koreprtycje_.ErrorDescriber;
 using Koreprtycje_.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -11,6 +12,7 @@ using Services.ConcreteServices;
 using Services.Configuration.AutoMapperProfiles;
 using Services.Interfaces;
 using Swashbuckle.AspNetCore.Filters;
+using System.Globalization;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -70,7 +72,16 @@ builder.Services.AddIdentityCore<User>(builder =>
         .AddRoleManager<RoleManager<Role>>()
         .AddUserManager<UserManager<User>>()
         .AddEntityFrameworkStores<ApplicationDbContext>()
-        .AddSignInManager<SignInManager<User>>();
+        .AddSignInManager<SignInManager<User>>()
+        .AddErrorDescriber<LocalizedIdentityErrorDescriber>();
+
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    options.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture("en-US");
+    options.SupportedCultures = new List<CultureInfo> { new CultureInfo("en-US"), new CultureInfo("it-IT") };
+    options.SupportedUICultures = new List<CultureInfo> { new CultureInfo("en-US"), new CultureInfo("it-IT") };
+});
 
 var app = builder.Build();
 
