@@ -7,7 +7,9 @@ const Terms = () => {
       <Nav></Nav>
       <div className="flex">
         <div className=" w-1/4">
-          <p className="text-2xl text-dark-blue ml-2">Spis treści</p>
+          <p className="text-2xl text-dark-blue ml-2 underline underline-offset-4">
+            Spis treści
+          </p>
           <ul className="list-decimal list-inside text-dark-blue ml-2 my-2">
             <li>Lorem ipsum dolor sit amet</li>
             <li>Fusce a velit sit amet enim tempor maximus. </li>
@@ -16,7 +18,9 @@ const Terms = () => {
           </ul>
         </div>
         <div>
-          <p className="text-2xl text-dark-blue mb-2">Regulamin</p>
+          <p className="text-2xl text-dark-blue mb-2 underline underline-offset-4">
+            Regulamin
+          </p>
           <ul className="list-decimal list-inside text-dark-blue ml-2 my-2 w-1/2">
             <li>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et
