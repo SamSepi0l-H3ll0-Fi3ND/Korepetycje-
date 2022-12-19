@@ -55,11 +55,11 @@ namespace Services.ConcreteServices
             {
                 var user = await DbContext.Users.FirstOrDefaultAsync<User>(x => x.UserName == login);
                 if (user == null)
-                    throw new Exception("No user with this username");
+                    throw new Exception("Nie ma uzytkownika z ta nazwa");
 
                 if (!VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt))
                 {
-                    throw new Exception("Wrong Password!");
+                    throw new Exception("Podano zle haslo!");
                 }
                 string token = CreateToken(user);
 

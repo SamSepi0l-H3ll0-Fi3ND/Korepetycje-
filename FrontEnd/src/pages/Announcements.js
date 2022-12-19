@@ -9,7 +9,14 @@ const Announcements = () => {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("");
   const [subject, setSubject] = useState("");
+  const [type, setType] = useState("");
   const [data, setData] = useState([]);
+  const allSubjects = {
+    "Ścisłe": ["Matematyka", "Algebra"],
+    "Przyrodnicze": ["Chemia", "Biologia"],
+    "Humanistyczne": ["Polski", "Historia", "WOS"],
+    "Obce": ["Angielski", "Niemiecki"]
+  }
 
   useEffect(() => {
     try {
@@ -30,9 +37,8 @@ const Announcements = () => {
   function valuetext(value) {
     return `${value}zł`;
   }
-  
+
   const minDistance = 1;
-  
   const [value1, setValue1] = useState([20, 60]);
 
   const handleChange1 = (event, newValue, activeThumb) => {
@@ -46,25 +52,27 @@ const Announcements = () => {
       setValue1([value1[0], Math.max(newValue[1], value1[0] + minDistance)]);
     }
   };
-  
 
   function generateAds() {
     return data
-    .filter((item) => {
-      return search.toLowerCase() === '' ? item : (item.user.firstName + ' ' + item.user.lastName).toLowerCase().includes(search.toLowerCase());
-    })
-    .filter((item) => {
-      return category === '' ? item : item.subject.category === category;
-    })
-    .filter((item) => {
-      return subject === '' ? item : item.subject.name === subject;
-    })
-    .filter((item) => {
-      return value1[0] <= item.price && value1[1] >= item.price ? item : false
-    })
-    .map((oneJson) => {
-      return <Ad adData={oneJson} />;
-    });
+      .filter((item) => {
+        return search.toLowerCase() === '' ? item : (item.user.firstName + ' ' + item.user.lastName).toLowerCase().includes(search.toLowerCase());
+      })
+      .filter((item) => {
+        return category === '' ? item : item.subject.category === category;
+      })
+      .filter((item) => {
+        return subject === '' ? item : item.subject.name === subject;
+      })
+      .filter((item) => {
+        return type === '' ? item : item.type === type;
+      })
+      .filter((item) => {
+        return value1[0] <= item.price && value1[1] >= item.price ? item : false
+      })
+      .map((oneJson) => {
+        return <Ad adData={oneJson} />;
+      });
   }
 
   return (
@@ -90,7 +98,7 @@ const Announcements = () => {
             <div class="flex justify-center">
               <div class="max-w-xl">
                 <div class="pb-6">
-                  <select class="m-6 rounded-full" onChange={(e) => setCategory(e.target.value)}>
+                  <select class="m-3 rounded-full" onChange={(e) => {setCategory(e.target.value); setSubject("")}}>
                     <option value="" selected disabled hidden>
                       Kategoria
                     </option>
@@ -100,26 +108,30 @@ const Announcements = () => {
                     <option value="Przyrodnicze">Przyrodnicze</option>
                     <option value="Obce">Obce</option>
                   </select>
-                  <select class="m-6 rounded-full" onChange={(e) => setSubject(e.target.value)}>
+                  <select class="m-3 rounded-full" onChange={(e) => setSubject(e.target.value)}>
                     <option value="" selected disabled hidden>
                       Przedmiot
                     </option>
                     <option value="">Wszystkie</option>
-                    <option value="Matematyka">Matematyka</option>
-                    <option value="Polski">Polski</option>
-                    <option value="Biologia">Biologia</option>
-                    <option value="Chemia">Chemia</option>
-                    <option value="Historia">Historia</option>
-                    <option value="WOS">WOS</option>
-                    <option value="Angielski">Angielski</option>
-                    <option value="Niemiecki">Niemiecki</option>
-                    <option value="Algebra">Algebra</option>
+                    {category == "" ? (
+                      Object.values(allSubjects).map((tab) => tab.map((item) => <option value={item}>{item}</option>))
+                    ) : (
+                      allSubjects[category].map((item) => <option value={item}>{item}</option>)
+                    )}
                   </select>
-                  <select class="m-6 rounded-full">
+                  <select class="m-3 rounded-full">
                     <option value="" selected disabled hidden>
                       Województwo
                     </option>
                     <option value="Śląsk">Śląsk</option>
+                  </select>
+                  <select class="m-3 rounded-full" onChange={(e) => setType(e.target.value)}>
+                    <option value="" selected disabled hidden>
+                      Typ
+                    </option>
+                    <option value="">Wszystkie</option>
+                    <option value="Uczen">Uczeń</option>
+                    <option value="Korepetytor">Korepetytor</option>
                   </select>
                 </div>
                 <div class="flex flex-col justify-center pb-10">
@@ -132,6 +144,8 @@ const Announcements = () => {
                     onChange={handleChange1}
                     valueLabelDisplay="auto"
                     getAriaValueText={valuetext}
+                    min={0}
+                    max={500}
                     disableSwap
                   />
                 </div>
