@@ -38,15 +38,11 @@ const SignUp = () => {
     console.log("po submicie: ", checkbox);
 
     try {
-      if(checkbox===false) {
+      if (checkbox === false) {
         console.log("Akceptuj szmato!");
         e.preventDefault();
-      }
-      else{
-      if(formdata.get("password") === formdata.get("confirmPassword"))
-      {
-        
-        
+      } else {
+        if (formdata.get("password") === formdata.get("confirmPassword")) {
           const response = await fetch(`${API}/Authentication/register`, {
             method: "POST",
             headers: {
@@ -55,19 +51,17 @@ const SignUp = () => {
             },
             body: JSON.stringify(jsonObject),
           });
-    
+
           const data = await response.json();
           if (response.status === 200) {
             navigate("/signin");
           }
           setResponse(data);
           setResponse2(false);
-
+        } else {
+          setResponse2(true);
+        }
       }
-      else{
-        setResponse2(true);
-      }
-    }
     } catch (error) {
       console.log(error, error.message);
     }
@@ -198,11 +192,11 @@ const SignUp = () => {
                   class="sm:mt-10 mt-2 sm:ml-12 ml-4 checked:bg-[#06283d] required:border-red-500"
                   onClick={(e) => {
                     isChecked(e.target.checked);
-                }}
+                  }}
                 />{" "}
                 <p class="sm:mt-10 mt-2 sm:ml-12 ml-6 text-dark-blue">
                   Akceptuje{" "}
-                  <a class="underline underline-offset-2">regulamin*</a>
+                  <Link to="/termsofuse" class="underline underline-offset-2">regulamin*</Link>
                 </p>
               </div>
               <div class="flex justify-center h-1/3">
@@ -211,12 +205,20 @@ const SignUp = () => {
                 </button>
               </div>
               {response && <Info responseData={response}></Info>}
-              {response2 && (<div>
-                <p class="flex flex-col text-xl m-4 text-center text-[#FF0000]">Hasła nie są identyczne</p>
-              </div>)}
-              {!checkbox && (<div>
-                <p class="flex flex-col text-xl m-4 text-center text-[#FF0000]">Musisz zaakceptować regulamin!</p>
-              </div>)}
+              {response2 && (
+                <div>
+                  <p class="flex flex-col text-xl m-4 text-center text-[#FF0000]">
+                    Hasła nie są identyczne
+                  </p>
+                </div>
+              )}
+              {!checkbox && (
+                <div>
+                  <p class="flex flex-col text-xl m-4 text-center text-[#FF0000]">
+                    Musisz zaakceptować regulamin!
+                  </p>
+                </div>
+              )}
               <Link to="../signin">
                 <p className="text-dark-blue text-center mb-8">
                   Jeśli masz już konto, zaloguj się!
