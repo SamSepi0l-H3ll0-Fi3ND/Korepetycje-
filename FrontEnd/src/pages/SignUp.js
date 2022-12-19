@@ -13,8 +13,8 @@ const SignUp = () => {
   const navigate = useNavigate();
   var [response, setResponse] = useState();
   var [response2, setResponse2] = useState();
-  var [checkbox, isChecked] = useState();
-
+  var [checked, setChecked] = useState();
+  var [afterSubmit, setAfterSubmit] = useState();
   const selectRef = useRef("");
 
   //let isChecked;
@@ -30,17 +30,18 @@ const SignUp = () => {
   //   }
   // };
 
-  async function registerSubmit(e, isChecked) {
+  async function registerSubmit(e) {
     const formdata = new FormData(e.target);
     var jsonObject = {};
     formdata.forEach((value, key) => (jsonObject[key] = value));
+    setAfterSubmit(true);
     e.preventDefault();
-    console.log("po submicie: ", checkbox);
+    console.log("po submicie: ", checked);
+    console.log("po submicie2: ", afterSubmit);
 
     try {
-      if (checkbox === false) {
+      if (!checked) {
         console.log("Akceptuj szmato!");
-        e.preventDefault();
       } else {
         if (formdata.get("password") === formdata.get("confirmPassword")) {
           const response = await fetch(`${API}/Authentication/register`, {
@@ -188,15 +189,16 @@ const SignUp = () => {
               </div>
               <div class="flex ml-4">
                 <input
+                  name="regulamin"
                   type="checkbox"
                   class="sm:mt-10 mt-2 sm:ml-12 ml-4 checked:bg-[#06283d] required:border-red-500"
-                  onClick={(e) => {
-                    isChecked(e.target.checked);
-                  }}
+                  onClick={(e) => setChecked(e.target.checked)}
                 />{" "}
                 <p class="sm:mt-10 mt-2 sm:ml-12 ml-6 text-dark-blue">
                   Akceptuje{" "}
-                  <Link to="/termsofuse" class="underline underline-offset-2">regulamin*</Link>
+                  <Link to="/termsofuse" class="underline underline-offset-2">
+                    regulamin*
+                  </Link>
                 </p>
               </div>
               <div class="flex justify-center h-1/3">
@@ -207,12 +209,12 @@ const SignUp = () => {
               {response && <Info responseData={response}></Info>}
               {response2 && (
                 <div>
-                  <p class="flex flex-col text-xl m-4 text-center text-[#FF0000]">
+                  <p class="flex flex-col text-xl text-center text-[#FF0000]">
                     Hasła nie są identyczne
                   </p>
                 </div>
               )}
-              {!checkbox && (
+              {!checked && afterSubmit && (
                 <div>
                   <p class="flex flex-col text-xl m-4 text-center text-[#FF0000]">
                     Musisz zaakceptować regulamin!

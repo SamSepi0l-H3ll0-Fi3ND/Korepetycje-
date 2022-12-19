@@ -4,7 +4,7 @@ const Info = (props) => {
   const info = responseData.split("<br>");
 
   return (
-    <p class="flex flex-col text-xl m-4 text-center text-[#FF0000]">
+    <p class="flex flex-col text-xl text-center text-[#FF0000]">
       {info.map((element) => (
         <p>
           {element}
