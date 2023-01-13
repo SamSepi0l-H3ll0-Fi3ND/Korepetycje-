@@ -71,152 +71,153 @@ const SignUp = () => {
   return (
     <form onSubmit={registerSubmit}>
       <div>
-        <div class="sm:h-fit">
-          <div class="flex justify-center mb-20">
-            <div class="grid sm:rounded-md bg-[#d6f4fe]  sm:mt-20 w-screen sm:w-auto sm:h-auto shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">
-              <div class="pt-6 px-10 text-center mr-4">
-                <p class="text-4xl text-center text-dark-blue font-bold pt-2 sm:px-20 sm:pb-14 pb-8">
+        <div className="sm:h-fit">
+          <div className="flex justify-center mb-20">
+            <div className="grid sm:rounded-md bg-[#d6f4fe]  sm:mt-20 w-screen sm:w-auto sm:h-auto shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">
+              <div className="pt-6 px-10 text-center mr-4">
+                <p className="text-4xl text-center text-dark-blue font-bold pt-2 sm:px-20 sm:pb-14 pb-8">
                   Rejestracja
                 </p>
               </div>
-              <div class="sm:ml-12">
-                <p class="ml-16 sm:ml-20 text-dark-blue font-bold">
+              <div className="sm:ml-12">
+                <p className="ml-16 sm:ml-20 text-dark-blue font-bold">
                   Nazwa Użytkownika
                 </p>
               </div>
-              <div class="flex flex-nowrap">
-                <AccountCircleIcon class="justify-center w-12 sm:w-16 sm:ml-12"></AccountCircleIcon>
+              <div className="flex flex-nowrap">
+                <AccountCircleIcon className="justify-center w-12 sm:w-16 sm:ml-12"></AccountCircleIcon>
                 <input
                   type="text"
                   name="username"
                   placeholder="Username"
-                  class="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-s mt-2 ml-4 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
+                  className="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-s mt-2 ml-4 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
                 />
               </div>
-              <div class="sm:ml-12">
-                <p class="ml-16 sm:ml-20 text-dark-blue font-bold">Imie</p>
+              <div className="sm:ml-12">
+                <p className="ml-16 sm:ml-20 text-dark-blue font-bold">Imie</p>
               </div>
-              <div class="flex sm:ml-12">
+              <div className="flex sm:ml-12">
                 <input
                   name="firstname"
                   type="text"
                   placeholder="Firstname"
-                  class="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-xs mt-2 ml-16 sm:ml-20 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
+                  className="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-xs mt-2 ml-16 sm:ml-20 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
                 />
               </div>
-              <div class="sm:ml-12">
-                <p class="ml-16 sm:ml-20 text-dark-blue font-bold">Nazwisko</p>
+              <div className="sm:ml-12">
+                <p className="ml-16 sm:ml-20 text-dark-blue font-bold">Nazwisko</p>
               </div>
-              <div class="flex sm:ml-12">
+              <div className="flex sm:ml-12">
                 <input
                   name="lastname"
                   type="text"
                   placeholder="Lastname"
-                  class="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-xs mt-2 ml-16 sm:ml-20 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
+                  className="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-xs mt-2 ml-16 sm:ml-20 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
                 />
               </div>
-              <div class="sm:ml-12">
-                <p class="ml-16 sm:ml-20 text-dark-blue font-bold">Adres</p>
+              <div className="sm:ml-12">
+                <p className="ml-16 sm:ml-20 text-dark-blue font-bold">Adres</p>
               </div>
-              <div class="flex">
-                <HomeIcon class="justify-center w-12 sm:w-16 sm:ml-12"></HomeIcon>
+              <div className="flex">
+                <HomeIcon className="justify-center w-12 sm:w-16 sm:ml-12"></HomeIcon>
                 <input
                   name="address"
                   type="text"
                   placeholder="Address"
-                  class="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-xs mt-2 ml-4 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
+                  className="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-xs mt-2 ml-4 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
                 />
               </div>
-              <div class="sm:ml-12">
-                <p class="ml-16 sm:ml-20 text-dark-blue font-bold">
+              <div className="sm:ml-12">
+                <p className="ml-16 sm:ml-20 text-dark-blue font-bold">
                   Adres e-mail
                 </p>
               </div>
-              <div class="flex">
-                <AlternateEmailIcon class="justify-center w-12 sm:w-16 sm:ml-12"></AlternateEmailIcon>
+              <div className="flex">
+                <AlternateEmailIcon className="justify-center w-12 sm:w-16 sm:ml-12"></AlternateEmailIcon>
                 <input
                   name="email"
                   type="text"
                   placeholder="Email"
-                  class="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-xs mt-2 ml-4 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
+                  className="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-xs mt-2 ml-4 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
                 />
               </div>
-              <div class="sm:ml-12">
-                <p class="ml-16 sm:ml-20 text-dark-blue font-bold">Hasło</p>
+              <div className="sm:ml-12">
+                <p className="ml-16 sm:ml-20 text-dark-blue font-bold">Hasło</p>
               </div>
-              <div class="flex">
-                <VpnKeyIcon class="justify-center w-12 sm:w-16 sm:ml-12"></VpnKeyIcon>
+              <div className="flex">
+                <VpnKeyIcon className="justify-center w-12 sm:w-16 sm:ml-12"></VpnKeyIcon>
                 <input
                   name="password"
                   type="password"
                   placeholder="Password"
-                  class="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-xs mt-2 ml-4 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
+                  className="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-xs mt-2 ml-4 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
                 />
               </div>
-              <div class="sm:ml-12">
-                <p class="ml-16 sm:ml-20 text-dark-blue font-bold">
+              <div className="sm:ml-12">
+                <p className="ml-16 sm:ml-20 text-dark-blue font-bold">
                   Potwierdź hasło
                 </p>
               </div>
-              <div class="flex sm:ml-12">
+              <div className="flex sm:ml-12">
                 <input
                   type="password"
                   placeholder="Confirm password"
                   name="confirmPassword"
-                  class="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-xs mt-2 ml-16 sm:ml-20 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
+                  className="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-xs mt-2 ml-16 sm:ml-20 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
                 />
               </div>
-              <div class="sm:ml-12 mt-2">
-                <p class="ml-16 sm:ml-20 text-dark-blue font-bold">
+              <div className="sm:ml-12 mt-2">
+                <p className="ml-16 sm:ml-20 text-dark-blue font-bold">
                   Typ konta:
                 </p>
               </div>
-              <div class="flex sm:ml-12">
+              <div className="flex sm:ml-12">
                 <select
-                  class="ml-16 sm:ml-20 my-2 rounded-md shadow-[0_0_16px_0_rgba(0,0,0,0.7)]"
+                  className="ml-16 sm:ml-20 my-2 rounded-md shadow-[0_0_16px_0_rgba(0,0,0,0.7)]"
                   ref={selectRef}
+                  defaultValue=""
                 >
-                  <option value="" selected disabled hidden>
+                  <option value="" disabled hidden>
                     Select account type
                   </option>
-                  <option value="1" class="text-dark-blue">
+                  <option value="1" className="text-dark-blue">
                     Korepetytor
                   </option>
-                  <option value="2" class="text-dark-blue">
+                  <option value="2" className="text-dark-blue">
                     Uczeń
                   </option>
                 </select>
               </div>
-              <div class="flex ml-4">
+              <div className="flex ml-4">
                 <input
                   name="regulamin"
                   type="checkbox"
-                  class="sm:mt-10 mt-2 sm:ml-12 ml-4 checked:bg-[#06283d] required:border-red-500"
+                  className="sm:mt-10 mt-2 sm:ml-12 ml-4 checked:bg-[#06283d] required:border-red-500"
                   onClick={(e) => setChecked(e.target.checked)}
                 />{" "}
-                <p class="sm:mt-10 mt-2 sm:ml-12 ml-6 text-dark-blue">
+                <p className="sm:mt-10 mt-2 sm:ml-12 ml-6 text-dark-blue">
                   Akceptuje{" "}
-                  <Link to="/termsofuse" class="underline underline-offset-2">
+                  <Link to="/termsofuse" className="underline underline-offset-2">
                     regulamin*
                   </Link>
                 </p>
               </div>
-              <div class="flex justify-center h-1/3">
-                <button class="btn bg-[#06283d] text-[#dff6ff] justify-center sm:mt-8 my-2 ml-4 w-48 shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">
+              <div className="flex justify-center h-1/3">
+                <button className="btn bg-[#06283d] text-[#dff6ff] justify-center sm:mt-8 my-2 ml-4 w-48 shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">
                   Zarejestruj się
                 </button>
               </div>
               {response && <Info responseData={response}></Info>}
               {response2 && (
                 <div>
-                  <p class="flex flex-col text-xl text-center text-[#FF0000]">
+                  <p className="flex flex-col text-xl text-center text-[#FF0000]">
                     Hasła nie są identyczne
                   </p>
                 </div>
               )}
               {!checked && afterSubmit && (
                 <div>
-                  <p class="flex flex-col text-xl m-4 text-center text-[#FF0000]">
+                  <p className="flex flex-col text-xl m-4 text-center text-[#FF0000]">
                     Musisz zaakceptować regulamin!
                   </p>
                 </div>

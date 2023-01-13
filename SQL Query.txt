@@ -22,7 +22,7 @@ SET IDENTITY_INSERT [dbo].[Subjects] OFF
 
 SET IDENTITY_INSERT [dbo].[Announcements] ON
 INSERT INTO [dbo].[Announcements] ([Id], [UserId], [Type], [SubjectId], [Description], [Price], [LessonLength]) VALUES (1, 1, N'Uczen', 1, N'Szukam korków z matematyki', CAST(0.00 AS Decimal(14, 2)), 0)
-INSERT INTO [dbo].[Announcements] ([Id], [UserId], [Type], [SubjectId], [Description], [Price], [LessonLength]) VALUES (2, 1, N'Uczeń', 3, N'Szukam koerepetycji z polskiego do 40zł', CAST(0.00 AS Decimal(14, 2)), 0)
+INSERT INTO [dbo].[Announcements] ([Id], [UserId], [Type], [SubjectId], [Description], [Price], [LessonLength]) VALUES (2, 1, N'Uczen', 3, N'Szukam koerepetycji z polskiego do 40zł', CAST(0.00 AS Decimal(14, 2)), 0)
 INSERT INTO [dbo].[Announcements] ([Id], [UserId], [Type], [SubjectId], [Description], [Price], [LessonLength]) VALUES (3, 2, N'Uczen', 6, N'Szukam na już korków z matematyki. Chce zdać maturę!', CAST(0.00 AS Decimal(14, 2)), 0)
 INSERT INTO [dbo].[Announcements] ([Id], [UserId], [Type], [SubjectId], [Description], [Price], [LessonLength]) VALUES (4, 2, N'Uczen', 8, N'Witam, szukam korepetycji z polskiego. Staram się o 6 na koniec', CAST(0.00 AS Decimal(14, 2)), 0)
 INSERT INTO [dbo].[Announcements] ([Id], [UserId], [Type], [SubjectId], [Description], [Price], [LessonLength]) VALUES (5, 3, N'Korepetytor', 3, N'Prowadzę profesjonalny, autorski kurs przygotowujący do zdania matury z Biologii z wysokim wynikiem pozwalającym na dostanie się na najbardziej oblegane kierunki takie jak: medycyna na wydziale lekarskim, lekarsko-stomatologicznym czy weterynaria. Zajęcia są uporządkowane i zaplanowane, dzięki czemu pozwalają uczniowie na najskuteczniejsze przyswajanie wiedzy.', CAST(40.00 AS Decimal(14, 2)), 30)

@@ -10,44 +10,44 @@ const Ad = (props) => {
 
   return (
     <div
-      class="h-auto bg-[#d0dfe9] rounded-md w-auto shadow-[0_0_16px_0_rgba(0,0,0,0.5)] text-dark-blue m-3"
+      className="h-auto bg-[#d0dfe9] rounded-md w-auto shadow-[0_0_16px_0_rgba(0,0,0,0.5)] text-dark-blue m-3"
       id={`Ad${adData.id}`}
     >
-      <div class="flex flex-col sm:flex-row">
-        <div class="flex flex-col justify-center sm:basis-1/12">
-          <div class="flex justify-center mt-4">
+      <div className="flex flex-col sm:flex-row">
+        <div className="flex flex-col justify-center sm:basis-1/12">
+          <div className="flex justify-center mt-4">
             <img
               src="https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-High-Quality-Image.png"
-              class="w-24 shadow-[0_0_16px_0_rgba(0,0,0,0.5)] m-2"
+              className="w-24 shadow-[0_0_16px_0_rgba(0,0,0,0.5)] m-2"
               alt="jakis_image"
             ></img>
           </div>
-          <div class="flex flex-col justify-center text-center m-2">
-            <p class="text-2xl ml-2">{adData.user.firstName}</p>
-            <p class="text-2xl ml-2">{adData.user.lastName}</p>
+          <div className="flex flex-col justify-center text-center m-2">
+            <p className="text-2xl ml-2">{adData.user.firstName}</p>
+            <p className="text-2xl ml-2">{adData.user.lastName}</p>
           </div>
         </div>
-        <div class="flex sm:flex-col sm:basis-9/12">
-          <div class="flex sm:justify-left mt-4">
-            <p class="text-2xl ml-6">{adData.subject.name}</p>
+        <div className="flex sm:flex-col sm:basis-9/12">
+          <div className="flex sm:justify-left mt-4">
+            <p className="text-2xl ml-6">{adData.subject.name}</p>
           </div>
-          <div class="flex justify-left p-6">{<p>{adData.description}</p>}</div>
+          <div className="flex justify-left p-6">{<p>{adData.description}</p>}</div>
         </div>
-        <div class="flex flex-col m-4 sm:basis-2/12">
-          <div class="flex flex-col mt-2">
-            <div class="flex justify-center m-2">
+        <div className="flex flex-col m-4 sm:basis-2/12">
+          <div className="flex flex-col mt-2">
+            <div className="flex justify-center m-2">
               <MonetizationOnIcon /> {adData.price}zł / {adData.lessonLength}{" "}
               minut
             </div>
-            <div class="flex justify-center m-2">
+            <div className="flex justify-center m-2">
               <CallIcon /> <p>{adData.user.phoneNumber}</p>
             </div>
           </div>
-          <div class="flex flex-col">
-            <div class="btn btn-ghost flex justify-center">
+          <div className="flex flex-col">
+            <div className="btn btn-ghost flex justify-center">
               <MessageIcon /> Wyślij wiadomość
             </div>
-            <div class="flex justify-center m-2">
+            <div className="flex justify-center m-2">
               <LocationOnIcon /> {adData.user.address} 
               <StarIcon /> {adData.user.rate}
             </div>

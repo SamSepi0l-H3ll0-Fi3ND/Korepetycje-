@@ -8,14 +8,14 @@ const UserEditInfo = () => {
     <>
       <Nav></Nav>
       <div className="grid h-screen justify-center place-items-center ">
-        <div class="card w-96 bg-dark-blue w-1/3 rounded-none shadow-xl">
+        <div className="card w-96 bg-dark-blue w-1/3 rounded-none shadow-xl">
           <div className="flex justify-between">
             <div className="text-start">
               <Logo></Logo>
             </div>
           </div>
-          <div class="flex flex-col  space-y-4 card-body">
-            <h2 class="text-white text-center text-3xl underline underline-offset-8">
+          <div className="flex flex-col  space-y-4 card-body">
+            <h2 className="text-white text-center text-3xl underline underline-offset-8">
               Cześć {user.userName}!
             </h2>
 
@@ -35,7 +35,7 @@ const UserEditInfo = () => {
                   <input
                     type="text"
                     placeholder="Type here"
-                    class="input input-bordered w-full input-info max-w-xs"
+                    className="input input-bordered w-full input-info max-w-xs"
                   />
                 </p>
               </div>
@@ -45,7 +45,7 @@ const UserEditInfo = () => {
                   <input
                     type="text"
                     placeholder="Type here"
-                    class="input input-bordered w-full input-info max-w-xs"
+                    className="input input-bordered w-full input-info max-w-xs"
                   />{" "}
                 </p>
               </div>
@@ -55,7 +55,7 @@ const UserEditInfo = () => {
                   <input
                     type="text"
                     placeholder="Type here"
-                    class="input input-bordered w-full input-info max-w-xs"
+                    className="input input-bordered w-full input-info max-w-xs"
                   />
                 </p>
               </div>
@@ -65,7 +65,7 @@ const UserEditInfo = () => {
                   <input
                     type="text"
                     placeholder="Type here"
-                    class="input input-bordered input-info w-full max-w-xs"
+                    className="input input-bordered input-info w-full max-w-xs"
                   />{" "}
                 </p>
               </div>
@@ -75,16 +75,16 @@ const UserEditInfo = () => {
                   <input
                     type="text"
                     placeholder="Type here"
-                    class="input input-bordered input-info w-full max-w-xs"
+                    className="input input-bordered input-info w-full max-w-xs"
                   />
                 </p>
               </div>
             </div>
-            <div class=" grid grid-cols-2 gap-4">
-              <button class="btn btn-success text-white border-2">
+            <div className=" grid grid-cols-2 gap-4">
+              <button className="btn btn-success text-white border-2">
                 Zapisz zmiany
               </button>
-              <button class="btn bg-white text-dark-blue border-info border-2">
+              <button className="btn bg-white text-dark-blue border-info border-2">
                 Przejdź do profilu
               </button>
             </div>

@@ -16,7 +16,7 @@ function App() {
         <Route path="/" exact element={<Dashboard />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/register" element={<SignUp />} />
-        <Route path="/announcements" element={<Announcements />} />
+        <Route path="/announcements/:inSubject" element={<Announcements />} />
         <Route path="/userinfo" element={<UserInfo />} />
         <Route path="/useredit" element={<UserEditInfo />} />
         <Route path="/termsofuse" element={<Terms />} />

@@ -30,7 +30,7 @@ const AddAnnouncements = () => {
         }),
       });
       console.log(response);
-      navigate("/announcements");
+      navigate("/announcements/all");
     } catch (error) {
       console.error(error.message);
     }
@@ -50,10 +50,11 @@ const AddAnnouncements = () => {
           <div className="justify-items-center w-full space-y-7">
             <p className="text-2xl text-center">Przedmiot:</p>
             <select
-              class="rounded-md w-full bg-white h-12 shadow-xl"
+              className="rounded-md w-full bg-white h-12 shadow-xl"
               onChange={(e) => setSubject(e.target.value)}
+              defaultValue=""
             >
-              <option value="" selected disabled hidden>
+              <option value="" disabled hidden>
                 Przedmiot
               </option>
               <option value="">Wszystkie</option>
@@ -69,10 +70,11 @@ const AddAnnouncements = () => {
             </select>
             <p className="text-2xl text-center">Kategoria:</p>
             <select
-              class="rounded-md w-full bg-white h-12 shadow-xl"
+              className="rounded-md w-full bg-white h-12 shadow-xl"
               onChange={(e) => setCategory(e.target.value)}
+              defaultValue=""
             >
-              <option value="" selected disabled hidden>
+              <option value="" disabled hidden>
                 Kategoria
               </option>
               <option value="">Wszystkie</option>
@@ -86,7 +88,7 @@ const AddAnnouncements = () => {
             <p className="text-2xl text-center">Cena:</p>
             <input
               type="number"
-              class="input input-bordered w-full bg-white shadow-xl"
+              className="input input-bordered w-full bg-white shadow-xl"
               placeholder="Cena za korepetycje"
               onChange={(e) => setPrice(e.target.value)}
             />
@@ -94,21 +96,21 @@ const AddAnnouncements = () => {
             <input
               type="number"
               placeholder="Czas przeznaczony na korepetycje"
-              class="input input-bordered w-full bg-white shadow-xl"
+              className="input input-bordered w-full bg-white shadow-xl"
               onChange={(e) => setLessonLength(e.target.value)}
             />
           </div>
           <div className="grid place-items-center grid-cols-1">
             <button
               type="submit"
-              class="btn btn-success text-dark-blue btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+              className="btn btn-success text-dark-blue btn-xs sm:btn-sm md:btn-md lg:btn-lg"
             >
               Dodaj ogłoszenie
             </button>
-            <Link to="/Announcements">
+            <Link to="/announcements/all">
               <span
                 type="submit"
-                class="btn btn-outline border-2 border-dark-blue  text-dark-blue btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+                className="btn btn-outline border-2 border-dark-blue  text-dark-blue btn-xs sm:btn-sm md:btn-md lg:btn-lg"
               >
                 Wróc do ogłoszeń
               </span>

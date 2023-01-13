@@ -5,27 +5,27 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import { Link } from "react-router-dom";
 const Footer = () => {
   return (
-    <div class="grid grid-cols-3  border-t border-dark-blue rounded-none border-r-none w-full ">
-      <div class="grid grid-flow-col pl-16 gap-8 justify-start invisible sm:visible ">
-        <span class="grid place-items-center">
-          <FacebookIcon class="footer-icon w-8"></FacebookIcon>
+    <div className="grid grid-cols-3  border-t border-dark-blue rounded-none border-r-none w-full ">
+      <div className="grid grid-flow-col pl-16 gap-8 justify-start invisible sm:visible ">
+        <span className="grid place-items-center">
+          <FacebookIcon className="footer-icon w-8"></FacebookIcon>
         </span>
-        <span class="grid place-items-center">
-          <InstagramIcon class="footer-icon w-8"></InstagramIcon>
+        <span className="grid place-items-center">
+          <InstagramIcon className="footer-icon w-8"></InstagramIcon>
         </span>
-        <span class="grid place-items-center">
-          <TwitterIcon class="footer-icon w-8"></TwitterIcon>
+        <span className="grid place-items-center">
+          <TwitterIcon className="footer-icon w-8"></TwitterIcon>
         </span>
       </div>
-      <div class="grid  content-center">
+      <div className="grid  content-center">
         <Link to="../">
-          <p class="flex justify-center normal-case text-2xl text-center decoration-white text-dark-blue font-bold">
-            <SchoolIcon class="footer-icon  w-10"></SchoolIcon>Korepetycje+
+          <p className="flex justify-center normal-case text-2xl text-center decoration-white text-dark-blue font-bold">
+            <SchoolIcon className="footer-icon  w-10"></SchoolIcon>Korepetycje+
           </p>
         </Link>
       </div>
-      <div class="grid gap-2 content-center ">
-        <p class="flex justify-center normal-case text-md decoration-white text-dark-blue font-bold invisible sm:visible">
+      <div className="grid gap-2 content-center ">
+        <p className="flex justify-center normal-case text-md decoration-white text-dark-blue font-bold invisible sm:visible">
           &copy; 2022 Firma
         </p>
       </div>

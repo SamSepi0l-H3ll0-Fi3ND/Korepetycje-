@@ -31,7 +31,7 @@ const UserInfo = () => {
       <Nav></Nav>
       <div className="grid h-screen justify-center place-items-center ">
         <>
-          <div class="card w-full bg-dark-blue rounded-none shadow-xl">
+          <div className="card w-full bg-dark-blue rounded-none shadow-xl">
             <div className="flex justify-between">
               <div className="text-start">
                 <Logo></Logo>
@@ -42,8 +42,8 @@ const UserInfo = () => {
                 </Link>
               </div>
             </div>
-            <div class="flex flex-col  space-y-4 card-body">
-              <h2 class="text-white text-center text-3xl underline underline-offset-8">
+            <div className="flex flex-col  space-y-4 card-body">
+              <h2 className="text-white text-center text-3xl underline underline-offset-8">
                 Cześć {user.userName}!
               </h2>
 
@@ -78,9 +78,9 @@ const UserInfo = () => {
                   <p className="text-white text-2xl"> {user.email} </p>
                 </div>
               </div>
-              <div class="card-actions justify-end">
+              <div className="card-actions justify-end">
                 <Link to="/">
-                  <button class="btn btn-outline text-white border-2">
+                  <button className="btn btn-outline text-white border-2">
                     Dashboard
                   </button>
                 </Link>
