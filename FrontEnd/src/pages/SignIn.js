@@ -31,9 +31,11 @@ const SignIn = () => {
           password: password,
         }),
       });
-      const data = await response.json();
-      setResponse(data);
-      if (!response.ok) throw new Error(response.status);
+      if (!response.ok){
+        const data = await response.json();
+        setResponse(data);
+        throw new Error(response.status);
+      } 
       else {
         const token = await response.text();
         localStorage.setItem("Tajny numerek", token);
