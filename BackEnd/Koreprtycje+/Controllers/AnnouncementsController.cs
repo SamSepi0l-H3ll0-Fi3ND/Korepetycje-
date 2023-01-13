@@ -50,27 +50,27 @@ namespace Koreprtycje_.Controllers
 
         // POST: api/Announcements
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost, Authorize(Roles = "Tutor,Administrator,Client")]
-        public async Task<ActionResult<AnnouncementDto>> PostAnnouncement(AnnouncementCreate announcement)
+        [HttpPost, Authorize(Roles = "User, Administrator")]
+        public async Task<ActionResult<bool>> PostAnnouncement(AnnouncementCreate newAnnouncement)
         {
-            announcement.UserId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            newAnnouncement.UserId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
             
-            var announcementId = await _announcementService.PostAnnouncement(announcement);
+            var result = await _announcementService.PostAnnouncement(newAnnouncement);
 
-            return await _announcementService.GetAnnouncementById(announcementId);
+            return Ok(result);
         }
 
         // DELETE: api/Announcements/5
-        [HttpDelete("{announcementId}"), Authorize]
-        public async Task<IActionResult> DeleteAnnouncement(int announcementId)
+        [HttpDelete("{announcementId}"), Authorize(Roles = "User, Administrator")]
+        public async Task<ActionResult> DeleteAnnouncement(int announcementId)
         {
             var userId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
-
-            _announcementService.DeleteAnnouncement(announcementId, userId);
-            return Ok("Announcement removed");
+            var userRole = User.FindFirstValue(ClaimTypes.Role);
+            var result = _announcementService.DeleteAnnouncement(announcementId, userId, userRole);
+            return Ok(result);
         }
 
-        [HttpPut, Authorize]
+        [HttpPut, Authorize(Roles="User, Administrator")]
         public async Task<ActionResult> UpdateAnnouncement(AnnouncementModify announcement)
         {
             var currentUserId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));

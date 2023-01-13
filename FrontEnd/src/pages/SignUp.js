@@ -166,28 +166,6 @@ const SignUp = () => {
                   className="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-xs mt-2 ml-16 sm:ml-20 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
                 />
               </div>
-              <div className="sm:ml-12 mt-2">
-                <p className="ml-16 sm:ml-20 text-dark-blue font-bold">
-                  Typ konta:
-                </p>
-              </div>
-              <div className="flex sm:ml-12">
-                <select
-                  className="ml-16 sm:ml-20 my-2 rounded-md shadow-[0_0_16px_0_rgba(0,0,0,0.7)]"
-                  ref={selectRef}
-                  defaultValue=""
-                >
-                  <option value="" disabled hidden>
-                    Select account type
-                  </option>
-                  <option value="1" className="text-dark-blue">
-                    Korepetytor
-                  </option>
-                  <option value="2" className="text-dark-blue">
-                    Uczeń
-                  </option>
-                </select>
-              </div>
               <div className="flex ml-4">
                 <input
                   name="regulamin"

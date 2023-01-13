@@ -3,24 +3,27 @@ import CallIcon from "@mui/icons-material/Call";
 import MessageIcon from "@mui/icons-material/Message";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import StarIcon from "@mui/icons-material/Star";
+import SearchIcon from '@mui/icons-material/Search';
+import SchoolIcon from "@mui/icons-material/School";
+
 
 const Ad = (props) => {
   const { adData } = props;
 
+  const student = "#d0dfe9";
+  const tutor = "#a0bdcf";
+  const search = "Szukam korepetycji - ";
+  const teach = "Udzielam korepetycji - "
 
   return (
     <div
-      className="h-auto bg-[#d0dfe9] rounded-md w-auto shadow-[0_0_16px_0_rgba(0,0,0,0.5)] text-dark-blue m-3"
+    className={`h-auto bg-[${adData.type === "Korepetytor" ? tutor : student}] rounded-md w-auto shadow-[0_0_16px_0_rgba(0,0,0,0.5)] text-dark-blue m-3`}
       id={`Ad${adData.id}`}
     >
       <div className="flex flex-col sm:flex-row">
         <div className="flex flex-col justify-center sm:basis-1/12">
           <div className="flex justify-center mt-4">
-            <img
-              src="https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-High-Quality-Image.png"
-              className="w-24 shadow-[0_0_16px_0_rgba(0,0,0,0.5)] m-2"
-              alt="jakis_image"
-            ></img>
+            {adData.type && adData.type === "Uczen" ? <SearchIcon class="w-auto"></SearchIcon> : <SchoolIcon class="w-auto"></SchoolIcon>}
           </div>
           <div className="flex flex-col justify-center text-center m-2">
             <p className="text-2xl ml-2">{adData.user.firstName}</p>
@@ -29,7 +32,7 @@ const Ad = (props) => {
         </div>
         <div className="flex sm:flex-col sm:basis-9/12">
           <div className="flex sm:justify-left mt-4">
-            <p className="text-2xl ml-6">{adData.subject.name}</p>
+            <p className="text-2xl ml-6">{adData.type === "Korepetytor" ? teach : search}{adData.subject.name}</p>
           </div>
           <div className="flex justify-left p-6">{<p>{adData.description}</p>}</div>
         </div>

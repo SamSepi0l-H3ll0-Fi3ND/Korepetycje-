@@ -14,7 +14,6 @@ namespace Model.DTO
         public string Description { get; set; }
         public decimal Price { get; set; }
         public int LessonLength { get; set; }
-        //public IList<TagDto> Tags { get; set; }
         public int SubjectId { get; set; }
     }
 }

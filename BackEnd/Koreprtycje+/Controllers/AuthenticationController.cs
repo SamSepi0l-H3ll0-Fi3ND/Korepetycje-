@@ -20,17 +20,13 @@ namespace Koreprtycje_.Controllers
     [ApiController]
     public class AuthenticationController : ControllerBase
     {
-        private readonly IConfiguration _configuration;
         private readonly IAuthenticationService _authenticationService;
-        private readonly IUserService _userService;
-        private readonly UserManager<User> _userManager;
 
-        public AuthenticationController(IConfiguration configuration, IAuthenticationService authenticationService, IUserService userService, UserManager<User> userManager)
+
+        public AuthenticationController(IAuthenticationService authenticationService)
         {
-            _configuration = configuration;
             _authenticationService = authenticationService;
-            _userService = userService;
-            _userManager = userManager;
+
         }
 
         [HttpGet, Authorize]
@@ -42,12 +38,12 @@ namespace Koreprtycje_.Controllers
 
         
         [HttpPost("register")]
-        public async Task<ActionResult<string>> Register(UserRegisterDto request)
+        public async Task<ActionResult<bool>> Register(UserRegisterDto newUser)
         {
             try {
-                var userDto = await _authenticationService.Register(request);
-                var token = await _authenticationService.Login(userDto.UserName, userDto.Password);
-                return Ok(token);
+                var success = await _authenticationService.Register(newUser);
+
+                return Ok(success);
             }catch (Exception ex)
             {
                 return BadRequest(ex.Message);
@@ -56,7 +52,7 @@ namespace Koreprtycje_.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult> Login(UserLoginDto req)
+        public async Task<ActionResult<string>> Login(UserLoginDto req)
         {
             try
             {
@@ -69,8 +65,6 @@ namespace Koreprtycje_.Controllers
             {
                 return BadRequest(JsonSerializer.Serialize(ex.Message));
             }
-            
-
         }
 
         [HttpPost("refresh-token")]

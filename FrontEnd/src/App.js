@@ -8,6 +8,7 @@ import UserInfo from "./user/Userinfo";
 import UserEditInfo from "./user/UserEditInfo";
 import AddAnnouncements from "./pages/AddAnnouncements";
 import Terms from "./pages/Terms";
+import UserProfile from "./user/UserProfile";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/useredit" element={<UserEditInfo />} />
         <Route path="/termsofuse" element={<Terms />} />
         <Route path="/addAnnouncements" element={<AddAnnouncements />} />
+        <Route path="/userprofile" element={<UserProfile />} />
       </Routes>
     </Router>
   );

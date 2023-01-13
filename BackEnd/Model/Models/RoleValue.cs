@@ -4,7 +4,5 @@
     {
         User = 0,
         Administrator = 1,
-        Tutor = 2,
-        Client = 3,
     }
 }

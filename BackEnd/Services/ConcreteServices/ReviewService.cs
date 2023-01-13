@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿/*using AutoMapper;
 using Koreprtycje_.Data;
 using Koreprtycje_.Models;
 using Microsoft.EntityFrameworkCore;
@@ -55,3 +55,4 @@ namespace Services.ConcreteServices
         }
     }
 }
+*/

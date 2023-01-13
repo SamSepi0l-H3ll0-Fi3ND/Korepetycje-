@@ -14,8 +14,8 @@ namespace Koreprtycje_.Models
         public DateTime TokenCreated { get; set; }
         public DateTime TokenExpires { get; set; }
         public virtual List<Announcement> Announcements { get; set; }
-        //public virtual List<Conversation> Conversations { get; set; }
-        //public virtual List<int> Favorites { get; set; }
+        public string Description { get; set; } = string.Empty;
 
+        //public virtual List<Review> Reviews { get; set; }
     }
 }

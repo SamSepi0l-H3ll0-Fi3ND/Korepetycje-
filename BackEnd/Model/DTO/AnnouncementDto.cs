@@ -5,7 +5,6 @@ namespace Koreprtycje_.DTO
     public class AnnouncementDto
     {
         public int Id { get; set; }
-        public int UserId { get; set; }
         public UserDto User { get; set; }   
         public string Type { get; set; }
         public SubjectDto Subject { get; set; }

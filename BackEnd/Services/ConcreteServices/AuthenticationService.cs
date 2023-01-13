@@ -71,47 +71,15 @@ namespace Services.ConcreteServices
                 throw;
             }
         }
-        public async Task<UserLoginDto> Register(UserRegisterDto userRegister)
+        public async Task<bool> Register(UserRegisterDto userRegister)
         {
             try
             {
-                User newUser;
-                CreatePasswordHash(userRegister.Password, out byte[] passwordHash, out byte[] passwordSalt);
+                var newUser = Mapper.Map<User>(userRegister);
 
-                if(userRegister.Type == 2)
-                {
-                    newUser = new Tutor() {
-                        Address = userRegister.Address,
-                        FirstName = userRegister.FirstName,
-                        LastName = userRegister.LastName,
-                        PasswordHash = passwordHash,
-                        PasswordSalt = passwordSalt,
-                        UserName = userRegister.UserName,
-                        Email = userRegister.Email,
-                    };
-                }
-                else if(userRegister.Type == 3)
-                {
-                    newUser = new Client() {
-                        Address = userRegister.Address,
-                        FirstName = userRegister.FirstName,
-                        LastName = userRegister.LastName,
-                        PasswordHash = passwordHash,
-                        PasswordSalt = passwordSalt,
-                        UserName = userRegister.UserName,
-                        Email = userRegister.Email
-                    };
-                } 
-                else 
-                {
-                    newUser = new User() { Address = userRegister.Address,
-                        FirstName = userRegister.FirstName,
-                        LastName = userRegister.LastName,
-                        PasswordHash = passwordHash,
-                        PasswordSalt = passwordSalt,
-                        UserName = userRegister.UserName,
-                        Email = userRegister.Email };
-                }
+                CreatePasswordHash(userRegister.Password, out byte[] passwordHash, out byte[] passwordSalt);
+                newUser.PasswordSalt = passwordSalt;
+                newUser.PasswordHash = passwordHash;
 
                 var result = await _userManager.CreateAsync(newUser, userRegister.Password);
                 if(result.Succeeded)
@@ -123,11 +91,8 @@ namespace Services.ConcreteServices
                     throw new Exception(JsonSerializer.Serialize(string.Join("<br>", result.Errors.Select(x => x.Description))));
                 }
 
-                //await DbContext.Users.AddAsync(newUser);
-                //await DbContext.SaveChangesAsync();
-                var newUserDto = Mapper.Map<UserLoginDto>(userRegister);
 
-                return newUserDto;
+                return true;
             }
             catch (Exception ex)
             {

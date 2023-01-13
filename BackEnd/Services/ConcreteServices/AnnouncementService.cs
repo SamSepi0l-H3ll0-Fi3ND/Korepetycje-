@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Model.DTO;
+using Model.Models;
 
 namespace Services.ConcreteServices
 {
@@ -20,20 +21,24 @@ namespace Services.ConcreteServices
         {
         }
 
-        public async void DeleteAnnouncement(int announcementId, int userId)
+        public bool DeleteAnnouncement(int announcementId, int userId, string userRole)
         {
             try
             {
-                if(announcementId == null)
+                if(announcementId == null || announcementId.Equals(""))
                     throw new ArgumentNullException("Id can't be null");
 
                 var announcementToDelete = DbContext.FindAsync<Announcement>(announcementId).Result;
                 if (announcementToDelete == null)
                     throw new ArgumentNullException("There is no announcement with this Id");
+
                 if (announcementToDelete.UserId != userId)
-                    if (DbContext.Users.FindAsync(userId).Result.GetType() != typeof(Administrator))
+                    if(!userRole.Equals("Administrator"))
                         throw new ArgumentException("User is not author or administrator");
+
                 DbContext.Remove(announcementToDelete);
+                DbContext.SaveChangesAsync();
+                return true;
             }
             catch (Exception ex)
             {
@@ -46,7 +51,7 @@ namespace Services.ConcreteServices
         {
             try
             {
-                var announcement = await DbContext.Announcements.FirstAsync(x => x.Id == id);
+                var announcement = await DbContext.Announcements.Include(x => x.User).Include(x=>x.Subject).FirstOrDefaultAsync(x => x.Id == id);
                 if (announcement == null)
                     throw new Exception("No announcement with this ID");
                 var announcementDTO = Mapper.Map<AnnouncementDto>(announcement);
@@ -77,17 +82,17 @@ namespace Services.ConcreteServices
             }
         }
 
-        public async Task<int> PostAnnouncement(AnnouncementCreate announcementDto)
+        public async Task<bool> PostAnnouncement(AnnouncementCreate newAnnouncementDto)
         {
             try
             {
-                if(announcementDto == null)
+                if(newAnnouncementDto == null)
                     throw new ArgumentNullException($"Dto parameter is null");
-                var announcement = Mapper.Map<Announcement>(announcementDto);
-                var ID = await DbContext.Announcements.AddAsync(announcement);
+                var announcement = Mapper.Map<Announcement>(newAnnouncementDto);
+                await DbContext.Announcements.AddAsync(announcement);
                 await DbContext.SaveChangesAsync();
 
-                return ID.Entity.Id;
+                return true;
 
             }
             catch (Exception ex)
@@ -103,9 +108,13 @@ namespace Services.ConcreteServices
             {
                 if (announcementModification == null)
                     throw new ArgumentNullException($"Dto parameter is null");
-                if (userId != announcementModification.UserId)
-                    throw new ArgumentException("User is not author of the announcement");
+
                 var announcement = await DbContext.Announcements.FirstOrDefaultAsync(x =>x.Id == announcementModification.Id);
+                if (announcement == null)
+                    throw new ArgumentNullException("No annoucement with this Id");
+                if (userId != announcement.UserId)
+                    throw new ArgumentException("User is not author of the announcement");
+
                 announcement.LessonLength = announcementModification.LessonLength;
                 announcement.Price = announcementModification.Price;
                 announcement.Description = announcementModification.Description;

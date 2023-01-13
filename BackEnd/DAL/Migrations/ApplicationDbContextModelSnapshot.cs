@@ -22,31 +22,6 @@ namespace DAL.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Koreprtycje_.Models.Achievement", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("AchievementDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TutorID")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TutorID");
-
-                    b.ToTable("Achievements");
-                });
-
             modelBuilder.Entity("Koreprtycje_.Models.Announcement", b =>
                 {
                     b.Property<int>("Id")
@@ -82,39 +57,6 @@ namespace DAL.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Announcements");
-                });
-
-            modelBuilder.Entity("Koreprtycje_.Models.Review", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("ClientId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Rate")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TutorId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ClientId");
-
-                    b.HasIndex("TutorId");
-
-                    b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("Koreprtycje_.Models.Role", b =>
@@ -171,28 +113,6 @@ namespace DAL.Migrations
                     b.ToTable("Subjects");
                 });
 
-            modelBuilder.Entity("Koreprtycje_.Models.Tag", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int?>("AnnouncementId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AnnouncementId");
-
-                    b.ToTable("Tags");
-                });
-
             modelBuilder.Entity("Koreprtycje_.Models.User", b =>
                 {
                     b.Property<int>("Id")
@@ -210,6 +130,10 @@ namespace DAL.Migrations
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
@@ -399,44 +323,11 @@ namespace DAL.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Koreprtycje_.Models.Administrator", b =>
+            modelBuilder.Entity("Model.Models.Administrator", b =>
                 {
                     b.HasBaseType("Koreprtycje_.Models.User");
 
                     b.HasDiscriminator().HasValue(1);
-                });
-
-            modelBuilder.Entity("Koreprtycje_.Models.Client", b =>
-                {
-                    b.HasBaseType("Koreprtycje_.Models.User");
-
-                    b.HasDiscriminator().HasValue(3);
-                });
-
-            modelBuilder.Entity("Koreprtycje_.Models.Tutor", b =>
-                {
-                    b.HasBaseType("Koreprtycje_.Models.User");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Education")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasDiscriminator().HasValue(2);
-                });
-
-            modelBuilder.Entity("Koreprtycje_.Models.Achievement", b =>
-                {
-                    b.HasOne("Koreprtycje_.Models.Tutor", "Tutor")
-                        .WithMany("Achievements")
-                        .HasForeignKey("TutorID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Tutor");
                 });
 
             modelBuilder.Entity("Koreprtycje_.Models.Announcement", b =>
@@ -456,32 +347,6 @@ namespace DAL.Migrations
                     b.Navigation("Subject");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Koreprtycje_.Models.Review", b =>
-                {
-                    b.HasOne("Koreprtycje_.Models.User", "Client")
-                        .WithMany()
-                        .HasForeignKey("ClientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Koreprtycje_.Models.Tutor", "Tutor")
-                        .WithMany("Reviews")
-                        .HasForeignKey("TutorId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Client");
-
-                    b.Navigation("Tutor");
-                });
-
-            modelBuilder.Entity("Koreprtycje_.Models.Tag", b =>
-                {
-                    b.HasOne("Koreprtycje_.Models.Announcement", null)
-                        .WithMany("Tags")
-                        .HasForeignKey("AnnouncementId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
@@ -535,21 +400,9 @@ namespace DAL.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Koreprtycje_.Models.Announcement", b =>
-                {
-                    b.Navigation("Tags");
-                });
-
             modelBuilder.Entity("Koreprtycje_.Models.User", b =>
                 {
                     b.Navigation("Announcements");
-                });
-
-            modelBuilder.Entity("Koreprtycje_.Models.Tutor", b =>
-                {
-                    b.Navigation("Achievements");
-
-                    b.Navigation("Reviews");
                 });
 #pragma warning restore 612, 618
         }

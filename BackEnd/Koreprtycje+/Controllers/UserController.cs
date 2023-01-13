@@ -13,12 +13,10 @@ namespace Koreprtycje_.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
-        private readonly ITutorService _tutorService;
 
-        public UserController(IUserService userService, ITutorService tutorService)
+        public UserController(IUserService userService)
         {
             _userService = userService;
-            _tutorService = tutorService;
         }
 
         [HttpGet, Authorize]
@@ -34,17 +32,6 @@ namespace Koreprtycje_.Controllers
             //    return Ok(_tutorService.GetTutor(id));
 
             return Ok(user);
-        }
-
-        [HttpGet("get-tutor")]
-        public async Task<ActionResult> GetTutor(int id)
-        {
-            var tutor = _tutorService.GetTutor(id).Result;
-            if (tutor == null)
-            {
-                return NotFound("tutor not found");
-            }
-            return Ok(tutor);
         }
 
         [HttpPut, Authorize]

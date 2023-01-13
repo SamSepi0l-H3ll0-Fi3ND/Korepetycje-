@@ -17,5 +17,6 @@ namespace Model.DTO
         public string PhoneNumber { get; set; }
         public string Rate { get; set; }
         public string UserName { get; set; }
+
     }
 }

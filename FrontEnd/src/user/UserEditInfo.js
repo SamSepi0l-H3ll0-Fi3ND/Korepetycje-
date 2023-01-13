@@ -18,7 +18,6 @@ const UserEditInfo = () => {
             <h2 className="text-white text-center text-3xl underline underline-offset-8">
               Cześć {user.userName}!
             </h2>
-
             <div className=" text-center">Informacje o Tobie:</div>
             <div className=" text-center text-white">
               {" "}
