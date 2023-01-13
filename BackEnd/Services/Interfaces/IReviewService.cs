@@ -1,4 +1,4 @@
-﻿using Model.DTO;
+﻿/*using Model.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,3 +13,4 @@ namespace Services.Interfaces
         public Task<Boolean> DeleteReview(int id);
     }
 }
+*/

@@ -2,17 +2,15 @@
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Model.Models;
 
 namespace Koreprtycje_.Data
 {
     public class ApplicationDbContext : IdentityDbContext<User, Role, int>
     {
         public virtual DbSet<Announcement> Announcements { get; set; }
-        public virtual DbSet<Achievement> Achievements { get; set; }
-        //public virtual DbSet<Conversation> Conversations { get; set; }
-        public virtual DbSet<Review> Reviews { get; set; }
+        //public virtual DbSet<Review> Reviews { get; set; }
         public virtual DbSet<Subject> Subjects { get; set; }
-        public virtual DbSet<Tag> Tags { get; set; }
 
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
@@ -25,9 +23,7 @@ namespace Koreprtycje_.Data
                 .ToTable("AspNetUsers")
                 .HasDiscriminator<int>("UserType")
                 .HasValue<User>((int)RoleValue.User)
-                .HasValue<Client>((int)RoleValue.Client)
-                .HasValue<Administrator>((int)RoleValue.Administrator)
-                .HasValue<Tutor>((int)RoleValue.Tutor);
+                .HasValue<Administrator>((int)RoleValue.Administrator);
 
             builder.Entity<Announcement>()
                 .Property(p => p.Price)
@@ -40,16 +36,16 @@ namespace Koreprtycje_.Data
                 .HasForeignKey(a => a.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            builder.Entity<Tutor>()
+/*            builder.Entity<User>()
                 .HasMany(r => r.Reviews)
                 .WithOne(t => t.Tutor)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Cascade);*/
 
-            builder.Entity<Review>()
+/*            builder.Entity<Review>()
                 .HasOne(r => r.Tutor)
                 .WithMany(t => t.Reviews)
                 .HasForeignKey(r => r.TutorId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Restrict);*/
 
 
 

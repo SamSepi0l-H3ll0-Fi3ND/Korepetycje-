@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿/*using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Model.DTO;
 using Services.Interfaces;
@@ -50,3 +50,4 @@ namespace Koreprtycje_.Controllers
         }
     }
 }
+*/

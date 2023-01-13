@@ -15,34 +15,24 @@ namespace Services.Configuration.AutoMapperProfiles
     {
         public MainProfile()
         {
+            CreateMap<UserRegisterDto, User>().ReverseMap();
+            CreateMap<UserRegisterDto, Administrator>().ReverseMap();
+
             CreateMap<User, UserLoginDto>();
-            CreateMap<User, UserDto>();
-            CreateMap<UserDto, User>();
-            CreateMap<UserRegisterDto, UserLoginDto>();
+            CreateMap<User, UserDto>().ReverseMap();
             CreateMap<User, UserModify>().ReverseMap();
 
 
-            CreateMap<AnnouncementDto, Announcement>();
-            CreateMap<Announcement, AnnouncementDto>();
+            CreateMap<AnnouncementDto, Announcement>().ReverseMap();
+
             CreateMap<AnnouncementCreate, Announcement>();
             CreateMap<AnnouncementModify, Announcement>().ReverseMap();
 
-            CreateMap<SubjectDto, Subject>();
-            CreateMap<Subject, SubjectDto>();
+            CreateMap<SubjectDto, Subject>().ReverseMap();
 
-            CreateMap<TagDto, Tag>();
-            CreateMap<Tag, TagDto>();
-
-            CreateMap<Tutor, TutorDto>();
-            CreateMap<TutorDto, Tutor>()
-                .ForMember(dest => dest.Reviews, x => x.MapFrom(src => src.Reviews));
-
-            CreateMap<Achievement, AchievementDto>();
-            CreateMap<AchievementDto, AchievementDto>();
-
-            CreateMap<Review, ReviewDto>()
-                .ForMember(dest => dest.Author, x => x.MapFrom(src => src.Client.FirstName + src.Client.LastName));
-            CreateMap<ReviewCreateDto, Review>();
+/*            CreateMap<Review, ReviewDto>()
+                .ForMember(dest => dest.Author, x => x.MapFrom(src => src.Client.FirstName + src.Client.LastName));*/
+            //CreateMap<ReviewCreateDto, Review>();
 
         }
     }
