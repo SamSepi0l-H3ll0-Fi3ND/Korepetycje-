@@ -4,11 +4,18 @@ import API from "../env";
 import { useState } from "react";
 const AddAnnouncements = () => {
   const navigate = useNavigate();
-  const [category, setCategory] = useState(null);
-  const [subject, setSubject] = useState(null);
+  const [category, setCategory] = useState("");
+  const [subject, setSubject] = useState("");
   const [price, setPrice] = useState(null);
   const [lessonLength, setLessonLength] = useState(30);
   const [Description, setDescription] = useState(null);
+  const [type, setType] = useState(null);
+  const allSubjects = {
+    "Ścisłe": ["Matematyka", "Algebra"],
+    "Przyrodnicze": ["Chemia", "Biologia"],
+    "Humanistyczne": ["Polski", "Historia", "WOS"],
+    "Obce": ["Angielski", "Niemiecki"]
+  }
 
   async function AddAnno(e) {
     e.preventDefault();
@@ -22,11 +29,11 @@ const AddAnnouncements = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          type: category,
           description: Description,
           price: price,
           lessonLength: lessonLength,
           subjectId: subject,
+          type: type
         }),
       });
       console.log(response);
@@ -48,29 +55,10 @@ const AddAnnouncements = () => {
         </div>
         <div className=" grid justify-items-center  grid-cols-3 gap-4 w-full bg-light-blue h-1/2 text-dark-blue px-6 py-6  border-solid border-8 border-white">
           <div className="justify-items-center w-full space-y-7">
-            <p className="text-2xl text-center">Przedmiot:</p>
-            <select
-              class="rounded-md w-full bg-white h-12 shadow-xl"
-              onChange={(e) => setSubject(e.target.value)}
-            >
-              <option value="" selected disabled hidden>
-                Przedmiot
-              </option>
-              <option value="">Wszystkie</option>
-              <option value="1">Matematyka</option>
-              <option value="4">Polski</option>
-              <option value="3">Biologia</option>
-              <option value="2">Chemia</option>
-              <option value="5">Historia</option>
-              <option value="6">WOS</option>
-              <option value="7">Angielski</option>
-              <option value="8">Niemiecki</option>
-              <option value="9">Algebra</option>
-            </select>
             <p className="text-2xl text-center">Kategoria:</p>
             <select
               class="rounded-md w-full bg-white h-12 shadow-xl"
-              onChange={(e) => setCategory(e.target.value)}
+              onChange={(e) => {setCategory(e.target.value); setSubject("")}}
             >
               <option value="" selected disabled hidden>
                 Kategoria
@@ -81,22 +69,51 @@ const AddAnnouncements = () => {
               <option value="Przyrodnicze">Przyrodnicze</option>
               <option value="Obce">Obce</option>
             </select>
+            <p className="text-2xl text-center">Przedmiot:</p>
+            <select
+              class="rounded-md w-full bg-white h-12 shadow-xl"
+              onChange={(e) => setSubject(e.target.value)}
+            >
+              <option value="" selected disabled hidden>
+                Przedmiot
+              </option>
+              <option value="">Wszystkie</option>
+                {category == "" ? (
+                  Object.values(allSubjects).map((tab) => tab.map((item) => <option value={item}>{item}</option>))
+                ) : (
+                  allSubjects[category].map((item) => <option value={item}>{item}</option>)
+                )}
+            </select>
+            <input 
+              type="radio" 
+              name="answ"
+              value="Uczen"
+              onChange={(e) => setType(e.target.value)}
+              /> 
+            <span className="text-xl"> Szukam korepetycji</span>
           </div>
           <div className="justify-items-center w-full space-y-7">
-            <p className="text-2xl text-center">Cena:</p>
+            <p className="text-2xl text-center">Cena (zł):</p>
             <input
               type="number"
               class="input input-bordered w-full bg-white shadow-xl"
               placeholder="Cena za korepetycje"
               onChange={(e) => setPrice(e.target.value)}
             />
-            <p className="text-2xl text-center">Długość lekcji:</p>
+            <p className="text-2xl text-center">Długość lekcji (minuty):</p>
             <input
               type="number"
               placeholder="Czas przeznaczony na korepetycje"
               class="input input-bordered w-full bg-white shadow-xl"
               onChange={(e) => setLessonLength(e.target.value)}
             />
+            <input 
+              type="radio" 
+              name="answ"
+              value="Korepetytor"
+              onChange={(e) => setType(e.target.value)}
+              /> 
+              <span className="text-xl"> Udzielam korepetycji</span>
           </div>
           <div className="grid place-items-center grid-cols-1">
             <button
