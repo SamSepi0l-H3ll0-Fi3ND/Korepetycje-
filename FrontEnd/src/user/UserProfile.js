@@ -4,6 +4,8 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import { useEffect } from "react";
 import { useState } from "react";
 import API from "../env";
+import Review from "../components/Review"
+
 const UserProfile = () => {
   const [user, setUser] = useState([]);
   try {
@@ -63,13 +65,13 @@ const UserProfile = () => {
 
             <div className="flex flex-col space-y-2">
               <p>Numer telefonu</p>
-              <p className="text-white text-2xl"> {User.phoneNumber} </p>
+              <p className="text-white text-2xl"> {user.phoneNumber} </p>
             </div>
           </div>
         </div>
         <div className="w-full bg-light-blue h-1/3 text-dark-blue px-6 py-6  border-solid border-8 border-white ">
           <p className="text-3xl mb-2">Opis:</p>
-          <p className="text-xl">{User.Description}</p>
+          <p className="text-xl">{user.Description}</p>
         </div>
         <div className="w-full bg-light-blue h-1/3 text-dark-blue px-6 py-6  border-solid border-8 border-white ">
           <p className="text-3xl mb-2">Ogłoszenia:</p>
