@@ -22,8 +22,10 @@ const UserEditInfo = () => {
             <div className=" text-center">Informacje o Tobie:</div>
             <div className=" text-center text-white">
               {" "}
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Similique, explicabo.
+              <textarea
+                class="textarea textarea-bordered w-80"
+                placeholder="Bio"
+              ></textarea>
             </div>
             <div>
               <hr />
