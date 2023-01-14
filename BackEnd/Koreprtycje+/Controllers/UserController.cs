@@ -19,10 +19,22 @@ namespace Koreprtycje_.Controllers
             _userService = userService;
         }
 
-        [HttpGet, Authorize(Roles ="User, Administrator")]
-        public async Task<ActionResult<UserDto>> GetUser()
+        [HttpGet, Authorize(Roles = "User, Administrator")]
+        public async Task<ActionResult<OtherUserDto>> GetMe()
         {
-            var user = await _userService.GetUserById(int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)));
+            var user = await _userService.GetMe(int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)));
+            if (user == null)
+            {
+                return NotFound("User not found");
+            }
+
+            return Ok(user);
+        }
+
+        [HttpGet("{id}"), Authorize(Roles = "User, Administrator")]
+        public async Task<ActionResult<OtherUserDto>> GetUserById(int id)
+        {
+            var user = await _userService.GetUserById(id);
             if (user == null)
             {
                 return NotFound("User not found");
