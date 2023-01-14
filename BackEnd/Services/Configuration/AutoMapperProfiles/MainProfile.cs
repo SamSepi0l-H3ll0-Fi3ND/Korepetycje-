@@ -21,6 +21,7 @@ namespace Services.Configuration.AutoMapperProfiles
             CreateMap<User, UserLoginDto>();
             CreateMap<User, UserDto>().ReverseMap();
             CreateMap<User, UserModify>().ReverseMap();
+            CreateMap<OtherUserDto, User>().ReverseMap();
 
 
             CreateMap<AnnouncementDto, Announcement>().ReverseMap();

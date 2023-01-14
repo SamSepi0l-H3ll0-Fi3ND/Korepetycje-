@@ -21,16 +21,36 @@ namespace Services.ConcreteServices
 
         }
 
-        public async Task<UserDto> GetUserById(int id)
+        public async Task<OtherUserDto> GetMe(int id)
         {
             try
             {
                 if(id == null)
                     throw new ArgumentNullException("Id can't be null");
-                var user = await DbContext.Users.FirstOrDefaultAsync(x => x.Id == id);
+                var user = await DbContext.Users.Include(x => x.Announcements).Include(r => r.Reviews).FirstOrDefaultAsync(x => x.Id == id);
                 if (user == null)
                     throw new Exception("No user with this id");
-                var userDto = Mapper.Map<UserDto>(user);
+                var userDto = Mapper.Map<OtherUserDto>(user);
+
+                return userDto;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex, ex.Message);
+                throw;
+            }
+        }
+
+        public async Task<OtherUserDto> GetUserById(int id)
+        {
+            try
+            {
+                if (id == null)
+                    throw new ArgumentNullException("Id can't be null");
+                var user = await DbContext.Users.Include(x=> x.Announcements).Include(r => r.Reviews).FirstOrDefaultAsync(x => x.Id == id);
+                if (user == null)
+                    throw new Exception("No user with this id");
+                var userDto = Mapper.Map<OtherUserDto>(user);
 
                 return userDto;
             }
