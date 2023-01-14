@@ -70,21 +70,21 @@ const SignUp = () => {
   return (
     <form onSubmit={registerSubmit}>
       <div>
-        <div className="sm:h-fit">
+        <div className="min-h-screen">
           <div className="flex justify-center mb-20">
-            <div className="grid sm:rounded-md bg-[#d6f4fe]  sm:mt-20 w-screen sm:w-auto sm:h-auto shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">
+            <div className="grid sm:rounded-md bg-[#d6f4fe] flex justify-center sm:mt-20 mt-4 w-screen sm:w-auto shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">
               <div className="pt-6 px-10 text-center mr-4">
-                <p className="text-4xl text-center text-dark-blue font-bold pt-2 sm:px-20 sm:pb-14 pb-8">
+                <p className="text-4xl text-center text-dark-blue font-bold pt-6 sm:px-20 pb-14">
                   Rejestracja
                 </p>
               </div>
               <div className="sm:ml-10">
-                <p className="ml-16 sm:ml-16 text-dark-blue font-bold">
+                <p className="ml-10 sm:ml-16 text-dark-blue font-bold">
                   <AccountCircleIcon /> Nazwa Użytkownika
                 </p>
               </div>
               <div className="flex flex-nowrap mb-2">
-                <div className="justify-center w-12 sm:w-10 sm:ml-12"/>
+                <div className="justify-center w-6 sm:w-10 sm:ml-12"/>
                 <input
                   type="text"
                   name="username"
@@ -93,10 +93,10 @@ const SignUp = () => {
                 />
               </div>
               <div className="sm:ml-10">
-                <p className="ml-16 text-dark-blue font-bold">Imie</p>
+                <p className="ml-10 sm:ml-16 text-dark-blue font-bold">Imie</p>
               </div>
               <div className="flex flex-nowrap mb-2">
-              <div className="justify-center w-12 sm:w-10 sm:ml-12"/>
+              <div className="justify-center w-6 sm:w-10 sm:ml-12"/>
                 <input
                   name="firstname"
                   type="text"
@@ -105,10 +105,10 @@ const SignUp = () => {
                 />
               </div>
               <div className="sm:ml-10">
-                <p className="ml-16 text-dark-blue font-bold">Nazwisko</p>
+                <p className="ml-10 sm:ml-16 text-dark-blue font-bold">Nazwisko</p>
               </div>
               <div className="flex flex-nowrap mb-2">
-              <div className="justify-center w-12 sm:w-10 sm:ml-12"/>
+              <div className="justify-center w-6 sm:w-10 sm:ml-12"/>
                 <input
                   name="lastname"
                   type="text"
@@ -117,10 +117,10 @@ const SignUp = () => {
                 />
               </div>
               <div className="sm:ml-10">
-                <p className="ml-16 text-dark-blue font-bold"><HomeIcon/> Adres</p>
+                <p className="ml-10 sm:ml-16 text-dark-blue font-bold"><HomeIcon/> Adres</p>
               </div>
               <div className="flex flex-nowrap mb-2">
-              <div className="justify-center w-12 sm:w-10 sm:ml-12"/>
+              <div className="justify-center w-6 sm:w-10 sm:ml-12"/>
                 <input
                   name="address"
                   type="text"
@@ -129,12 +129,12 @@ const SignUp = () => {
                 />
               </div>
               <div className="sm:ml-10">
-                <p className="ml-16 text-dark-blue font-bold">
+                <p className="ml-10 sm:ml-16 text-dark-blue font-bold">
                 <AlternateEmailIcon/> Adres e-mail
                 </p>
               </div>
               <div className="flex flex-nowrap mb-2">
-              <div className="justify-center w-12 sm:w-10 sm:ml-12"/>
+              <div className="justify-center w-6 sm:w-10 sm:ml-12"/>
                 <input
                   name="email"
                   type="text"
@@ -143,10 +143,10 @@ const SignUp = () => {
                 />
               </div>
               <div className="sm:ml-10">
-                <p className="ml-16 text-dark-blue font-bold"><VpnKeyIcon/> Hasło</p>
+                <p className="ml-10 sm:ml-16 text-dark-blue font-bold"><VpnKeyIcon/> Hasło</p>
               </div>
               <div className="flex flex-nowrap mb-2">
-              <div className="justify-center w-12 sm:w-10 sm:ml-12"/>
+              <div className="justify-center w-6 sm:w-10 sm:ml-12"/>
                 <input
                   name="password"
                   type="password"
@@ -155,12 +155,12 @@ const SignUp = () => {
                 />
               </div>
               <div className="sm:ml-10">
-                <p className="ml-16 text-dark-blue font-bold">
+                <p className="ml-10 sm:ml-16 text-dark-blue font-bold">
                   Potwierdź hasło
                 </p>
               </div>
               <div className="flex flex-nowrap mb-2">
-              <div className="justify-center w-12 sm:w-10 sm:ml-12"/>
+              <div className="justify-center w-6 sm:w-10 sm:ml-12"/>
                 <input
                   type="password"
                   placeholder="Confirm password"
@@ -182,8 +182,8 @@ const SignUp = () => {
                   </Link>
                 </p>
               </div>
-              <div className="flex justify-center h-1/3">
-                <button className="btn bg-[#06283d] text-[#dff6ff] justify-center sm:mt-8 my-2 w-48 shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">
+              <div className="flex justify-center mb-8">
+                <button className="btn bg-[#06283d] text-[#dff6ff] justify-center mt-8 my-2 w-48 shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">
                   Zarejestruj się
                 </button>
               </div>
