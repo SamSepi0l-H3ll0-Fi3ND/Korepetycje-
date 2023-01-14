@@ -55,6 +55,7 @@ namespace Services.ConcreteServices
                 if (announcement == null)
                     throw new Exception("No announcement with this ID");
                 var announcementDTO = Mapper.Map<AnnouncementDto>(announcement);
+
                 return announcementDTO;
             }
             catch (Exception ex)
