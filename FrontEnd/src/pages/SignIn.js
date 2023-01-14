@@ -54,13 +54,13 @@ const SignIn = () => {
                   Logowanie
                 </p>
               </div>
-              <div className="sm:ml-12">
-                <p className="ml-16 sm:ml-20 text-dark-blue font-bold">
-                  Nazwa Użytkownika
+              <div className="sm:ml-10">
+                <p className="ml-12 sm:ml-16 text-dark-blue font-bold">
+                  <AccountCircleIcon/> Nazwa Użytkownika
                 </p>
               </div>
-              <div className="flex">
-                <AccountCircleIcon className="justify-center w-12 sm:w-16 sm:ml-12"></AccountCircleIcon>
+              <div className="flex flex-nowrap mb-2">
+                <div className="justify-center w-8 sm:w-10 sm:ml-12"/>
                 <input
                   type="text"
                   placeholder="Username"
@@ -68,11 +68,11 @@ const SignIn = () => {
                   onChange={(e) => setUsername(e.target.value)}
                 />
               </div>
-              <div className="ml-14">
-                <p className="ml-16 sm:ml-20 text-dark-blue font-bold">Hasło</p>
+              <div className="sm:ml-10">
+                <p className="ml-12 sm:ml-16 text-dark-blue font-bold"><VpnKeyIcon/> Hasło</p>
               </div>
-              <div className="flex">
-                <VpnKeyIcon className="justify-center w-12 sm:w-16 sm:ml-12"></VpnKeyIcon>
+              <div className="flex flex-nowrap mb-2">
+                <div className="justify-center w-8 sm:w-10 sm:ml-12"/>
                 <input
                   type="password"
                   placeholder="Password"
@@ -81,7 +81,7 @@ const SignIn = () => {
                 />
               </div>
               <div className="flex justify-center mb-8">
-                <button className="btn bg-[#06283d] text-[#dff6ff] justify-center mt-8 ml-6 w-48 shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">
+                <button className="btn bg-[#06283d] text-[#dff6ff] justify-center mt-8 w-48 shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">
                   Zaloguj się
                 </button>
               </div>
