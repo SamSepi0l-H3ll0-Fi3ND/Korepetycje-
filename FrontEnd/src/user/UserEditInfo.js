@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Logo from "../components/Logo";
 import Nav from "../components/Nav";
 const UserEditInfo = () => {
@@ -83,9 +84,11 @@ const UserEditInfo = () => {
               <button className="btn btn-success text-white border-2">
                 Zapisz zmiany
               </button>
-              <button className="btn bg-white text-dark-blue border-info border-2">
-                Przejdź do profilu
-              </button>
+              <Link to="/userinfo">
+                <a className="btn bg-white text-dark-blue border-info border-2">
+                  Przejdź do profilu
+                </a>
+              </Link>
             </div>
           </div>
         </div>

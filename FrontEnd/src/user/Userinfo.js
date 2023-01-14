@@ -37,9 +37,7 @@ const UserInfo = () => {
                 <Logo></Logo>
               </div>
               <div className="text-end pt-4 pr-6 ">
-                <Link to="/useredit">
-                  <SettingsIcon className="fill-white"></SettingsIcon>
-                </Link>
+                
               </div>
             </div>
             <div className="flex flex-col  space-y-4 card-body">
@@ -48,10 +46,8 @@ const UserInfo = () => {
               </h2>
 
               <div className=" text-center">Informacje o Tobie:</div>
-              <div className=" text-center text-white">
-                {" "}
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Similique, explicabo.
+              <div className=" text-center text-white w-">
+                {user.description}
               </div>
               <div>
                 <hr />
@@ -79,11 +75,9 @@ const UserInfo = () => {
                 </div>
               </div>
               <div className="card-actions justify-end">
-                <Link to="/">
-                  <button className="btn btn-outline text-white border-2">
-                    Dashboard
-                  </button>
-                </Link>
+                <button className="btn btn-outline text-white border-2">
+                  Dashboard
+                </button>
               </div>
             </div>
           </div>
