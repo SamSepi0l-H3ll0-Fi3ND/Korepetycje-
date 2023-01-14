@@ -31,7 +31,7 @@ namespace Koreprtycje_.Controllers
             return Ok(user);
         }
 
-        [HttpGet("{id}"), Authorize(Roles = "User, Administrator")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<OtherUserDto>> GetUserById(int id)
         {
             var user = await _userService.GetUserById(id);
@@ -50,6 +50,23 @@ namespace Koreprtycje_.Controllers
             var update = await _userService.UpdateUser(user);
 
             return Ok("User modified");
+        }
+
+        [HttpDelete, Authorize]
+        public async Task<ActionResult> DeleteMe()
+        {
+            var myId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            var result = await _userService.DeleteUser(myId);
+
+            return Ok(result);
+        }
+
+        [HttpDelete("{id}"), Authorize(Roles="Administrator")]
+        public async Task<ActionResult> DeleteUser(int id)
+        {
+            var result = await _userService.DeleteUser(id);
+
+            return Ok(result);
         }
     }
 }

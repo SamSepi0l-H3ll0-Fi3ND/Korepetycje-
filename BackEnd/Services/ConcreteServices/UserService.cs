@@ -21,6 +21,27 @@ namespace Services.ConcreteServices
 
         }
 
+        public async Task<bool> DeleteUser(int id)
+        {
+            try
+            {
+                if (id == null)
+                    throw new ArgumentNullException("Id can't be null");
+                var user = await DbContext.Users.Include(x => x.Announcements).Include(r => r.Reviews).FirstOrDefaultAsync(x => x.Id == id);
+                if (user == null)
+                    throw new Exception("No user with this id");
+                DbContext.Users.Remove(user);
+                await DbContext.SaveChangesAsync();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex, ex.Message);
+                throw;
+            }
+        }
+
         public async Task<OtherUserDto> GetMe(int id)
         {
             try
