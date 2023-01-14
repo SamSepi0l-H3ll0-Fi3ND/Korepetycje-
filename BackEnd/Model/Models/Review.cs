@@ -8,11 +8,11 @@ namespace Koreprtycje_.Models
         [Key]
         public int Id { get; set; }
 
-        [ForeignKey("Tutor")]
+        [ForeignKey("Author")]
         public int AuthorId { get; set; }
         public virtual User Author { get; set; }
 
-        [ForeignKey("Client")]
+        [ForeignKey("Person")]
         public int PersonId { get; set; }
         public virtual User Person { get; set; }
         public string Description { get; set; }

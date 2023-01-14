@@ -59,6 +59,39 @@ namespace DAL.Migrations
                     b.ToTable("Announcements");
                 });
 
+            modelBuilder.Entity("Koreprtycje_.Models.Review", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("AuthorId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PersonId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Rate")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AuthorId");
+
+                    b.HasIndex("PersonId");
+
+                    b.ToTable("Reviews");
+                });
+
             modelBuilder.Entity("Koreprtycje_.Models.Role", b =>
                 {
                     b.Property<int>("Id")
@@ -349,6 +382,25 @@ namespace DAL.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Koreprtycje_.Models.Review", b =>
+                {
+                    b.HasOne("Koreprtycje_.Models.User", "Author")
+                        .WithMany("Reviews")
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Koreprtycje_.Models.User", "Person")
+                        .WithMany()
+                        .HasForeignKey("PersonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Author");
+
+                    b.Navigation("Person");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.HasOne("Koreprtycje_.Models.Role", null)
@@ -403,6 +455,8 @@ namespace DAL.Migrations
             modelBuilder.Entity("Koreprtycje_.Models.User", b =>
                 {
                     b.Navigation("Announcements");
+
+                    b.Navigation("Reviews");
                 });
 #pragma warning restore 612, 618
         }

@@ -9,7 +9,7 @@ namespace Koreprtycje_.Data
     public class ApplicationDbContext : IdentityDbContext<User, Role, int>
     {
         public virtual DbSet<Announcement> Announcements { get; set; }
-        //public virtual DbSet<Review> Reviews { get; set; }
+        public virtual DbSet<Review> Reviews { get; set; }
         public virtual DbSet<Subject> Subjects { get; set; }
 
 
@@ -36,16 +36,16 @@ namespace Koreprtycje_.Data
                 .HasForeignKey(a => a.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-/*            builder.Entity<User>()
-                .HasMany(r => r.Reviews)
-                .WithOne(t => t.Tutor)
-                .OnDelete(DeleteBehavior.Cascade);*/
+            /*            builder.Entity<User>()
+                            .HasMany(r => r.Reviews)
+                            .WithOne(t => t.Tutor)
+                            .OnDelete(DeleteBehavior.Cascade);*/
 
-/*            builder.Entity<Review>()
-                .HasOne(r => r.Tutor)
+            builder.Entity<Review>()
+                .HasOne(r => r.Author)
                 .WithMany(t => t.Reviews)
-                .HasForeignKey(r => r.TutorId)
-                .OnDelete(DeleteBehavior.Restrict);*/
+                .HasForeignKey(r => r.AuthorId)
+                .OnDelete(DeleteBehavior.Restrict);
 
 
 

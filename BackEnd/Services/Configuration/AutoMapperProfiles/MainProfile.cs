@@ -30,9 +30,8 @@ namespace Services.Configuration.AutoMapperProfiles
 
             CreateMap<SubjectDto, Subject>().ReverseMap();
 
-/*            CreateMap<Review, ReviewDto>()
-                .ForMember(dest => dest.Author, x => x.MapFrom(src => src.Client.FirstName + src.Client.LastName));*/
-            //CreateMap<ReviewCreateDto, Review>();
+            CreateMap<Review, ReviewDto>().ReverseMap();
+            CreateMap<ReviewCreateDto, Review>();
 
         }
     }

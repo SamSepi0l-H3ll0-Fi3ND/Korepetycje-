@@ -1,4 +1,4 @@
-﻿/*using AutoMapper;
+﻿using AutoMapper;
 using Koreprtycje_.Data;
 using Koreprtycje_.Models;
 using Microsoft.EntityFrameworkCore;
@@ -22,12 +22,12 @@ namespace Services.ConcreteServices
         {
             try
             {
-                if(reviewCreate == null)
+                if (reviewCreate == null)
                     throw new ArgumentNullException("Dto can't be null");
                 var reviewModel = Mapper.Map<Review>(reviewCreate);
                 await DbContext.Reviews.AddAsync(reviewModel);
                 await DbContext.SaveChangesAsync();
-                
+
                 return true;
             }
             catch (Exception ex)
@@ -43,7 +43,7 @@ namespace Services.ConcreteServices
             {
                 if (id == null)
                     throw new ArgumentNullException("Id can't be null");
-                var review = await DbContext.Reviews.FirstOrDefaultAsync(x=> x.Id == id);
+                var review = await DbContext.Reviews.FirstOrDefaultAsync(x => x.Id == id);
                 DbContext.Reviews.Remove(review);
                 return true;
             }
@@ -53,6 +53,22 @@ namespace Services.ConcreteServices
                 throw;
             }
         }
+
+        public IEnumerable<ReviewDto> GetUserReviews(int userId)
+        {
+            try
+            {
+                if (userId == null)
+                    throw new ArgumentNullException("Id can't be null");
+                var reviews = DbContext.Reviews.Include(x=>x.Author).Include(x=>x.Person).AsQueryable().Where(x=> x.PersonId == userId);
+                var reviewsDto = Mapper.Map<List<ReviewDto>>(reviews);
+                return reviewsDto;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex, ex.Message);
+                throw;
+            }
+        }
     }
 }
-*/

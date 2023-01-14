@@ -19,7 +19,7 @@ namespace Koreprtycje_.Controllers
             _userService = userService;
         }
 
-        [HttpGet, Authorize]
+/*        [HttpGet, Authorize]
         public async Task<ActionResult> GetUser(int id)
         {
             var user = _userService.GetUserById(int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier))).Result;
@@ -32,7 +32,7 @@ namespace Koreprtycje_.Controllers
             //    return Ok(_tutorService.GetTutor(id));
 
             return Ok(user);
-        }
+        }*/
 
         [HttpPut, Authorize]
         public async Task<ActionResult> UpdateUser(UserModify user)

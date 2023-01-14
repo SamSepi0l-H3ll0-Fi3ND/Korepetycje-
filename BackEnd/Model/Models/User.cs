@@ -16,6 +16,6 @@ namespace Koreprtycje_.Models
         public virtual List<Announcement> Announcements { get; set; }
         public string Description { get; set; } = string.Empty;
 
-        //public virtual List<Review> Reviews { get; set; }
+        public virtual List<Review> Reviews { get; set; }
     }
 }

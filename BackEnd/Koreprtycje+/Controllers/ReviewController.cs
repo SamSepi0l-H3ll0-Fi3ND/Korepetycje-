@@ -1,4 +1,4 @@
-﻿/*using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Model.DTO;
 using Services.Interfaces;
@@ -21,15 +21,26 @@ namespace Koreprtycje_.Controllers
             _reviewService = reviewService;
         }
 
-        [HttpPost("AddReview"), Authorize]
+        [HttpGet]
+        public IEnumerable<ReviewDto> GetUserReviews(int userId)
+        {
+            if (userId == null)
+                throw new ArgumentNullException("Id cannot be null");
+
+            var reviews = _reviewService.GetUserReviews(userId);
+
+            return reviews;
+        }
+
+        [HttpPost("AddReview"), Authorize(Roles ="User")]
         public async Task<ActionResult> AddReview(ReviewCreateDto reviewCreateDto)
         {
-            reviewCreateDto.ClientId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            reviewCreateDto.AuthorId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
             if (await _reviewService.AddReview(reviewCreateDto))
                 return Ok();
-            
+
             return BadRequest();
-        }   
+        }
 
         // PUT api/<ReviewController>/5
         [HttpPut("{id}")]
@@ -50,4 +61,3 @@ namespace Koreprtycje_.Controllers
         }
     }
 }
-*/

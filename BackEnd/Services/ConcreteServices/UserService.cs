@@ -63,5 +63,10 @@ namespace Services.ConcreteServices
                 throw;
             }
         }
+
+        UserDto IUserService.GetUserById(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
