@@ -18,11 +18,10 @@ function App() {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/register" element={<SignUp />} />
         <Route path="/announcements/:inSubject" element={<Announcements />} />
-        <Route path="/userinfo" element={<UserInfo />} />
+        <Route path="/userinfo" element={<UserProfile />} />
         <Route path="/useredit" element={<UserEditInfo />} />
         <Route path="/termsofuse" element={<Terms />} />
         <Route path="/addAnnouncements" element={<AddAnnouncements />} />
-        <Route path="/userprofile" element={<UserProfile />} />
       </Routes>
     </Router>
   );

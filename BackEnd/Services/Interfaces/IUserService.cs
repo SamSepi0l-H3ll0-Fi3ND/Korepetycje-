@@ -9,7 +9,9 @@ namespace Services.Interfaces
 {
     public interface IUserService
     {
-        public UserDto GetUserById(int id);
+        public Task<OtherUserDto> GetMe(int id);
+        
+        public Task<OtherUserDto> GetUserById(int id);
 
         public Task<Boolean> UpdateUser(UserModify user);
     }
