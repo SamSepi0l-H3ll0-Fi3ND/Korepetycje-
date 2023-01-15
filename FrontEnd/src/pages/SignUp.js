@@ -6,6 +6,22 @@ import API from "../env";
 import { useNavigate } from "react-router-dom";
 import FormInput from "../components/FormInput";
 
+const regulamin = `2.1. Niniejszy Regulamin określa zasady korzystania ze sklepu internetowego dostępnego pod [adresem].
+2.2. Niniejszy Regulamin jest regulaminem, o którym mowa w art. 8 Ustawy o świadczeniu usług drogą elektroniczną.
+2.3. Sklep internetowy, działający pod [adresem], prowadzony jest przez [oznaczenie zgodne z częścią I. Podręcznika].
+2.4. Niniejszy Regulamin określa w szczególności [w zależności od dostępnych możliwości]:
+a.) zasady dokonywania rejestracji i korzystania z konta w ramach sklepu internetowego;
+b.) warunki i zasady dokonywania elektronicznej rezerwacji produktów dostępnych w ramach sklepu internetowego;
+c.) warunki i zasady składania drogą elektroniczną Zamówień w ramach sklepu internetowego;
+d.) zasady zawierania Umów sprzedaży z wykorzystaniem usług świadczonych w ramach Sklepu Internetowego.
+2.5. Korzystanie ze sklepu internetowego jest możliwe pod warunkiem spełnienia przez system teleinformatyczny, z którego korzysta Klient następujących minimalnych wymagań technicznych:
+a.) Internet Explorer w wersji [...] lub nowszej z włączoną obsługą [wskazanie niezbędnych aplikacji, np. aplety Javy], lub
+b.) [przeglądarka internetowa] w wersji [...] lub nowszej z włączoną obsługą [...], c.) minimalna rozdzielczość ekranu [...] x [...] pikseli.
+2.6. W celu korzystania ze sklepu internetowego Klient powinien we własnym zakresie uzyskać dostęp do stanowiska komputerowego lub urządzenia końcowego, z dostępem do Internetu.
+2.7. Zgodnie z obowiązującymi przepisami prawa [prowadzący Sklep] zastrzega sobie możliwość ograniczenia świadczenia usług za pośrednictwem Sklepu internetowego do osób, które ukończyły wiek 18 lat. W takim przypadku potencjalni Klienci zostaną o powyższym powiadomieni.
+2.8. Klienci mogą uzyskać dostęp do niniejszego Regulaminu w każdym czasie za pośrednictwem odsyłacza zamieszczonego na stronie głównej serwisu [adres internetowy] oraz pobrać go i sporządzić jego wydruk.
+2.9. Informacje o Towarach podane na stronach internetowych Sklepu, w szczególności ich opisy, parametry techniczne i użytkowe oraz ceny, stanowią zaproszenie do zawarcia umowy, w rozumieniu art. 71 Kodeksu Cywilnego.`
+
 const SignUp = () => {
   const navigate = useNavigate();
   var [response, setResponse] = useState();
@@ -74,11 +90,19 @@ const SignUp = () => {
                   className="sm:mt-10 mt-2 checked:bg-[#06283d] required:border-red-500"
                   onClick={(e) => setChecked(e.target.checked)}
                 />{" "}
+                  <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+                  <div className="modal">
+                    <div className="modal-box relative">
+                      <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                      <h3 className="text-lg font-bold">Regulamin</h3>
+                      <p className="py-4">{regulamin.split('\n').map(line => <p>{line}<br/><br/></p>)}</p>
+                    </div>
+                  </div>
                 <p className="sm:mt-10 mt-2 ml-6 text-dark-blue">
                   Akceptuje{" "}
-                  <Link to="/termsofuse" className="underline underline-offset-2">
+                  <label htmlFor="my-modal-3" className="underline underline-offset-2 cursor-pointer">
                     regulamin*
-                  </Link>
+                  </label>
                 </p>
               </div>
               <div className="flex justify-center mb-8">
