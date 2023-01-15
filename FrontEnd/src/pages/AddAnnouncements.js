@@ -50,7 +50,6 @@ const AddAnnouncements = () => {
         }),
       });
 
-      console.log(response);
       navigate("/announcements/all");
     } catch (error) {
       console.error(error.message);

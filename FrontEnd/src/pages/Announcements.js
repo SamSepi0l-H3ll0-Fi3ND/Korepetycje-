@@ -14,9 +14,7 @@ const Announcements = () => {
   const [subject, setSubject] = useState(inSubject);
   const [type, setType] = useState("");
   const [data, setData] = useState();
-  const [minValue, setMinValue] = useState(0.0);
-  const [maxValue, setMaxValue] = useState(0.0);
-  const [subjects, setSubjects] = useState(null);
+  const [maxValue, setMaxValue] = useState(60);
 
 
   var allSubjects = {
@@ -60,7 +58,6 @@ const Announcements = () => {
             data.forEach(element => {
               if (element.category === "Ścisłe") {
                 allSubjects.Ścisłe.push(element.name)
-                console.log(element.name)
               }
               if (element.category === "Przyrodnicze") {
                 allSubjects.Przyrodnicze.push(element.name)
@@ -73,7 +70,6 @@ const Announcements = () => {
               }
             })
         });
-        console.log(allSubjects)
 
     } catch (error) {
       console.error(error.message);

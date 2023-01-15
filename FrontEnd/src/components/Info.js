@@ -1,6 +1,5 @@
 const Info = (props) => {
   const { responseData } = props;
-  console.log("info", responseData);
   const info = responseData.split("<br>");
 
   return (
