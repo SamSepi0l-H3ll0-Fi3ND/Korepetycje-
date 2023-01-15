@@ -14,7 +14,6 @@ const Ad = (props) => {
   const tutor = "#a0bdcf";
   const search = "Szukam korepetycji - ";
   const teach = "Udzielam korepetycji - "
-  console.log(adData);
   return (
     <div
     className={`h-auto bg-[${adData.type === "Korepetytor" ? tutor : student}] rounded-md w-auto shadow-[0_0_16px_0_rgba(0,0,0,0.5)] text-dark-blue m-3`}

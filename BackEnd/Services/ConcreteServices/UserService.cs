@@ -92,6 +92,7 @@ namespace Services.ConcreteServices
                 userModel.FirstName = user.FirstName;
                 userModel.LastName = user.LastName;
                 userModel.Email = user.Email;
+                userModel.Description = user.Description;
                 
                 DbContext.Users.Update(userModel);
                 await DbContext.SaveChangesAsync();
