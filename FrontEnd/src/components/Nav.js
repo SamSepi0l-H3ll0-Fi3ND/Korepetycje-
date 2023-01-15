@@ -5,19 +5,23 @@ import LoginIcon from "@mui/icons-material/Login";
 import HowToRegIcon from "@mui/icons-material/HowToReg";
 import LogoutIcon from "@mui/icons-material/Logout";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import { useState } from "react";
 
 
 const Nav = () => {
 
   const [token, setToken] = useState(() =>
-  localStorage.getItem("Tajny numerek")
-);
+    localStorage.getItem("Tajny numerek"));
 
+  const [role, setRole] = useState(() =>
+    localStorage.getItem("Role"));
 
   const LogOut = () => {
     localStorage.removeItem("Tajny numerek");
+    localStorage.removeItem("Role");
     setToken(null);
+    setRole(null);
   };
   return (
     <>
@@ -97,6 +101,13 @@ const Nav = () => {
         </div>
         {token && (
           <div className="invisible md:visible navbar-end gap-2">
+            {role === "Administrator" && (
+              <Link to="/adminpanel">
+              <button className="btn btn-outline text-[#06283d] border-2">
+                <AdminPanelSettingsIcon/> Admin
+              </button>
+            </Link>
+            )}
             <Link to="/">
               <button
                 className="btn btn-outline text-[#06283d] border-2"
