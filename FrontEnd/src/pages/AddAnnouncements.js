@@ -1,7 +1,9 @@
 import Nav from "../components/Nav";
 import { Link, useNavigate } from "react-router-dom";
 import API from "../env";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+
 const AddAnnouncements = () => {
   const navigate = useNavigate();
   const [category, setCategory] = useState("");
@@ -10,6 +12,7 @@ const AddAnnouncements = () => {
   const [lessonLength, setLessonLength] = useState(30);
   const [Description, setDescription] = useState(null);
   const [type, setType] = useState(null);
+  const [subjects, setSubjects] = useState(null);
   const allSubjects = {
     "Ścisłe": ["Matematyka", "Algebra"],
     "Przyrodnicze": ["Chemia", "Biologia"],
@@ -17,8 +20,25 @@ const AddAnnouncements = () => {
     "Obce": ["Angielski", "Niemiecki"]
   }
 
+  useEffect(() => {
+      try {
+        const response = fetch(`${API}/Subject`, {
+          method: "GET"})
+          .then((response) => response.json())
+          .then((data) => {
+              setSubjects(data)
+              console.log(data)
+          });
+        
+      } catch (error) {
+        console.error(error.message);
+      }
+  }, []);
+
+console.log(subject)
   async function AddAnno(e) {
     e.preventDefault();
+
 
     try {
       const response = await fetch(`${API}/Announcements`, {

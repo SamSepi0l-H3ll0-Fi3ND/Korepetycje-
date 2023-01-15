@@ -19,7 +19,7 @@ namespace Koreprtycje_.Controllers
             _userService = userService;
         }
 
-        [HttpGet, Authorize(Roles = "User, Administrator")]
+        [HttpGet("myaccount"), Authorize(Roles = "User, Administrator")]
         public async Task<ActionResult<OtherUserDto>> GetMe()
         {
             var user = await _userService.GetMe(int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)));
@@ -41,6 +41,13 @@ namespace Koreprtycje_.Controllers
             }
 
             return Ok(user);
+        }
+
+        [HttpGet, Authorize(Roles ="Administrator")]
+        public async Task<ActionResult<List<UserDto>>> GetAllUsers()
+        {
+            var users = await _userService.GetAllUsers();
+            return Ok(users);
         }
 
         [HttpPut, Authorize(Roles ="User, Administrator")]

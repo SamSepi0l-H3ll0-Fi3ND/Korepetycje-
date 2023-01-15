@@ -15,5 +15,7 @@ namespace Services.Interfaces
 
         public Task<Boolean> UpdateUser(UserModify user);
         public Task<bool> DeleteUser(int id);
+
+        public Task<List<UserDto>> GetAllUsers();
     }
 }

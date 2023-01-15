@@ -12,7 +12,7 @@ const UserProfile = () => {
 
   try {
     useEffect(() => {
-      const response = fetch(`${API}/User`, {
+      const response = fetch(`${API}/User/myaccount`, {
         method: "GET",
         headers: {
           Authorization: "bearer " + localStorage.getItem("Tajny numerek"),
