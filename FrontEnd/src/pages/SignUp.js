@@ -1,13 +1,10 @@
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import VpnKeyIcon from "@mui/icons-material/VpnKey";
-import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
-import HomeIcon from "@mui/icons-material/Home";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Info from "../components/Info";
 import { useState } from "react";
 import API from "../env";
 import { useNavigate } from "react-router-dom";
+import FormInput from "../components/FormInput";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -15,19 +12,6 @@ const SignUp = () => {
   var [response2, setResponse2] = useState();
   var [checked, setChecked] = useState();
   var [afterSubmit, setAfterSubmit] = useState();
-
-  //let isChecked;
-
-  // const checkbox = (e, isChecked) => {
-  //   const checked = e.target.checked;
-  //   if (checked) {
-  //    isChecked = true;
-  //    console.log(isChecked);
-  //   } else {
-  //     isChecked = false;
-  //     console.log(isChecked);
-  //   }
-  // };
 
   async function registerSubmit(e) {
     const formdata = new FormData(e.target);
@@ -72,102 +56,19 @@ const SignUp = () => {
       <div>
         <div className="min-h-screen">
           <div className="flex justify-center mb-20">
-            <div className="grid sm:rounded-md bg-[#d6f4fe] flex justify-center sm:mt-20 mt-4 w-screen sm:w-auto shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">
+            <div className="sm:rounded-md bg-[#d6f4fe] flex flex-col justify-center sm:mt-20 mt-4 w-screen sm:w-auto shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">
               <div className="pt-6 px-10 text-center mr-4">
                 <p className="text-4xl text-center text-dark-blue font-bold pt-6 sm:px-20 pb-14">
                   Rejestracja
                 </p>
               </div>
-              <div className="sm:ml-10">
-                <p className="ml-10 sm:ml-16 text-dark-blue font-bold">
-                  <AccountCircleIcon /> Nazwa Użytkownika
-                </p>
-              </div>
-              <div className="flex flex-nowrap mb-2">
-                <div className="justify-center w-6 sm:w-10 sm:ml-12"/>
-                <input
-                  type="text"
-                  name="username"
-                  placeholder="Username"
-                  className="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-s mt-2 ml-4 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
-                />
-              </div>
-              <div className="sm:ml-10">
-                <p className="ml-10 sm:ml-16 text-dark-blue font-bold">Imie</p>
-              </div>
-              <div className="flex flex-nowrap mb-2">
-              <div className="justify-center w-6 sm:w-10 sm:ml-12"/>
-                <input
-                  name="firstname"
-                  type="text"
-                  placeholder="Firstname"
-                  className="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-xs mt-2 ml-4 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
-                />
-              </div>
-              <div className="sm:ml-10">
-                <p className="ml-10 sm:ml-16 text-dark-blue font-bold">Nazwisko</p>
-              </div>
-              <div className="flex flex-nowrap mb-2">
-              <div className="justify-center w-6 sm:w-10 sm:ml-12"/>
-                <input
-                  name="lastname"
-                  type="text"
-                  placeholder="Lastname"
-                  className="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-xs mt-2 ml-4 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
-                />
-              </div>
-              <div className="sm:ml-10">
-                <p className="ml-10 sm:ml-16 text-dark-blue font-bold"><HomeIcon/> Adres</p>
-              </div>
-              <div className="flex flex-nowrap mb-2">
-              <div className="justify-center w-6 sm:w-10 sm:ml-12"/>
-                <input
-                  name="address"
-                  type="text"
-                  placeholder="Address"
-                  className="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-xs mt-2 ml-4 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
-                />
-              </div>
-              <div className="sm:ml-10">
-                <p className="ml-10 sm:ml-16 text-dark-blue font-bold">
-                <AlternateEmailIcon/> Adres e-mail
-                </p>
-              </div>
-              <div className="flex flex-nowrap mb-2">
-              <div className="justify-center w-6 sm:w-10 sm:ml-12"/>
-                <input
-                  name="email"
-                  type="text"
-                  placeholder="Email"
-                  className="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-xs mt-2 ml-4 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
-                />
-              </div>
-              <div className="sm:ml-10">
-                <p className="ml-10 sm:ml-16 text-dark-blue font-bold"><VpnKeyIcon/> Hasło</p>
-              </div>
-              <div className="flex flex-nowrap mb-2">
-              <div className="justify-center w-6 sm:w-10 sm:ml-12"/>
-                <input
-                  name="password"
-                  type="password"
-                  placeholder="Password"
-                  className="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-xs mt-2 ml-4 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
-                />
-              </div>
-              <div className="sm:ml-10">
-                <p className="ml-10 sm:ml-16 text-dark-blue font-bold">
-                  Potwierdź hasło
-                </p>
-              </div>
-              <div className="flex flex-nowrap mb-2">
-              <div className="justify-center w-6 sm:w-10 sm:ml-12"/>
-                <input
-                  type="password"
-                  placeholder="Confirm password"
-                  name="confirmPassword"
-                  className="input input-bordered input-sm sm:input sm:bg-[#faf9fa] border-neutral-700 bg-[#faf9fa] w-50 max-w-xs mt-2 ml-4 shadow-[0_0_16px_0_rgba(0,0,0,0.7)] text-dark-blue"
-                />
-              </div>
+              <FormInput name="username" placeholder="Username" label="Nazwa Użytkownika"/>
+              <FormInput name="firstname" placeholder="Firstname" label="Imie"/>
+              <FormInput name="lastname" placeholder="Last name" label="Nazwisko"/>
+              <FormInput name="address" placeholder="Address" label="Adres"/>
+              <FormInput name="email" placeholder="Email" label="Adres e-mail"/>
+              <FormInput name="password" placeholder="Password" label="Hasło" type="password"/>
+              <FormInput name="confirmPassword" placeholder="Confirm password" label="Potwierdź hasło" type="password"/>
               <div className="flex justify-center">
                 <input
                   name="regulamin"
@@ -183,7 +84,7 @@ const SignUp = () => {
                 </p>
               </div>
               <div className="flex justify-center mb-8">
-                <button className="btn bg-[#06283d] text-[#dff6ff] justify-center mt-8 my-2 w-48 shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">
+                <button className="btn bg-[#06283d] text-[#dff6ff] mt-8 w-48 shadow-[0_0_16px_0_rgba(0,0,0,0.7)]">
                   Zarejestruj się
                 </button>
               </div>
@@ -197,7 +98,7 @@ const SignUp = () => {
               )}
               {!checked && afterSubmit && (
                 <div>
-                  <p className="flex flex-col text-xl m-4 text-center text-[#FF0000]">
+                  <p className="flex flex-col text-xl m-2 text-center text-[#FF0000]">
                     Musisz zaakceptować regulamin!
                   </p>
                 </div>

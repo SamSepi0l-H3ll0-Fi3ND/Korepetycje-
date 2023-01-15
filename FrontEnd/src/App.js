@@ -4,7 +4,6 @@ import SignUp from "./pages/SignUp";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Announcements from "./pages/Announcements";
-import UserInfo from "./user/Userinfo";
 import UserEditInfo from "./user/UserEditInfo";
 import AddAnnouncements from "./pages/AddAnnouncements";
 import Terms from "./pages/Terms";
