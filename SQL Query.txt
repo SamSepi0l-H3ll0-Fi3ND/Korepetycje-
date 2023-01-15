@@ -31,3 +31,16 @@ INSERT INTO [dbo].[Announcements] ([Id], [UserId], [Type], [SubjectId], [Descrip
 INSERT INTO [dbo].[Announcements] ([Id], [UserId], [Type], [SubjectId], [Description], [Price], [LessonLength]) VALUES (7, 4, N'Korepetytor', 5, N'Zapraszam na bardzo efektywne i skuteczne korepetycje z historii oraz wiedzy o społeczeństwie. Jestem korepetytorem z kilkunastoletnim doświadczeniem (absolwentka prawa oraz Historii na Uniwersytecie Jagiellońskim).', CAST(55.00 AS Decimal(14, 2)), 60)
 INSERT INTO [dbo].[Announcements] ([Id], [UserId], [Type], [SubjectId], [Description], [Price], [LessonLength]) VALUES (8, 4, N'Korepetytor', 8, N'Wiemy co to znaczy KORZYSTAĆ z języka i tego właśnie uczymy. Doświadczenie i skuteczność potwierdzają opinie. Każdy uczeń jest traktowany indywidualnie.', CAST(80.00 AS Decimal(14, 2)), 60)
 SET IDENTITY_INSERT [dbo].[Announcements] OFF
+
+SET IDENTITY_INSERT [dbo].[Reviews] ON
+INSERT INTO [dbo].[Reviews] ([Id], [AuthorId], [PersonId], [Description], [Rate], [CreateDate]) VALUES (1, 2, 4, N'Nie polecam', 2, N'2022-02-21 00:00:00')
+INSERT INTO [dbo].[Reviews] ([Id], [AuthorId], [PersonId], [Description], [Rate], [CreateDate]) VALUES (2, 6, 5, N'Polecam dobry w tym co robi', 2, N'2022-02-21 00:00:00')
+INSERT INTO [dbo].[Reviews] ([Id], [AuthorId], [PersonId], [Description], [Rate], [CreateDate]) VALUES (3, 5, 3, N'Super', 2, N'2022-02-21 00:00:00')
+INSERT INTO [dbo].[Reviews] ([Id], [AuthorId], [PersonId], [Description], [Rate], [CreateDate]) VALUES (4, 2, 2, N'Wszystko jak potrzeba', 2, N'2022-02-21 00:00:00')
+INSERT INTO [dbo].[Reviews] ([Id], [AuthorId], [PersonId], [Description], [Rate], [CreateDate]) VALUES (5, 3, 5, N'Super!!', 2, N'2022-02-23 00:00:00')
+INSERT INTO [dbo].[Reviews] ([Id], [AuthorId], [PersonId], [Description], [Rate], [CreateDate]) VALUES (6, 5, 6, N'Słabo!!', 2, N'2022-03-21 00:00:00')
+INSERT INTO [dbo].[Reviews] ([Id], [AuthorId], [PersonId], [Description], [Rate], [CreateDate]) VALUES (7, 4, 2, N'Nie da się umówić ', 2, N'2022-06-11 00:00:00')
+INSERT INTO [dbo].[Reviews] ([Id], [AuthorId], [PersonId], [Description], [Rate], [CreateDate]) VALUES (8, 3, 1, N'Ogólnie 2/10', 2, N'2022-02-21 00:00:00')
+INSERT INTO [dbo].[Reviews] ([Id], [AuthorId], [PersonId], [Description], [Rate], [CreateDate]) VALUES (9, 6, 2, N'Szukaj innego bo z tym jest ciężko się dogadać', 2, N'2022-05-21 00:00:00')
+INSERT INTO [dbo].[Reviews] ([Id], [AuthorId], [PersonId], [Description], [Rate], [CreateDate]) VALUES (10, 4, 2, N'Raz na tydzień wystarczy', 2, N'2022-12-13 00:00:00')
+SET IDENTITY_INSERT [dbo].[Reviews] OFF
