@@ -14,7 +14,7 @@ const AdWithDelete = (props) => {
   const tutor = "#a0bdcf";
   const search = "Szukam korepetycji - ";
   const teach = "Udzielam korepetycji - ";
-  console.log(adData);
+ 
 
   return (
     <div

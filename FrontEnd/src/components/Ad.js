@@ -9,7 +9,6 @@ import SchoolIcon from "@mui/icons-material/School";
 
 const Ad = (props) => {
   const { adData } = props;
-
   const student = "#D6F4FE";
   const tutor = "#a0bdcf";
   const search = "Szukam korepetycji - ";
