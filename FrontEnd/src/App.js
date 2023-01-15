@@ -6,6 +6,7 @@ import Dashboard from "./pages/Dashboard";
 import Announcements from "./pages/Announcements";
 import UserEditInfo from "./user/UserEditInfo";
 import AddAnnouncements from "./pages/AddAnnouncements";
+import ModifyAnnouncements from "./pages/ModifyAnnouncements";
 import Terms from "./pages/Terms";
 import UserProfile from "./user/UserProfile";
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/useredit" element={<UserEditInfo />} />
         <Route path="/termsofuse" element={<Terms />} />
         <Route path="/addAnnouncements" element={<AddAnnouncements />} />
+        <Route path="/editAnnouncements" element={<ModifyAnnouncements />} />
       </Routes>
     </Router>
   );
