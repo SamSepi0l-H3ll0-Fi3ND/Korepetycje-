@@ -41,6 +41,8 @@ namespace Koreprtycje_.Data
                 .WithMany(t => t.Reviews)
                 .HasForeignKey(r => r.AuthorId)
                 .OnDelete(DeleteBehavior.Restrict);
+            
+
         }
 
     }

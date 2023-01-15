@@ -67,7 +67,7 @@ namespace DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("AuthorId")
+                    b.Property<int?>("AuthorId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreateDate")
@@ -385,13 +385,11 @@ namespace DAL.Migrations
             modelBuilder.Entity("Koreprtycje_.Models.Review", b =>
                 {
                     b.HasOne("Koreprtycje_.Models.User", "Author")
-                        .WithMany("Reviews")
-                        .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .WithMany()
+                        .HasForeignKey("AuthorId");
 
                     b.HasOne("Koreprtycje_.Models.User", "Person")
-                        .WithMany()
+                        .WithMany("Reviews")
                         .HasForeignKey("PersonId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

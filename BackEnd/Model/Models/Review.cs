@@ -15,7 +15,7 @@ namespace Koreprtycje_.Models
 
 
         [ForeignKey("Author")]
-        public int AuthorId { get; set; }
+        public int? AuthorId { get; set; }
         public virtual User Author { get; set; }
 
         public string Description { get; set; }
