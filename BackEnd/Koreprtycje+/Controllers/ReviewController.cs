@@ -20,14 +20,22 @@ namespace Koreprtycje_.Controllers
             _configuration = configuration;
             _reviewService = reviewService;
         }
-
-        [HttpGet]
-        public IEnumerable<ReviewDto> GetUserReviews(int userId)
+        [HttpGet, Authorize(Roles ="Administrator")]
+        public async Task<ActionResult<IEnumerable<ReviewDto>>> GetAllReviews()
         {
-            if (userId == null)
+
+            var reviews = await _reviewService.GetAllReviews();
+
+            return Ok(reviews);
+        }
+
+        [HttpGet("{id}")]
+        public IEnumerable<ReviewDto> GetUserReviews(int id)
+        {
+            if (id == null)
                 throw new ArgumentNullException("Id cannot be null");
 
-            var reviews = _reviewService.GetUserReviews(userId);
+            var reviews = _reviewService.GetUserReviews(id);
 
             return reviews;
         }
@@ -42,11 +50,6 @@ namespace Koreprtycje_.Controllers
             return BadRequest();
         }
 
-        // PUT api/<ReviewController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
 
         // DELETE api/<ReviewController>/5
         [HttpDelete("{id}")]

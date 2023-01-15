@@ -9,9 +9,15 @@ import AdWithDelete from "../components/AdWithDelete";
 const UserProfile = () => {
   const [user, setUser] = useState([]);
   const [ann, setAnnouncements] = useState(null);
+  const [reviews, setReviews] = useState(null);
 
-  try {
+  const deleteOneAnnouncement = (id) => {
+    const newData = ann.filter(x=>x.id !== id)
+    setAnnouncements(newData)
+  }
+
     useEffect(() => {
+      try {
       const response = fetch(`${API}/User/myaccount`, {
         method: "GET",
         headers: {
@@ -24,13 +30,24 @@ const UserProfile = () => {
         .then((data) => {
           setUser(data);
           setAnnouncements(data.announcements);
-          console.log(data.description);
+          try {
+            const response = fetch(`${API}/Review/${data.id}`, {
+              method: "GET"
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                setReviews(data)
+              });
+            return () => response;
+          } catch (error) {
+            console.log(error, error.message);
+          }
         });
-      return () => response;
+    } catch (error) {
+      console.log(error, error.message);
+    }
     }, []);
-  } catch (error) {
-    console.log(error, error.message);
-  }
+
 
   return (
     <div className="bg-white h-screen">
@@ -79,13 +96,15 @@ const UserProfile = () => {
       <div className="w-full bg-light-blue h-fit text-dark-blue px-6 py-6  border-solid border-8 border-white ">
         <p className="text-3xl mb-2">Ogłoszenia:</p>
         {ann
-          ? ann.map((item) => <AdWithDelete key={item.id} adData={item} />)
+          ? ann.map((item) => <AdWithDelete key={item.id} adData={item} deleteAnnouncement={deleteOneAnnouncement} />)
           : null}
       </div>
       <div className="w-full bg-light-blue h-fit text-dark-blue px-6 py-6  border-solid border-8 border-white ">
         <p className="text-3xl mb-2">Recenzje:</p>
         <div>
-          <Review></Review>
+        {reviews
+          ? reviews.map((item) => <Review key={item.id} reviewData={item} />)
+          : null}
         </div>
       </div>
     </div>

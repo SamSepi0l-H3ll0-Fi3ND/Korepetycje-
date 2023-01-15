@@ -54,6 +54,22 @@ namespace Services.ConcreteServices
             }
         }
 
+        public async Task<IEnumerable<ReviewDto>> GetAllReviews()
+        {
+            try
+            {
+
+                var reviews = await DbContext.Reviews.Include(x => x.Author).Include(x => x.Person).ToListAsync();
+                var reviewsDto = Mapper.Map<List<ReviewDto>>(reviews);
+                return reviewsDto;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex, ex.Message);
+                throw;
+            }
+        }
+
         public IEnumerable<ReviewDto> GetUserReviews(int userId)
         {
             try

@@ -11,9 +11,9 @@ namespace Model.DTO
     public class ReviewDto
     {
         public int Id { get; set; }
+        public UserDto Person { get; set; }
 
         public UserDto Author { get; set; }
-        public UserDto Person { get; set; }
 
         public string Description { get; set; }
         public int Rate { get; set; }

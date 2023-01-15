@@ -12,5 +12,6 @@ namespace Services.Interfaces
         public IEnumerable<ReviewDto> GetUserReviews(int userId);
         public Task<Boolean> AddReview(ReviewCreateDto reviewCreate);
         public Task<Boolean> DeleteReview(int id);
+        public Task<IEnumerable<ReviewDto>> GetAllReviews();
     }
 }

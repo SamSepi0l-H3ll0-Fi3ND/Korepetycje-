@@ -20,7 +20,6 @@ namespace Model.DTO
         public string Description { get; set; }
 
         public List<AnnouncementDto> Announcements { get;set; }
-        public List<ReviewDto> Reviews { get;set; }
 
     }
 }
