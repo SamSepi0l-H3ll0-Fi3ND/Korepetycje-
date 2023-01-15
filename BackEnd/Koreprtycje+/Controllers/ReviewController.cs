@@ -52,7 +52,7 @@ namespace Koreprtycje_.Controllers
 
 
         // DELETE api/<ReviewController>/5
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}"), Authorize(Roles = "Administrator")]
         public async Task<ActionResult> DeleteReview(int id)
         {
             if (await _reviewService.DeleteReview(id))

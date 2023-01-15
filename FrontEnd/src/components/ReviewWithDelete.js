@@ -1,8 +1,22 @@
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import StarIcon from '@mui/icons-material/Star';
 import { Link } from "react-router-dom";
+import API from "../env";
 
 const ReviewWithDelete = ({review, delete: del}) => {
+
+  const deleteReview = () => {
+    fetch(`${API}/Review/${review.id}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: "bearer " + localStorage.getItem("Tajny numerek"),
+        "Content-Type": "application/json",
+      },
+    })
+      .then(response => {
+        if (response.ok) del(review.id);
+      })
+  };
 
   return (
     <div
@@ -13,7 +27,7 @@ const ReviewWithDelete = ({review, delete: del}) => {
           <div className="flex sm:justify-left mt-4">
           <AccountCircleIcon class="justify-center w-16 ml-12 fill-[#ffffff]"/><p className="text-2xl ml-6 mt-4">{review.author.firstName} {review.author.lastName}</p>
             <div className="">
-            <button className="btn bg-light-blue hover:bg-rose-800 text-dark-blue btn-sm ml-4" onClick={del(review.id)}>
+            <button className="btn bg-light-blue hover:bg-rose-800 text-dark-blue btn-sm ml-4" onClick={deleteReview}>
               Usuń opinie
             </button>
             <Link to="/editAnnouncements">

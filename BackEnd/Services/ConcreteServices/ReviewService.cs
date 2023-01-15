@@ -53,6 +53,7 @@ namespace Services.ConcreteServices
                     throw new ArgumentNullException("Id can't be null");
                 var review = await DbContext.Reviews.FirstOrDefaultAsync(x => x.Id == id);
                 DbContext.Reviews.Remove(review);
+                await DbContext.SaveChangesAsync();
                 return true;
             }
             catch (Exception ex)

@@ -1,15 +1,9 @@
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import StarIcon from '@mui/icons-material/Star';
 
+
 const Review = (props) => {
   const {reviewData} = props
-  // const Review = {
-  //   FirstName: " Jakub",
-  //   LastName: " Figzał",
-  //   Description:
-  //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus maxime aliquid atque minus sequi soluta reiciendis optio enim ipsa aspernatur! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus maxime aliquid atque minus sequi soluta reiciendis optio enim ipsa aspernatur! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus maxime aliquid atque minus sequi soluta reiciendis optio enim ipsa aspernatur!",
-  //   Rate: "2/5"
-  // }
 
   return (
     <div

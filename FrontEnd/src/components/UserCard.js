@@ -1,8 +1,21 @@
-
-
 import DeleteIcon from '@mui/icons-material/Delete';
+import API from "../env";
+
 
 const UserCard = ({user, delete: del}) => {
+
+    const deleteUser = () => {
+        fetch(`${API}/User/${user.id}`, {
+          method: "DELETE",
+          headers: {
+            Authorization: "bearer " + localStorage.getItem("Tajny numerek"),
+            "Content-Type": "application/json",
+          },
+        })
+          .then(response => {
+            if (response.ok) del(user.id);
+          })
+      };
 
   return (
     <div className="h-auto bg-dark-blue text-white rounded-md w-auto shadow-[0_0_16px_0_rgba(0,0,0,0.5)] text-dark-blue mx-10">
@@ -26,7 +39,7 @@ const UserCard = ({user, delete: del}) => {
             <p className="text-white text-l"> {user.phoneNumber} </p>
           </div>
           <div className="flex flex-col space-y-2">
-            <p className="text-white text-l"><button onClick={del(user.id)}><DeleteIcon/></button></p>      
+            <p className="text-white text-l"><button onClick={deleteUser}><DeleteIcon/></button></p>      
           </div>
         </div>
     </div>

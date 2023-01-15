@@ -13,36 +13,13 @@ const AdminPanel = () => {
   const [announcements, setAnnouncements] = useState();
   const [reviews, setReviews] = useState();
 
-  const deleteUser = (id) => {
-    fetch(`${API}/User/${id}`, {
-      method: "DELETE",
-      headers: {
-        Authorization: "bearer " + localStorage.getItem("Tajny numerek"),
-        "Content-Type": "application/json",
-      },
-    })
-      .then(response => {
-        if (response.ok) setUsers(users.filter(user => user.id !== id));
-      })
-  };
+  const deleteUser = (id) => setUsers(users.filter(user => user.id !== id));
+  const deleteAnnouncement = (id) => setAnnouncements(announcements.filter(announcement => announcement.id !== id));
+  const deleteReview = (id) => setReviews(reviews.filter(review => review.id !== id));
 
-  const deleteReview = (id) => {
-    fetch(`${API}/Review/${id}`, {
-      method: "DELETE",
-      headers: {
-        Authorization: "bearer " + localStorage.getItem("Tajny numerek"),
-        "Content-Type": "application/json",
-      },
-    })
-      .then(response => {
-        if (response.ok) setUsers(users.filter(user => user.id !== id));
-      })
-  };
 
-  const deleteOneAnnouncement = (id) => setAnnouncements(announcements.filter(x => x.id !== id));
-
-  try {
     useEffect(() => {
+      try {
       fetch(`${API}/User/myaccount`, {
         method: "GET",
         headers: {
@@ -72,7 +49,7 @@ const AdminPanel = () => {
         },
       })
         .then(response => response.json())
-        .then(data => setUsers(data));
+        .then(data => {setUsers(data); console.log(users);});
 
       fetch(`${API}/Review`, {
         method: "GET",
@@ -83,10 +60,11 @@ const AdminPanel = () => {
       })
         .then(response => response.json())
         .then(data => {setReviews(data)});
+    } catch (error) {
+      console.log(error, error.message);
+    }
     }, []);
-  } catch (error) {
-    console.log(error, error.message);
-  }
+
 
   return (
     <div className="bg-white h-screen">
@@ -125,20 +103,20 @@ const AdminPanel = () => {
           </div>
         </div>
         <div className="max-h-96 overflow-y-scroll">
-          {users?.map(user => <UserCard key={user.id} user={user} delete={() => deleteUser} />)}
+          {users?.map(user => <UserCard key={"user" + user.id} user={user} delete={deleteUser} />)}
         </div>
       </div>
       <div className="w-full bg-light-blue h-fit text-dark-blue p-10  border-solid border-8 border-white">
         <p className="text-3xl mb-2">Ogłoszenia:</p>
         <div className="max-h-96 overflow-y-scroll">
-          {announcements?.map((item) => <AdWithDelete key={item.id} adData={item} deleteAnnouncement={deleteOneAnnouncement} />)}
+          {announcements?.map((item) => <AdWithDelete key={"ad" + item.id} adData={item} deleteAnnouncement={deleteAnnouncement}/>)}
         </div>
 
       </div>
       <div className="w-full bg-light-blue h-fit text-dark-blue p-10  border-solid border-8 border-white">
         <p className="text-3xl mb-2">Opinie:</p>
         <div className="max-h-96 overflow-y-scroll">
-          {reviews?.map(review => <ReviewWithDelete key={review.id} review={review} delete={deleteReview} />)}
+          {reviews?.map(review => <ReviewWithDelete key={"rev" + review.id} review={review} delete={deleteReview} />)}
         </div>
       </div>
     </div>
