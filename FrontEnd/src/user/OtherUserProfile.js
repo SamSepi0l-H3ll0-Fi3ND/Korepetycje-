@@ -7,8 +7,11 @@ import Review from "../components/Review";
 import Ad from "../components/Ad";
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
+import { useNavigate } from "react-router-dom";
 
 const OtherUserProfile = () => {
+
+    const navigate = useNavigate();
     const {state} = useLocation();
     const [user, setUser] = useState([]);
     const [ann, setAnnouncements] = useState(null);
@@ -68,11 +71,12 @@ const OtherUserProfile = () => {
             rate : rate,
             createdDate : Date.now(),
           }),
+          
         });
-  
       } catch (error) {
         console.error(error.message);
       }
+      window.location.reload(false);
     }
 
   return (
