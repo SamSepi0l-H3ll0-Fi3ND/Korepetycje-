@@ -14,11 +14,11 @@ const ReviewWithDelete = ({review}) => {
           <AccountCircleIcon class="justify-center w-16 ml-12 fill-[#ffffff]"/><p className="text-2xl ml-6 mt-4">{review.FirstName} {review.LastName}</p>
             <div className="">
             <button className="btn bg-light-blue hover:bg-rose-800 text-dark-blue btn-sm ml-4">
-              Usuń ogłoszenie
+              Usuń opinia
             </button>
             <Link to="/editAnnouncements">
               <button className="btn bg-light-blue hover:bg-yellow-600 text-dark-blue btn-sm ml-4">
-                Modyfikuj ogłoszenie
+                Modyfikuj opinie
               </button>
             </Link>
             </div>
