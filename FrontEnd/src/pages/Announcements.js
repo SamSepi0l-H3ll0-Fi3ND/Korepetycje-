@@ -125,13 +125,13 @@ const Announcements = () => {
         <div className="bg-[#a0bdcf] w-full">
           <div>
             <p className="text-3xl text-[#06283d] flex justify-center pt-16">
-              Przeglądaj korepetytorów...
+              Przeglądaj ogłoszenia...
             </p>
             <div className="flex justify-center mt-8 mb-6">
               <input
                 type="text"
                 onChange={(e) => setSearch(e.target.value)}
-                placeholder="Szukaj korepetycji"
+                placeholder="Szukaj korepetytora/ucznia"
                 className="input input-bordered border-neutral-700 bg-[#faf9fa] w-4/5 max-w-3xl rounded-none rounded-l-3xl text-[#06283d]"
               />
               <button className="btn bg-dark-blue text-[#dff6ff] rounded-none rounded-r-3xl w-1/3 sm:w-1/6 lg:w-1/12">
