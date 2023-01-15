@@ -1,12 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../components/Logo";
 import Nav from "../components/Nav";
 import API from "../env";
+import { useNavigate } from "react-router-dom";
 
 
 
 const UserEditInfo = () => {
+  const navigate = useNavigate();
+
   const { state } = useLocation()
   const [user, setUser] = useState({
     Id: 0,
@@ -24,10 +27,26 @@ const UserEditInfo = () => {
     setUser((user) => ({ ...user, [e.target.name]: e.target.value }))
   }
 
+  const deleteUser = async () => {
+
+    const response = await fetch(`${API}/User`, {
+      method: "Delete",
+      headers: {
+        Authorization: "bearer " + localStorage.getItem("Tajny numerek"),
+        "Content-Type": "application/json",
+      },
+    });
+
+    if(response.ok){
+      localStorage.removeItem("Tajny numerek")
+      navigate("/");
+    }
+  }
+
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch(`${API}/User`, {
+    await fetch(`${API}/User`, {
       method: "PUT",
       body: JSON.stringify(user),
       headers: {
@@ -138,13 +157,18 @@ const UserEditInfo = () => {
                   Zapisz zmiany
                 </button>
                 <Link to="/userinfo">
-                  <a className="btn bg-white text-dark-blue border-info border-2">
+                  <p className="btn bg-white text-dark-blue border-info border-2">
                     Przejdź do profilu
-                  </a>
+                  </p>
                 </Link>
+
               </div>
+
             </div>
           </form>
+          <button onClick={deleteUser} className="btn rounded-none btn-error text-white border-2">
+                  Usuń konto
+          </button>
         </div>
       </div>
     </>

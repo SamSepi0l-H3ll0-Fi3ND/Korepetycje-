@@ -29,13 +29,15 @@ const AddAnnouncements = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          userId: 0,
           description: Description,
           price: price,
           lessonLength: lessonLength,
-          subjectId: subject,
+          subjectId: 0,
           type: type
         }),
       });
+      
       console.log(response);
       navigate("/announcements/all");
     } catch (error) {
@@ -78,7 +80,7 @@ const AddAnnouncements = () => {
                 Przedmiot
               </option>
               <option value="">Wszystkie</option>
-                {category == "" ? (
+                {category === "" ? (
                   Object.values(allSubjects).map((tab) => tab.map((item) => <option value={item}>{item}</option>))
                 ) : (
                   allSubjects[category].map((item) => <option value={item}>{item}</option>)
