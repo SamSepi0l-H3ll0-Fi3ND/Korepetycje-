@@ -24,7 +24,7 @@ const UserProfile = () => {
         .then((data) => {
           setUser(data);
           setAnnouncements(data.announcements);
-          console.log(data.description)
+          console.log(data.description);
         });
       return () => response;
     }, []);
@@ -42,6 +42,7 @@ const UserProfile = () => {
         <div className="text-4xl self-center text-white text-center mt-4 ">
           Witaj na profilu użytkownika {user.firstName} {user.lastName} !
         </div>
+        <div></div>
       </div>
       <div className="flex flex-wrap h-1/6 bg-dark-blue text-light-blue justify-center border-solid border-8 border-white w-full">
         <div className="grid grid-cols-6 gap-4 mt-8 text-center">
@@ -77,8 +78,9 @@ const UserProfile = () => {
       </div>
       <div className="w-full bg-light-blue h-fit text-dark-blue px-6 py-6  border-solid border-8 border-white ">
         <p className="text-3xl mb-2">Ogłoszenia:</p>
-        { ann? ann.map((item) => <AdWithDelete key={item.id} adData={item} />)
-    : null}
+        {ann
+          ? ann.map((item) => <AdWithDelete key={item.id} adData={item} />)
+          : null}
       </div>
       <div className="w-full bg-light-blue h-fit text-dark-blue px-6 py-6  border-solid border-8 border-white ">
         <p className="text-3xl mb-2">Recenzje:</p>

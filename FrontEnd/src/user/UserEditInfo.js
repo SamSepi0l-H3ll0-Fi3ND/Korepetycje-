@@ -5,12 +5,10 @@ import Nav from "../components/Nav";
 import API from "../env";
 import { useNavigate } from "react-router-dom";
 
-
-
 const UserEditInfo = () => {
   const navigate = useNavigate();
 
-  const { state } = useLocation()
+  const { state } = useLocation();
   const [user, setUser] = useState({
     Id: 0,
     FirstName: state.firstName,
@@ -18,17 +16,14 @@ const UserEditInfo = () => {
     Address: state.address,
     Email: state.email,
     PhoneNumber: state.phoneNumber,
-    Description: state.description
-  }
-  )
-
+    Description: state.description,
+  });
 
   const onChange = (e) => {
-    setUser((user) => ({ ...user, [e.target.name]: e.target.value }))
-  }
+    setUser((user) => ({ ...user, [e.target.name]: e.target.value }));
+  };
 
   const deleteUser = async () => {
-
     const response = await fetch(`${API}/User`, {
       method: "Delete",
       headers: {
@@ -37,11 +32,11 @@ const UserEditInfo = () => {
       },
     });
 
-    if(response.ok){
-      localStorage.removeItem("Tajny numerek")
+    if (response.ok) {
+      localStorage.removeItem("Tajny numerek");
       navigate("/");
     }
-  }
+  };
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -54,7 +49,8 @@ const UserEditInfo = () => {
         "Content-Type": "application/json",
       },
     });
-  }
+    navigate("/userinfo");
+  };
   return (
     <>
       <Nav></Nav>
@@ -79,8 +75,7 @@ const UserEditInfo = () => {
                   placeholder="Bio"
                   onChange={onChange}
                   defaultValue={user.Description}
-                >
-                </textarea>
+                ></textarea>
               </div>
               <div>
                 <hr />
@@ -161,13 +156,14 @@ const UserEditInfo = () => {
                     Przejdź do profilu
                   </p>
                 </Link>
-
               </div>
-
             </div>
           </form>
-          <button onClick={deleteUser} className="btn rounded-none btn-error text-white border-2">
-                  Usuń konto
+          <button
+            onClick={deleteUser}
+            className="btn rounded-none btn-error text-white border-2"
+          >
+            Usuń konto
           </button>
         </div>
       </div>
