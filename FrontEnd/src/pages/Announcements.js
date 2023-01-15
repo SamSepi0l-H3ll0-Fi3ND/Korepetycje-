@@ -14,16 +14,21 @@ const Announcements = () => {
   const [subject, setSubject] = useState(inSubject);
   const [type, setType] = useState("");
   const [data, setData] = useState();
-  const [maxValue, setMaxValue] = useState(0.0);
-  const [subjects, setSubjects] = useState(null);
-
-
-  var allSubjects = {
+  const [maxValue, setMaxValue] = useState(55);
+  const [allSubjects, setSubjects] = useState({
     "Ścisłe": [],
     "Przyrodnicze": [],
     "Humanistyczne": [],
     "Obce": []
-  }
+  });
+  
+
+  // var allSubjects = {
+  //   "Ścisłe": [],
+  //   "Przyrodnicze": [],
+  //   "Humanistyczne": [],
+  //   "Obce": []
+  // }
 
   useEffect(() => {
     try {
@@ -55,21 +60,28 @@ const Announcements = () => {
       })
         .then((response) => response.json())
         .then((data) => {
-
+          const subjects = {
+            "Ścisłe": [],
+            "Przyrodnicze": [],
+            "Humanistyczne": [],
+            "Obce": []
+          }
             data.forEach(element => {
               if (element.category === "Ścisłe") {
-                allSubjects.Ścisłe.push(element.name)
+                subjects.Ścisłe.push(element.name)
               }
               if (element.category === "Przyrodnicze") {
-                allSubjects.Przyrodnicze.push(element.name)
+                subjects.Przyrodnicze.push(element.name)
               }
               if (element.category === "Humanistyczne") {
-                allSubjects.Humanistyczne.push(element.name)
+                subjects.Humanistyczne.push(element.name)
               }              
               if (element.category === "Obce") {
-                allSubjects.Obce.push(element.name)
+                subjects.Obce.push(element.name)
               }
             })
+
+            setSubjects(subjects)
         });
 
     } catch (error) {
@@ -80,8 +92,7 @@ const Announcements = () => {
   function valuetext(value) {
     return `${value}zł`;
   }
-
-  const minDistance = 1;
+    const minDistance = 1;
   const [value1, setValue1] = useState([0, maxValue]);
 
   const handleChange1 = (event, newValue, activeThumb) => {
@@ -117,7 +128,8 @@ const Announcements = () => {
         return <Ad key={oneJson.id} adData={oneJson} />;
       });
   }
-
+  console.log(category)
+  console.log(subject)
   return (
     <div>
       <div className="min-h-screen w-full">
@@ -141,7 +153,7 @@ const Announcements = () => {
             <div className="flex justify-center">
               <div className="max-w-xl">
                 <div className="pb-6">
-                  <select className="m-3 rounded-full" onChange={(e) => { setCategory(e.target.value); setSubject("") }} defaultValue="">
+                  <select className="m-3 rounded-full" onChange={(e) => { setCategory(e.target.value); setSubject("all") }} defaultValue="">
                     <option value="" disabled hidden>
                       Kategoria
                     </option>
