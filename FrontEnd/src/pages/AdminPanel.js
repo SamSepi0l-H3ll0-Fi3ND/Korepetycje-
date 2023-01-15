@@ -12,6 +12,32 @@ const AdminPanel = () => {
   const [users, setUsers] = useState([]);
   const [announcements, setAnnouncements] = useState(null);
 
+  const deleteUser = (id) => {
+    fetch(`${API}/User/${id}`, {
+      method: "Delete",
+      headers: {
+        Authorization: "bearer " + localStorage.getItem("Tajny numerek"),
+        "Content-Type": "application/json",
+      },
+    })
+    .then(response => {
+      if(response.ok) setUsers(users.filter(user => user.id !== id));
+    })
+  };
+
+  const deleteAnnoucement = (id) => {
+    fetch(`${API}/Announcements/${id}`, {
+      method: "Delete",
+      headers: {
+        Authorization: "bearer " + localStorage.getItem("Tajny numerek"),
+        "Content-Type": "application/json",
+      },
+    })
+    .then(response => {
+      if(response.ok) setAnnouncements(announcements.filter(announcement => announcements.id !== id));
+    })
+  };
+
   try {
     useEffect(() => {
         fetch(`${API}/User/myaccount`, {
@@ -87,13 +113,13 @@ const AdminPanel = () => {
           </div>
         </div>
         <div className="max-h-96 overflow-y-scroll">
-          {users.map(user => <UserCard key={user.id} user={user}/>)}
+          {users.map(user => <UserCard key={user.id} user={user} delete={deleteUser}/>)}
         </div>
       </div>
       <div className="w-full bg-light-blue h-fit text-dark-blue p-10  border-solid border-8 border-white">
         <p className="text-3xl mb-2">Ogłoszenia:</p>
         <div className="max-h-96 overflow-y-scroll">{announcements
-          ? announcements.map((item) => <AdWithDelete key={item.id} adData={item} />)
+          ? announcements.map((item) => <AdWithDelete key={item.id} adData={item} delete={deleteAnnoucement}/>)
           : null}
           </div>
         
