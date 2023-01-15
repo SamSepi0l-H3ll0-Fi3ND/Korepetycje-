@@ -10,6 +10,17 @@ const SignIn = () => {
   const navigate = useNavigate();
   var [response, setResponse] = useState();
 
+  const getRole = (token) => {
+    if(!token) token = localStorage.getItem("Tajny numerek");
+    var base64Url = token.split('.')[1];
+    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+
+    return (JSON.parse(jsonPayload))["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
+}
+
   async function loginSubmit(e) {
     const formdata = new FormData(e.target);
     var jsonObject = {};
@@ -33,6 +44,7 @@ const SignIn = () => {
       else {
         const token = await response.text();
         localStorage.setItem("Tajny numerek", token);
+        localStorage.setItem("Role", getRole());
         navigate("/");
       }
     } catch (error) {
