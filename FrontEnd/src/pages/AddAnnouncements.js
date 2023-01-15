@@ -13,12 +13,8 @@ const AddAnnouncements = () => {
   const [Description, setDescription] = useState(null);
   const [type, setType] = useState(null);
   const [subjects, setSubjects] = useState(null);
-  const allSubjects = {
-    "Ścisłe": ["Matematyka", "Algebra"],
-    "Przyrodnicze": ["Chemia", "Biologia"],
-    "Humanistyczne": ["Polski", "Historia", "WOS"],
-    "Obce": ["Angielski", "Niemiecki"]
-  }
+  
+  const allCategories = ["Obce", "Ścisłe", "Humanistyczne", "Przyrodnicze"]
 
   useEffect(() => {
       try {
@@ -27,18 +23,15 @@ const AddAnnouncements = () => {
           .then((response) => response.json())
           .then((data) => {
               setSubjects(data)
-              console.log(data)
-          });
+            });
         
       } catch (error) {
         console.error(error.message);
       }
   }, []);
 
-console.log(subject)
   async function AddAnno(e) {
     e.preventDefault();
-
 
     try {
       const response = await fetch(`${API}/Announcements`, {
@@ -53,7 +46,7 @@ console.log(subject)
           description: Description,
           price: price,
           lessonLength: lessonLength,
-          subjectId: 0,
+          subjectId: subject,
           type: type
         }),
       });
@@ -80,43 +73,40 @@ console.log(subject)
             <p className="text-2xl text-center">Kategoria:</p>
             <select
               className="rounded-md w-full bg-white h-12 shadow-xl"
-              onChange={(e) => {setCategory(e.target.value); setSubject("")}}
+              onChange={(e) => {setCategory(e.target.value)}}
+              defaultValue="DEFAULT"
             >
-              <option value="" disabled hidden>
-                Kategoria
-              </option>
-              <option value="">Wszystkie</option>
-              <option value="Ścisłe">Ścisłe</option>
-              <option value="Humanistyczne">Humanistyczne</option>
-              <option value="Przyrodnicze">Przyrodnicze</option>
-              <option value="Obce">Obce</option>
+              <option value="DEFAULT" disabled>Wybierz Kateogorie</option>
+              {allCategories?.map((category) => (
+                <option value={category}>{category}</option>
+              )
+              )}
+
             </select>
             <p className="text-2xl text-center">Przedmiot:</p>
-            <select
+            <select required
               className="rounded-md w-full bg-white h-12 shadow-xl"
               onChange={(e) => setSubject(e.target.value)}
             >
-              <option value="" selected disabled hidden>
-                Przedmiot
-              </option>
-              <option value="">Wszystkie</option>
-                {category === "" ? (
-                  Object.values(allSubjects).map((tab) => tab.map((item) => <option value={item}>{item}</option>))
-                ) : (
-                  allSubjects[category].map((item) => <option value={item}>{item}</option>)
-                )}
+              <option>Wybierz Przedmiot</option>
+              {subjects?.filter(x=> x.category === category).map((item) => (
+                <option value={item.id}>{item.name}</option>
+              ))}
             </select>
             <input 
+            required
               type="radio" 
               name="answ"
               value="Uczen"
-              onChange={(e) => setType(e.target.value)}
+              onChange={(e) => setType(e.target.value)
+              }
               /> 
             <span className="text-xl"> Szukam korepetycji</span>
           </div>
           <div className="justify-items-center w-full space-y-7">
             <p className="text-2xl text-center">Cena (zł):</p>
             <input
+            required
               type="number"
               className="input input-bordered w-full bg-white shadow-xl"
               placeholder="Cena za korepetycje"
@@ -124,12 +114,14 @@ console.log(subject)
             />
             <p className="text-2xl text-center">Długość lekcji (minuty):</p>
             <input
+            required
               type="number"
               placeholder="Czas przeznaczony na korepetycje"
               className="input input-bordered w-full bg-white shadow-xl"
               onChange={(e) => setLessonLength(e.target.value)}
             />
             <input 
+            required
               type="radio" 
               name="answ"
               value="Korepetytor"
@@ -156,7 +148,8 @@ console.log(subject)
         </div>
         <div className="w-full bg-light-blue h-1/3 text-dark-blue px-6 py-6  border-solid border-8 border-white ">
           <p className="text-3xl mb-2">Opis:</p>
-          <textarea
+          <textarea 
+          required
             className="w-full h-5/6 text-xl shadow-xl"
             placeholder="Tutaj opisz czego teraz potrzebujesz"
             onChange={(e) => setDescription(e.target.value)}

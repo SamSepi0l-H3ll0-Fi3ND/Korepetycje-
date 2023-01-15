@@ -14,11 +14,16 @@ const Announcements = () => {
   const [subject, setSubject] = useState(inSubject);
   const [type, setType] = useState("");
   const [data, setData] = useState();
-  const allSubjects = {
-    "Ścisłe": ["Matematyka", "Algebra"],
-    "Przyrodnicze": ["Chemia", "Biologia"],
-    "Humanistyczne": ["Polski", "Historia", "WOS"],
-    "Obce": ["Angielski", "Niemiecki"]
+  const [minValue, setMinValue] = useState(0.0);
+  const [maxValue, setMaxValue] = useState(0.0);
+  const [subjects, setSubjects] = useState(null);
+
+
+  var allSubjects = {
+    "Ścisłe": [],
+    "Przyrodnicze": [],
+    "Humanistyczne": [],
+    "Obce": []
   }
 
   useEffect(() => {
@@ -31,9 +36,47 @@ const Announcements = () => {
         },
       })
         .then((response) => response.json())
-        .then((data) => setData(data));
+        .then((announcements) => {
+          setData(announcements)
+          var max = 0.0
+          announcements.forEach(element => {
+            if (element.price > max) {
+              max = element.price
+            }
+          });
+          setMaxValue(max)
+        });
     } catch (error) {
       console.error(error);
+    }
+
+    try {
+      const response = fetch(`${API}/Subject`, {
+        method: "GET"
+      })
+        .then((response) => response.json())
+        .then((data) => {
+
+            data.forEach(element => {
+              if (element.category === "Ścisłe") {
+                allSubjects.Ścisłe.push(element.name)
+                console.log(element.name)
+              }
+              if (element.category === "Przyrodnicze") {
+                allSubjects.Przyrodnicze.push(element.name)
+              }
+              if (element.category === "Humanistyczne") {
+                allSubjects.Humanistyczne.push(element.name)
+              }              
+              if (element.category === "Obce") {
+                allSubjects.Obce.push(element.name)
+              }
+            })
+          console.log(allSubjects)
+        });
+
+    } catch (error) {
+      console.error(error.message);
     }
   }, []);
 
@@ -158,9 +201,9 @@ const Announcements = () => {
           </div>
         </div>
         {
-          data ? 
-          <div className="flex flex-col justify-center m-10">{generateAds()}</div>
-           :
+          data ?
+            <div className="flex flex-col justify-center m-10">{generateAds()}</div>
+            :
             <div className="flex p-10 justify-center">
               <CircularProgress />
             </div>
