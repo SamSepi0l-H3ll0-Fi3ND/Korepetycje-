@@ -5,12 +5,16 @@ import { useState } from "react";
 import API from "../env";
 import Review from "../components/Review";
 import Ad from "../components/Ad";
+import Rating from '@mui/material/Rating';
+import Stack from '@mui/material/Stack';
 
 const OtherUserProfile = () => {
     const {state} = useLocation();
-  const [user, setUser] = useState([]);
-  const [ann, setAnnouncements] = useState(null);
-  const [reviews, setReviews] = useState(null);
+    const [user, setUser] = useState([]);
+    const [ann, setAnnouncements] = useState(null);
+    const [reviews, setReviews] = useState(null);
+    const [rate,setRate] = useState(null);
+    const [description, setDescription] = useState(null);
 
 
     useEffect(() => {
@@ -45,6 +49,31 @@ const OtherUserProfile = () => {
     }
     }, []);
 
+    async function AddReview(e) {
+      e.preventDefault();
+      console.log("Działa")
+
+      try {
+        const response = await fetch(`${API}/Review/AddReview`, {
+          method: "POST",
+          headers: {
+            Authorization: "bearer " + localStorage.getItem("Tajny numerek"),
+            accept: "text/plain",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            authorId : 0,
+            personId : user.id,
+            description : description,
+            rate : rate,
+            createdDate : Date.now(),
+          }),
+        });
+  
+      } catch (error) {
+        console.error(error.message);
+      }
+    }
 
   return (
     <div className="bg-white h-screen">
@@ -94,7 +123,33 @@ const OtherUserProfile = () => {
           : null}
       </div>
       <div className="w-full bg-light-blue h-fit text-dark-blue px-6 py-6  border-solid border-8 border-white ">
-        <p className="text-3xl mb-2">Recenzje:</p>
+        <p className="text-3xl mb-2">Recenzje: 
+        <label for="my-modal-3" class="btn bg-dark-blue hover:bg-yellow-600 text-light-blue btn-sm ml-4">Dodaj recenzje</label>
+        <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+        <div class="modal">
+          <div class="modal-box relative bg-light-blue">
+            <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+            <h3 class="text-2xl font-bold text-dark-blue">Zrecenzuj użytkownika!</h3>
+            <div className="">
+            <form onSubmit={AddReview}>
+              <textarea
+                required
+                className="w-full h-full text-xl shadow-xl bg-dark-blue text-white rounded-md m-2 p-2"
+                placeholder="Napisz recenzje..."
+                onChange={(e) => setDescription(e.target.value)}
+              ></textarea>
+              <div class="flex flex-col">
+                <span class="flex flex-row text-dark-blue justify-center">Oceń:     
+                <Stack spacing={1}>
+                    <Rating className="ml-10 mt-2" name="half-rating" defaultValue={2.5} precision={0.5} onChange={(e)=>setRate(e.target.value)} />
+                  </Stack>
+                </span>
+                <button class="btn bg-dark-blue hover:bg-green-600 text-light-blue m-6 ">Dodaj recenzje</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div></p>
         <div>
         {reviews
           ? reviews.map((item) => <Review key={item.id} reviewData={item} />)

@@ -5,9 +5,14 @@ import LoginIcon from "@mui/icons-material/Login";
 import HowToRegIcon from "@mui/icons-material/HowToReg";
 import LogoutIcon from "@mui/icons-material/Logout";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
+import { useState } from "react";
 
 
-const Nav = ({token, setToken}) => {
+const Nav = () => {
+
+  const [token, setToken] = useState(() =>
+  localStorage.getItem("Tajny numerek")
+);
 
 
   const LogOut = () => {
