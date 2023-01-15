@@ -16,17 +16,18 @@ const AddAnnouncements = () => {
   const allCategories = ["Obce", "Ścisłe", "Humanistyczne", "Przyrodnicze"];
 
   useEffect(() => {
-    try {
-      const response = fetch(`${API}/Subject`, {
-        method: "GET",
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          setSubjects(data);
-        });
-    } catch (error) {
-      console.error(error.message);
-    }
+      try {
+        fetch(`${API}/Subject`, {
+          method: "GET"})
+          .then((response) => response.json())
+          .then((data) => {
+              setSubjects(data)
+              console.log(data)
+          });
+        
+      } catch (error) {
+        console.error(error.message);
+      }
   }, []);
 
   async function AddAnno(e) {

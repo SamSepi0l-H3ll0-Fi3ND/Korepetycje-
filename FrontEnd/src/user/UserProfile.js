@@ -18,7 +18,7 @@ const UserProfile = () => {
 
     useEffect(() => {
       try {
-      const response = fetch(`${API}/User/myaccount`, {
+      fetch(`${API}/User/myaccount`, {
         method: "GET",
         headers: {
           Authorization: "bearer " + localStorage.getItem("Tajny numerek"),
@@ -31,14 +31,13 @@ const UserProfile = () => {
           setUser(data);
           setAnnouncements(data.announcements);
           try {
-            const response = fetch(`${API}/Review/${data.id}`, {
+            fetch(`${API}/Review/${data.id}`, {
               method: "GET"
             })
               .then((response) => response.json())
               .then((data) => {
                 setReviews(data)
               });
-            return () => response;
           } catch (error) {
             console.log(error, error.message);
           }
@@ -52,7 +51,7 @@ const UserProfile = () => {
   return (
     <div className="bg-white h-screen">
       <Nav></Nav>
-      <div className="flex justify-between flex-wrap h-1/6 bg-dark-blue text-light-blue   border-solid border-8 border-white w-full">
+      <div className="flex justify-between flex-wrap h-1/6 bg-dark-blue text-light-blue border-solid border-8 border-white w-full">
         <Link state={user} to="/useredit">
           <SettingsIcon className="fill-white"></SettingsIcon>
         </Link>

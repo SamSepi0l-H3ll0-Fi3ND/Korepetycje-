@@ -14,7 +14,8 @@ const Announcements = () => {
   const [subject, setSubject] = useState(inSubject);
   const [type, setType] = useState("");
   const [data, setData] = useState();
-  const [maxValue, setMaxValue] = useState(60);
+  const [maxValue, setMaxValue] = useState(0.0);
+  const [subjects, setSubjects] = useState(null);
 
 
   var allSubjects = {
@@ -49,7 +50,7 @@ const Announcements = () => {
     }
 
     try {
-      const response = fetch(`${API}/Subject`, {
+      fetch(`${API}/Subject`, {
         method: "GET"
       })
         .then((response) => response.json())

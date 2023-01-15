@@ -10,6 +10,7 @@ import ModifyAnnouncements from "./pages/ModifyAnnouncements";
 import Terms from "./pages/Terms";
 import UserProfile from "./user/UserProfile";
 import OtherUserProfile from "./user/OtherUserProfile";
+import AdminPanel from "./pages/AdminPanel";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/editAnnouncements" element={<ModifyAnnouncements />} />
         <Route path="/userprofile" element={<OtherUserProfile />} />
 
+        <Route path="/adminPanel" element={<AdminPanel />} />
       </Routes>
     </Router>
   );
