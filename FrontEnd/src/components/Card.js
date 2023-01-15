@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
-const Card = () => {
+const Card = ({token}) => {
+
   return (
     <div className="hero min-h-screen bg-[#d6f4fe]">
       <div className="hero-content flex-col lg:flex-row-reverse">
@@ -10,15 +12,37 @@ const Card = () => {
           alt="Nawet nie mam pojecia co jest na tym zdjeciu"
         />
         <div className=":m-2 text-[#06283d] md:text-center ">
-          <h1 className="text-5xl font-bold  ">Lorem ipsum!</h1>
-          <p className="py-6">
-            Lorem pomo to ero cos moko doko emorze. Edke peteke, mosva screen.
+          <h1 className="text-5xl font-bold  ">Zacznij się uczyć <br></br>lub ucz innych!</h1>
+          {!token && (
+            <div>
+            <p className="py-6">
+            Załóż konto i wyszukaj profesjonalnych korepetycji, lub też sam takie ogłoś!
           </p>
           <Link to="/register">
             <div className="btn btn-wide rounded-full bg-[#06283d] text-[#dff6ff]">
               Załóż konto
             </div>
           </Link>
+          </div>
+          )}
+          {
+            token && (
+              <div>
+              <p className="py-6">
+                Ucz się z profesjonalnymi korepetytorami, lub też sam zacznij uczyć innych!
+            </p>
+              <Link to="/announcements/all">
+                <div className="btn btn-wide bg-[#06283d] text-[#dff6ff] max-w-sm mr-2">
+                  Zacznij się uczyć!
+                </div>
+              </Link>
+              <Link to="/addAnnouncements">
+                <div className="btn btn-wide bg-[#06283d] text-[#dff6ff]">
+                  Naucz innych!
+                </div>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>
