@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import API from "../env";
 import { useState, useEffect } from "react";
 
-
 const AddAnnouncements = () => {
   const navigate = useNavigate();
   const [category, setCategory] = useState("");
@@ -13,21 +12,21 @@ const AddAnnouncements = () => {
   const [Description, setDescription] = useState(null);
   const [type, setType] = useState(null);
   const [subjects, setSubjects] = useState(null);
-  
-  const allCategories = ["Obce", "Ścisłe", "Humanistyczne", "Przyrodnicze"]
+
+  const allCategories = ["Obce", "Ścisłe", "Humanistyczne", "Przyrodnicze"];
 
   useEffect(() => {
-      try {
-        const response = fetch(`${API}/Subject`, {
-          method: "GET"})
-          .then((response) => response.json())
-          .then((data) => {
-              setSubjects(data)
-            });
-        
-      } catch (error) {
-        console.error(error.message);
-      }
+    try {
+      const response = fetch(`${API}/Subject`, {
+        method: "GET",
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          setSubjects(data);
+        });
+    } catch (error) {
+      console.error(error.message);
+    }
   }, []);
 
   async function AddAnno(e) {
@@ -47,10 +46,10 @@ const AddAnnouncements = () => {
           price: price,
           lessonLength: lessonLength,
           subjectId: subject,
-          type: type
+          type: type,
         }),
       });
-      
+
       console.log(response);
       navigate("/announcements/all");
     } catch (error) {
@@ -73,15 +72,17 @@ const AddAnnouncements = () => {
             <p className="text-2xl text-center">Kategoria:</p>
             <select
               className="rounded-md w-full bg-white h-12 shadow-xl"
-              onChange={(e) => {setCategory(e.target.value)}}
+              onChange={(e) => {
+                setCategory(e.target.value);
+              }}
               defaultValue="DEFAULT"
             >
-              <option value="DEFAULT" disabled>Wybierz Kateogorie</option>
+              <option value="DEFAULT" disabled>
+                Wybierz Kateogorie
+              </option>
               {allCategories?.map((category) => (
                 <option value={category}>{category}</option>
-              )
-              )}
-
+              ))}
             </select>
             <p className="text-2xl text-center">Przedmiot:</p>
             <select required defaultValue="Wybierz Kategorie"
@@ -93,14 +94,13 @@ const AddAnnouncements = () => {
                 <option value={item.id}>{item.name}</option>
               ))}
             </select>
-            <input 
-            required
-              type="radio" 
+            <input
+              required
+              type="radio"
               name="answ"
               value="Uczen"
-              onChange={(e) => setType(e.target.value)
-              }
-              /> 
+              onChange={(e) => setType(e.target.value)}
+            />
             <span className="text-xl"> Szukam korepetycji</span>
           </div>
           <div className="justify-items-center w-full space-y-7">
@@ -122,14 +122,14 @@ const AddAnnouncements = () => {
               className="input input-bordered w-full bg-white shadow-xl"
               onChange={(e) => setLessonLength(e.target.value)}
             />
-            <input 
-            required
-              type="radio" 
+            <input
+              required
+              type="radio"
               name="answ"
               value="Korepetytor"
               onChange={(e) => setType(e.target.value)}
-              /> 
-              <span className="text-xl"> Udzielam korepetycji</span>
+            />
+            <span className="text-xl"> Udzielam korepetycji</span>
           </div>
           <div className="grid place-items-center grid-cols-1">
             <button
@@ -150,8 +150,8 @@ const AddAnnouncements = () => {
         </div>
         <div className="w-full bg-light-blue h-1/3 text-dark-blue px-6 py-6  border-solid border-8 border-white ">
           <p className="text-3xl mb-2">Opis:</p>
-          <textarea 
-          required
+          <textarea
+            required
             className="w-full h-5/6 text-xl shadow-xl"
             placeholder="Tutaj opisz czego teraz potrzebujesz"
             onChange={(e) => setDescription(e.target.value)}
