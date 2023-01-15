@@ -28,7 +28,6 @@ const AdWithDelete = (props) => {
     } catch (error) {
       console.error(error.message);
     }
-    
   }
 
   return (
@@ -74,17 +73,19 @@ const AdWithDelete = (props) => {
         <div className="flex flex-col m-4 sm:basis-2/12">
           <div className="flex flex-col mt-2">
             <div className="flex justify-center m-2">
-              <MonetizationOnIcon /> {adData.price}zł / {adData.lessonLength}{" "}
+              <MonetizationOnIcon />  <p className="ml-2">{adData.price}zł / {adData.lessonLength}{" "}</p>
               minut
             </div>
             <div className="flex justify-center m-2">
-              <CallIcon /> <p>{adData.user.phoneNumber}</p>
+              <CallIcon /> <p className="ml-2">{adData.user.phoneNumber}</p>
             </div>
           </div>
           <div className="flex flex-col">
+          <a href={`mailto:${adData.user.email}`}>
             <div className="btn btn-ghost flex justify-center">
-              <MessageIcon /> Wyślij wiadomość
+              <MessageIcon /><p className="ml-2">{adData.user.email}</p>
             </div>
+            </a>
             <div className="flex justify-center m-2">
               <LocationOnIcon /> {adData.user.address}
               <StarIcon /> {adData.user.rate}

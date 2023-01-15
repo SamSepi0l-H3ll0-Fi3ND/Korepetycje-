@@ -9,6 +9,7 @@ import AddAnnouncements from "./pages/AddAnnouncements";
 import ModifyAnnouncements from "./pages/ModifyAnnouncements";
 import Terms from "./pages/Terms";
 import UserProfile from "./user/UserProfile";
+import OtherUserProfile from "./user/OtherUserProfile";
 import AdminPanel from "./pages/AdminPanel";
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
         <Route path="/termsofuse" element={<Terms />} />
         <Route path="/addAnnouncements" element={<AddAnnouncements />} />
         <Route path="/editAnnouncements" element={<ModifyAnnouncements />} />
+        <Route path="/userprofile" element={<OtherUserProfile />} />
+
         <Route path="/adminPanel" element={<AdminPanel />} />
       </Routes>
     </Router>

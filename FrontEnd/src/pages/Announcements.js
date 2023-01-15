@@ -59,7 +59,6 @@ const Announcements = () => {
             data.forEach(element => {
               if (element.category === "Ścisłe") {
                 allSubjects.Ścisłe.push(element.name)
-                console.log(element.name)
               }
               if (element.category === "Przyrodnicze") {
                 allSubjects.Przyrodnicze.push(element.name)
@@ -72,7 +71,6 @@ const Announcements = () => {
               }
             })
         });
-        console.log(allSubjects)
 
     } catch (error) {
       console.error(error.message);

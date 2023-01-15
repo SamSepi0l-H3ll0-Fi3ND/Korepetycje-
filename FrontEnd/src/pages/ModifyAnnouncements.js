@@ -12,7 +12,6 @@ const ModifyAnnouncements = () => {
     Price: state.price,
     LessonLength: state.lessonLength,
   });
-  console.log(state);
   const onChange = (e) => {
     setAnnouncements((ann) => ({ ...ann, [e.target.name]: e.target.value }));
   };

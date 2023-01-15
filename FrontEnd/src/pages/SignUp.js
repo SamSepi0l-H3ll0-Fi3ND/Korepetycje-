@@ -19,12 +19,10 @@ const SignUp = () => {
     formdata.forEach((value, key) => (jsonObject[key] = value));
     setAfterSubmit(true);
     e.preventDefault();
-    console.log("po submicie: ", checked);
-    console.log("po submicie2: ", afterSubmit);
 
     try {
       if (!checked) {
-        console.log("Akceptuj szmato!");
+        console.log("Akceptuj regulamin!");
       } else {
         if (formdata.get("password") === formdata.get("confirmPassword")) {
           const response = await fetch(`${API}/Authentication/register`, {
