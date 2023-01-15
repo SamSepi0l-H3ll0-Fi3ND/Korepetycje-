@@ -24,7 +24,7 @@ const UserProfile = () => {
         .then((data) => {
           setUser(data);
           setAnnouncements(data.announcements);
-          console.log(ann);
+          console.log(data.description)
         });
       return () => response;
     }, []);
@@ -32,14 +32,11 @@ const UserProfile = () => {
     console.log(error, error.message);
   }
 
-
-
-  console.log(ann);
   return (
     <div className="bg-white h-screen">
       <Nav></Nav>
       <div className="flex justify-between flex-wrap h-1/6 bg-dark-blue text-light-blue   border-solid border-8 border-white w-full">
-        <Link to="/useredit">
+        <Link state={user} to="/useredit">
           <SettingsIcon className="fill-white"></SettingsIcon>
         </Link>
         <div className="text-4xl self-center text-white text-center mt-4 ">

@@ -43,7 +43,7 @@ namespace Koreprtycje_.Controllers
             return Ok(user);
         }
 
-        [HttpPut, Authorize]
+        [HttpPut, Authorize(Roles ="User, Administrator")]
         public async Task<ActionResult> UpdateUser(UserModify user)
         {
             user.Id = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
