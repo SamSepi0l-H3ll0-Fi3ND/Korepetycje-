@@ -7,13 +7,15 @@ import SearchIcon from '@mui/icons-material/Search';
 import SchoolIcon from "@mui/icons-material/School";
 
 
-const Ad = (props) => {
+const AdWithDelete = (props) => {
   const { adData } = props;
 
   const student = "#D6F4FE";
   const tutor = "#a0bdcf";
   const search = "Szukam korepetycji - ";
   const teach = "Udzielam korepetycji - "
+  console.log(adData);
+
   return (
     <div
     className={`h-auto bg-[${adData.type === "Korepetytor" ? tutor : student}] rounded-md w-auto shadow-[0_0_16px_0_rgba(0,0,0,0.5)] text-dark-blue m-3`}
@@ -32,6 +34,9 @@ const Ad = (props) => {
         <div className="flex sm:flex-col sm:basis-9/12">
           <div className="flex sm:justify-left mt-4">
             <p className="text-2xl ml-6">{adData.type === "Korepetytor" ? teach : search}{adData.subject.name}</p>
+            <button className="btn bg-[#06283d] text-[#dff6ff] btn-sm">
+                    Usuń ogłoszenie
+            </button>
           </div>
           <div className="flex justify-left p-6">{<p>{adData.description}</p>}</div>
         </div>
@@ -60,4 +65,4 @@ const Ad = (props) => {
   );
 };
 
-export default Ad;
+export default AdWithDelete;
