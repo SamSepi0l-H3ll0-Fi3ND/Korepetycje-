@@ -4,8 +4,8 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import { useEffect } from "react";
 import { useState } from "react";
 import API from "../env";
-import Ad from "../components/Ad";
 import Review from "../components/Review";
+import AdWithDelete from "../components/AdWithDelete";
 const UserProfile = () => {
   const [user, setUser] = useState([]);
   const [ann, setAnnouncements] = useState(null);
@@ -80,7 +80,7 @@ const UserProfile = () => {
       </div>
       <div className="w-full bg-light-blue h-fit text-dark-blue px-6 py-6  border-solid border-8 border-white ">
         <p className="text-3xl mb-2">Ogłoszenia:</p>
-        { ann? ann.map((item) => <Ad key={item.id} adData={item} />)
+        { ann? ann.map((item) => <AdWithDelete key={item.id} adData={item} />)
     : null}
       </div>
       <div className="w-full bg-light-blue h-fit text-dark-blue px-6 py-6  border-solid border-8 border-white ">
