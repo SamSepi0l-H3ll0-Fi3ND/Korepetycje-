@@ -72,8 +72,8 @@ const Announcements = () => {
                 allSubjects.Obce.push(element.name)
               }
             })
-          console.log(allSubjects)
         });
+        console.log(allSubjects)
 
     } catch (error) {
       console.error(error.message);
@@ -85,7 +85,7 @@ const Announcements = () => {
   }
 
   const minDistance = 1;
-  const [value1, setValue1] = useState([0, 200]);
+  const [value1, setValue1] = useState([0, maxValue]);
 
   const handleChange1 = (event, newValue, activeThumb) => {
     if (!Array.isArray(newValue)) {
@@ -166,12 +166,7 @@ const Announcements = () => {
                       allSubjects[category].map((item) => <option key={item} value={item}>{item}</option>)
                     )}
                   </select>
-                  <select className="m-3 rounded-full" defaultValue="">
-                    <option value="" disabled hidden>
-                      Województwo
-                    </option>
-                    <option value="Śląsk">Śląsk</option>
-                  </select>
+
                   <select className="m-3 rounded-full" onChange={(e) => setType(e.target.value)} defaultValue="">
                     <option value="" disabled hidden>
                       Typ
@@ -192,7 +187,7 @@ const Announcements = () => {
                     valueLabelDisplay="auto"
                     getAriaValueText={valuetext}
                     min={0}
-                    max={500}
+                    max={maxValue}
                     disableSwap
                   />
                 </div>

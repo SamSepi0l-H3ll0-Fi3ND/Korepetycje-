@@ -8,13 +8,16 @@ namespace Koreprtycje_.Models
         [Key]
         public int Id { get; set; }
 
-        [ForeignKey("Author")]
-        public int AuthorId { get; set; }
-        public virtual User Author { get; set; }
 
         [ForeignKey("Person")]
         public int PersonId { get; set; }
         public virtual User Person { get; set; }
+
+
+        [ForeignKey("Author")]
+        public int AuthorId { get; set; }
+        public virtual User Author { get; set; }
+
         public string Description { get; set; }
         public int Rate { get; set; }
         public DateTime CreateDate { get; set; } = DateTime.Now;

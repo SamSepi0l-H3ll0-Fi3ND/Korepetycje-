@@ -86,17 +86,14 @@ const AddAnnouncements = () => {
               ))}
             </select>
             <p className="text-2xl text-center">Przedmiot:</p>
-            <select
-              required
+            <select required defaultValue="Wybierz Kategorie"
               className="rounded-md w-full bg-white h-12 shadow-xl"
               onChange={(e) => setSubject(e.target.value)}
             >
-              <option>Wybierz Przedmiot</option>
-              {subjects
-                ?.filter((x) => x.category === category)
-                .map((item) => (
-                  <option value={item.id}>{item.name}</option>
-                ))}
+              <option value="" selected disabled>Wybierz Przedmiot</option>
+              {subjects?.filter(x=> x.category === category).map((item) => (
+                <option value={item.id}>{item.name}</option>
+              ))}
             </select>
             <input
               required
@@ -110,7 +107,8 @@ const AddAnnouncements = () => {
           <div className="justify-items-center w-full space-y-7">
             <p className="text-2xl text-center">Cena (zł):</p>
             <input
-              required
+            required
+              max={1000}
               type="number"
               className="input input-bordered w-full bg-white shadow-xl"
               placeholder="Cena za korepetycje"
@@ -119,6 +117,7 @@ const AddAnnouncements = () => {
             <p className="text-2xl text-center">Długość lekcji (minuty):</p>
             <input
               required
+              max={200}
               type="number"
               placeholder="Czas przeznaczony na korepetycje"
               className="input input-bordered w-full bg-white shadow-xl"
