@@ -4,7 +4,7 @@ import StarIcon from '@mui/icons-material/Star';
 
 const Review = (props) => {
   const {reviewData} = props
-
+  
   return (
     <div
     className="h-auto bg-dark-blue text-white rounded-md w-auto shadow-[0_0_16px_0_rgba(0,0,0,0.5)] text-dark-blue m-10"
@@ -26,7 +26,7 @@ const Review = (props) => {
               <p className="text-2xl ml-6">Ocena</p>
             </div>
             <div className="flex justify-center m-2">
-              <StarIcon class="justify-center w-8 ml-12 fill-[#ffffff]"></StarIcon><p className="text-2xl ml-6">{reviewData.rate}</p>
+              <StarIcon class="justify-center w-8 ml-12 fill-[#FFD700]"></StarIcon><p className="text-2xl ml-6">{reviewData.rate}</p>
             </div>
           </div>
         </div>

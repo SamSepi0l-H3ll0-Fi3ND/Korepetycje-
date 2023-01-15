@@ -93,9 +93,10 @@ const Nav = () => {
               </li>
             </Link>
             <li>
+              {token && (
               <Link to="/addAnnouncements" className="btn btn-ghost">
                 <span>Dodaj ogłoszenie</span>
-              </Link>
+              </Link>)}
             </li>
           </ul>
         </div>

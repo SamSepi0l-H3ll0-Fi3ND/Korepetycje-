@@ -8,10 +8,10 @@ const Subjects = () => {
           Ścisłe
         </div>
         <div className="text-2xl font-bold  px-16 py-2 underline underline-offset-8">
-          Artystyczne
+          Humanistyczne
         </div>
         <div className="text-2xl font-bold  px-16 py-2 underline underline-offset-8">
-          Humanistyczne
+          Artystyczne
         </div>
         <div className="text-2xl font-bold px-16 py-2 underline underline-offset-8">
           Języki obce
@@ -36,11 +36,6 @@ const Subjects = () => {
         <Subject name="Etyka"/>
         <Subject name="Emisja głosu"/>
         <Subject name="Francuski"/>
-      </div>
-      <div>
-        <p className="flex justify-center font-semibold text-2xl underline mt-8  mb-8 text-dark-blue  underline-offset-1">
-          Wszystkie kategorie
-        </p>
       </div>
     </div>
   );
