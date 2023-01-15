@@ -19,7 +19,7 @@ namespace Koreprtycje_.Models
         public virtual User Author { get; set; }
 
         public string Description { get; set; }
-        public int Rate { get; set; }
+        public double Rate { get; set; }
         public DateTime CreateDate { get; set; } = DateTime.Now;
     }
 }

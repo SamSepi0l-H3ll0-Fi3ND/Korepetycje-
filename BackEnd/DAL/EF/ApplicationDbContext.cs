@@ -36,28 +36,11 @@ namespace Koreprtycje_.Data
                 .HasForeignKey(a => a.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            /*            builder.Entity<User>()
-                            .HasMany(r => r.Reviews)
-                            .WithOne(t => t.Tutor)
-                            .OnDelete(DeleteBehavior.Cascade);*/
-
             builder.Entity<Review>()
                 .HasOne(r => r.Author)
                 .WithMany(t => t.Reviews)
                 .HasForeignKey(r => r.AuthorId)
                 .OnDelete(DeleteBehavior.Restrict);
-
-
-
-            //builder.Entity<Conversation>()
-            //    .HasOne(c => c.Sender)
-            //    .WithMany(u => u.Conversations)
-            //    .HasForeignKey(c => c.SenderId);
-
-            //builder.Entity<Conversation>()
-            //    .HasOne(c => c.Recipient)
-            //    .WithMany(u => u.Conversations)
-            //    .HasForeignKey(c => c.RecipientId);
         }
 
     }
