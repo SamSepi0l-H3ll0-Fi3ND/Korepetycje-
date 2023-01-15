@@ -7,7 +7,7 @@ const ModifyAnnouncements = () => {
   const navigate = useNavigate();
   const { state } = useLocation();
   const [ann, setAnnouncements] = useState({
-    Id: 0,
+    Id: state.id,
     Description: state.description,
     Price: state.price,
     LessonLength: state.lessonLength,
@@ -21,6 +21,7 @@ const ModifyAnnouncements = () => {
       method: "PUT",
       body: JSON.stringify(ann),
       headers: {
+        Authorization: "bearer " + localStorage.getItem("Tajny numerek"),
         "Content-Type": "application/json",
       },
     });
