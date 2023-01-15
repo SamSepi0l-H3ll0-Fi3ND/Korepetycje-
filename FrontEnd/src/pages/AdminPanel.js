@@ -41,22 +41,12 @@ const AdminPanel = () => {
 
   const deleteOneAnnouncement = (id) => setAnnouncements(announcements.filter(x => x.id !== id));
 
-  const getRole = (token) => {
-    if(!token) token = localStorage.getItem("Tajny numerek");
-    var base64Url = token.split('.')[1];
-    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-    }).join(''));
-
-    return (JSON.parse(jsonPayload))["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
-}
-
   try {
     useEffect(() => {
       fetch(`${API}/User/myaccount`, {
         method: "GET",
         headers: {
+          Authorization: "bearer " + localStorage.getItem("Tajny numerek"),
           accept: "text/plain",
           "Content-Type": "application/json",
         },
@@ -92,7 +82,7 @@ const AdminPanel = () => {
         },
       })
         .then(response => response.json())
-        .then(data => {setReviews(data); console.log(reviews); console.log(getRole("eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiIxIiwiZXhwIjoxNjczOTA0MTg1fQ.lRFdRRgmxv8ywPLx2UnbZSJ3DgudQWYi0uZZnaTRGuoTuFXjRQKhX9bOIKhZw-PvFLynsaI5pp0EuojDIi9KZA"));});
+        .then(data => {setReviews(data)});
     }, []);
   } catch (error) {
     console.log(error, error.message);
@@ -141,14 +131,14 @@ const AdminPanel = () => {
       <div className="w-full bg-light-blue h-fit text-dark-blue p-10  border-solid border-8 border-white">
         <p className="text-3xl mb-2">Ogłoszenia:</p>
         <div className="max-h-96 overflow-y-scroll">
-          {announcements?.map((item) => <AdWithDelete key={item.id} adData={item} deleteAnnouncement={() => deleteOneAnnouncement} />)}
+          {announcements?.map((item) => <AdWithDelete key={item.id} adData={item} deleteAnnouncement={deleteOneAnnouncement} />)}
         </div>
 
       </div>
       <div className="w-full bg-light-blue h-fit text-dark-blue p-10  border-solid border-8 border-white">
         <p className="text-3xl mb-2">Opinie:</p>
         <div className="max-h-96 overflow-y-scroll">
-          {reviews?.map(review => <ReviewWithDelete key={review.id} review={review} delete={() => deleteReview} />)}
+          {reviews?.map(review => <ReviewWithDelete key={review.id} review={review} delete={deleteReview} />)}
         </div>
       </div>
     </div>
