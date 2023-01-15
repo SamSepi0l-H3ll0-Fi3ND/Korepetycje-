@@ -35,7 +35,7 @@ const UserProfile = () => {
   return (
     <div className="bg-white h-screen">
       <Nav></Nav>
-      <div className="flex justify-between flex-wrap h-1/6 bg-dark-blue text-light-blue   border-solid border-8 border-white w-full">
+      <div className="flex justify-between flex-wrap h-1/6 bg-dark-blue text-light-blue border-solid border-8 border-white w-full">
         <Link state={user} to="/useredit">
           <SettingsIcon className="fill-white"></SettingsIcon>
         </Link>

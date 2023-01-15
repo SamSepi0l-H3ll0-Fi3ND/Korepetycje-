@@ -22,7 +22,7 @@ const AddAnnouncements = () => {
 
   useEffect(() => {
       try {
-        const response = fetch(`${API}/Subject`, {
+        fetch(`${API}/Subject`, {
           method: "GET"})
           .then((response) => response.json())
           .then((data) => {

@@ -43,11 +43,11 @@ const AdWithDelete = (props) => {
               {adData.type === "Korepetytor" ? teach : search}
               {adData.subject.name}
             </p>
-            <button className="btn bg-dark-blue text-light-blue btn-sm ml-4">
+            <button className="btn bg-dark-blue hover:bg-rose-800 text-light-blue btn-sm ml-4">
               Usuń ogłoszenie
             </button>
             <Link to="/editAnnouncements">
-              <button className="btn bg-dark-blue text-light-blue btn-sm ml-4">
+              <button className="btn bg-dark-blue hover:bg-yellow-600 text-light-blue btn-sm ml-4">
                 Modyfikuj ogłoszenie
               </button>
             </Link>
