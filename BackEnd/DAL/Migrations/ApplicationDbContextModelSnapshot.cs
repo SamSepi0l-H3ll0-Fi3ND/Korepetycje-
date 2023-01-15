@@ -80,8 +80,8 @@ namespace DAL.Migrations
                     b.Property<int>("PersonId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Rate")
-                        .HasColumnType("int");
+                    b.Property<double>("Rate")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 

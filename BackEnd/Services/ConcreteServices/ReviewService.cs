@@ -25,7 +25,15 @@ namespace Services.ConcreteServices
                 if (reviewCreate == null)
                     throw new ArgumentNullException("Dto can't be null");
                 var reviewModel = Mapper.Map<Review>(reviewCreate);
+
                 await DbContext.Reviews.AddAsync(reviewModel);
+                await DbContext.SaveChangesAsync();
+
+                var reviews = await DbContext.Reviews.Where(rev => rev.PersonId == reviewCreate.PersonId).ToListAsync();
+                double rate = reviews.Sum(x=>x.Rate)/reviews.Count;
+                var user = await DbContext.Users.FirstOrDefaultAsync(x=> x.Id == reviewCreate.PersonId);
+                user.Rate = Math.Round(rate,1);
+                DbContext.Update(user);
                 await DbContext.SaveChangesAsync();
 
                 return true;
