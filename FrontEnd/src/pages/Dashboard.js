@@ -5,19 +5,15 @@ import Steps from "../components/Steps";
 import Subjects from "../components/Subjects";
 import Footer from "../components/Footer";
 import StepsEarn from "../components/StepsEarn";
-import { useState } from "react";
+
 
 const Dashboard = () => {
-
-  const [token, setToken] = useState(() =>
-  localStorage.getItem("Tajny numerek")
-);
 
   return (
     
     <div>
-      <Nav token={token} setToken={setToken}></Nav>
-      <Card token={token}></Card>
+      <Nav></Nav>
+      <Card></Card>
       <SearchBar></SearchBar>
       <Subjects></Subjects>
       <Steps></Steps>

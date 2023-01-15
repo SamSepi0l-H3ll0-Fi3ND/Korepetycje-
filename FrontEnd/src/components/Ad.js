@@ -21,7 +21,7 @@ const Ad = (props) => {
     >
       <div className="flex flex-col sm:flex-row">
         <div className="flex flex-col justify-center sm:basis-1/12">
-          <Link to="/userprofile" state={adData.id}>
+          <Link to="/userprofile" state={adData.user.id}>
           <div className="flex justify-center mt-4">
             {adData.type && adData.type === "Uczen" ? <SearchIcon class="w-auto"></SearchIcon> : <SchoolIcon class="w-auto"></SchoolIcon>}
           </div>
