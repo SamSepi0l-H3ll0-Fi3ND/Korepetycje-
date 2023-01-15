@@ -2,15 +2,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import StarIcon from '@mui/icons-material/Star';
 import { Link } from "react-router-dom";
 
-const ReviewWithDelete = () => {
-
-  const Review = {
-    FirstName: " Jakub",
-    LastName: " Figzał",
-    Description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus maxime aliquid atque minus sequi soluta reiciendis optio enim ipsa aspernatur! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus maxime aliquid atque minus sequi soluta reiciendis optio enim ipsa aspernatur! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus maxime aliquid atque minus sequi soluta reiciendis optio enim ipsa aspernatur!",
-    Rate: "2/5"
-  }
+const ReviewWithDelete = ({review}) => {
 
   return (
     <div
@@ -19,7 +11,7 @@ const ReviewWithDelete = () => {
       <div className="flex flex-col lg:flex-row">
         <div className="flex flex-col sm:basis-10/12">
           <div className="flex sm:justify-left mt-4">
-          <AccountCircleIcon class="justify-center w-16 ml-12 fill-[#ffffff]"/><p className="text-2xl ml-6 mt-4">{Review.FirstName} {Review.LastName}</p>
+          <AccountCircleIcon class="justify-center w-16 ml-12 fill-[#ffffff]"/><p className="text-2xl ml-6 mt-4">{review.FirstName} {review.LastName}</p>
             <div className="">
             <button className="btn bg-light-blue hover:bg-rose-800 text-dark-blue btn-sm ml-4">
               Usuń ogłoszenie
@@ -33,7 +25,7 @@ const ReviewWithDelete = () => {
           </div>
           <div className="flex justify-left p-6">
             <p className="ml-10 mb-10">
-                {Review.Description}
+                {review.Description}
             </p>
           </div>
         </div>
@@ -43,7 +35,7 @@ const ReviewWithDelete = () => {
               <p className="text-2xl ml-6">Ocena</p>
             </div>
             <div className="flex justify-center m-2">
-              <StarIcon class="justify-center w-8 ml-12 fill-[#ffffff]"></StarIcon><p className="text-2xl ml-6">{Review.Rate}</p>
+              <StarIcon class="justify-center w-8 ml-12 fill-[#ffffff]"></StarIcon><p className="text-2xl ml-6">{review.Rate}</p>
             </div>
           </div>
         </div>

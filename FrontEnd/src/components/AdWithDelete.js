@@ -5,12 +5,11 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import StarIcon from "@mui/icons-material/Star";
 import SearchIcon from "@mui/icons-material/Search";
 import SchoolIcon from "@mui/icons-material/School";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import API from "../env";
 
 const AdWithDelete = (props) => {
   const { adData } = props;
-  const navigate = useNavigate()
   const student = "#D6F4FE";
   const tutor = "#a0bdcf";
   const search = "Szukam korepetycji - ";
@@ -18,7 +17,7 @@ const AdWithDelete = (props) => {
 
   const deleteAnnouncement = async () => {
     try {
-      const response = await fetch(`${API}/Announcements/${adData.id}`, {
+      await fetch(`${API}/Announcements/${adData.id}`, {
         method: "DELETE",
         headers: {
           Authorization: "bearer " + localStorage.getItem("Tajny numerek"),
