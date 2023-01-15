@@ -19,6 +19,9 @@ const OtherUserProfile = () => {
     const [rate,setRate] = useState(null);
     const [description, setDescription] = useState(null);
 
+    const [token, setToken] = useState(() =>
+    localStorage.getItem("Tajny numerek"));
+
 
     useEffect(() => {
       try {
@@ -128,7 +131,7 @@ const OtherUserProfile = () => {
       </div>
       <div className="w-full bg-light-blue h-fit text-dark-blue px-6 py-6  border-solid border-8 border-white ">
         <p className="text-3xl mb-2">Recenzje: 
-        <label for="my-modal-3" class="btn bg-dark-blue hover:bg-yellow-600 text-light-blue btn-sm ml-4">Dodaj recenzje</label>
+        {token && (<label for="my-modal-3" class="btn bg-dark-blue hover:bg-yellow-600 text-light-blue btn-sm ml-4">Dodaj recenzje</label>)}
         <input type="checkbox" id="my-modal-3" class="modal-toggle" />
         <div class="modal">
           <div class="modal-box relative bg-light-blue">

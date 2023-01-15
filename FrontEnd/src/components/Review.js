@@ -3,14 +3,7 @@ import StarIcon from '@mui/icons-material/Star';
 
 const Review = (props) => {
   const {reviewData} = props
-  // const Review = {
-  //   FirstName: " Jakub",
-  //   LastName: " Figzał",
-  //   Description:
-  //     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus maxime aliquid atque minus sequi soluta reiciendis optio enim ipsa aspernatur! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus maxime aliquid atque minus sequi soluta reiciendis optio enim ipsa aspernatur! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus maxime aliquid atque minus sequi soluta reiciendis optio enim ipsa aspernatur!",
-  //   Rate: "2/5"
-  // }
-
+  
   return (
     <div
     className="h-auto bg-dark-blue text-white rounded-md w-auto shadow-[0_0_16px_0_rgba(0,0,0,0.5)] text-dark-blue m-10"
