@@ -6,21 +6,21 @@ import API from "../env";
 import { useNavigate } from "react-router-dom";
 import FormInput from "../components/FormInput";
 
-const regulamin = `2.1. Niniejszy Regulamin określa zasady korzystania ze sklepu internetowego dostępnego pod [adresem].
-2.2. Niniejszy Regulamin jest regulaminem, o którym mowa w art. 8 Ustawy o świadczeniu usług drogą elektroniczną.
-2.3. Sklep internetowy, działający pod [adresem], prowadzony jest przez [oznaczenie zgodne z częścią I. Podręcznika].
-2.4. Niniejszy Regulamin określa w szczególności [w zależności od dostępnych możliwości]:
-a.) zasady dokonywania rejestracji i korzystania z konta w ramach sklepu internetowego;
-b.) warunki i zasady dokonywania elektronicznej rezerwacji produktów dostępnych w ramach sklepu internetowego;
-c.) warunki i zasady składania drogą elektroniczną Zamówień w ramach sklepu internetowego;
-d.) zasady zawierania Umów sprzedaży z wykorzystaniem usług świadczonych w ramach Sklepu Internetowego.
-2.5. Korzystanie ze sklepu internetowego jest możliwe pod warunkiem spełnienia przez system teleinformatyczny, z którego korzysta Klient następujących minimalnych wymagań technicznych:
-a.) Internet Explorer w wersji [...] lub nowszej z włączoną obsługą [wskazanie niezbędnych aplikacji, np. aplety Javy], lub
-b.) [przeglądarka internetowa] w wersji [...] lub nowszej z włączoną obsługą [...], c.) minimalna rozdzielczość ekranu [...] x [...] pikseli.
-2.6. W celu korzystania ze sklepu internetowego Klient powinien we własnym zakresie uzyskać dostęp do stanowiska komputerowego lub urządzenia końcowego, z dostępem do Internetu.
-2.7. Zgodnie z obowiązującymi przepisami prawa [prowadzący Sklep] zastrzega sobie możliwość ograniczenia świadczenia usług za pośrednictwem Sklepu internetowego do osób, które ukończyły wiek 18 lat. W takim przypadku potencjalni Klienci zostaną o powyższym powiadomieni.
-2.8. Klienci mogą uzyskać dostęp do niniejszego Regulaminu w każdym czasie za pośrednictwem odsyłacza zamieszczonego na stronie głównej serwisu [adres internetowy] oraz pobrać go i sporządzić jego wydruk.
-2.9. Informacje o Towarach podane na stronach internetowych Sklepu, w szczególności ich opisy, parametry techniczne i użytkowe oraz ceny, stanowią zaproszenie do zawarcia umowy, w rozumieniu art. 71 Kodeksu Cywilnego.`
+const regulamin = `1.1. Niniejszy Regulamin określa zasady korzystania z serwisu internetowego dostępnego pod obecnym adresem.
+1.2. Niniejszy Regulamin jest regulaminem, o którym mowa w art. 8 Ustawy o świadczeniu usług drogą elektroniczną.
+1.3. Serwis internetowy, działający pod obecnym adresem, prowadzony jest przez nas.
+1.4. Niniejszy Regulamin określa w szczególności:
+a.) zasady dokonywania rejestracji i korzystania z konta w ramach serwisu internetowego;
+b.) warunki i zasady dokonywania elektronicznej rezerwacji produktów dostępnych w ramach serwisu internetowego;
+c.) warunki i zasady składania drogą elektroniczną Zamówień w ramach serwisu internetowego;
+d.) zasady zawierania Umów sprzedaży z wykorzystaniem usług świadczonych w ramach serwisu Internetowego.
+1.5. Korzystanie ze serwisu internetowego jest możliwe pod warunkiem spełnienia przez system teleinformatyczny, z którego korzysta Klient następujących minimalnych wymagań technicznych:
+a.) Edge w wersji 17 lub nowszej z włączoną obsługą js, lub
+b.) Chrome w wersji 109.0 lub nowszej z włączoną obsługą js, c.) minimalna rozdzielczość ekranu 375 x 667 pikseli.
+1.6. W celu korzystania ze serwisu internetowego Klient powinien we własnym zakresie uzyskać dostęp do stanowiska komputerowego lub urządzenia końcowego, z dostępem do Internetu.
+1.7. Zgodnie z obowiązującymi przepisami prawa prowadzący serwis zastrzega sobie możliwość ograniczenia świadczenia usług za pośrednictwem serwisu internetowego do osób, które ukończyły wiek 18 lat. W takim przypadku potencjalni Klienci zostaną o powyższym powiadomieni.
+1.8. Klienci mogą uzyskać dostęp do niniejszego Regulaminu w każdym czasie za pośrednictwem odsyłacza zamieszczonego na stronie głównej serwisu oraz pobrać go i sporządzić jego wydruk.
+1.9. Informacje o Towarach podane na stronach internetowych serwisu, w szczególności ich opisy, parametry techniczne i użytkowe oraz ceny, stanowią zaproszenie do zawarcia umowy, w rozumieniu art. 71 Kodeksu Cywilnego.`
 
 const SignUp = () => {
   const navigate = useNavigate();
