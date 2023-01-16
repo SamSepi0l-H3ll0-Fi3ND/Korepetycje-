@@ -45,7 +45,7 @@ const Ad = (props) => {
               minut
             </div>
             <div className="flex justify-center m-2">
-              <CallIcon />  <p className="ml-2">{adData.user.phoneNumber}</p>
+              <CallIcon />  <p className="ml-2">{adData.user.phoneNumber ? adData.user.phoneNumber : "Brak telefonu"}</p>
             </div>
           </div>
           <div className="flex flex-col">

@@ -21,7 +21,8 @@ const Announcements = () => {
     "Humanistyczne": [],
     "Obce": []
   });
-  
+  const [myID, setMyID] = useState(() =>
+    localStorage.getItem("MyID"));
 
   useEffect(() => {
     try {
@@ -116,6 +117,9 @@ const Announcements = () => {
       })
       .filter((item) => {
         return value1[0] <= item.price && value1[1] >= item.price ? item : false
+      })
+      .filter((item) => {
+        return myID ? (myID != item.user.id ? item : false) : true
       })
       .map((oneJson) => {
         return <Ad key={oneJson.id} adData={oneJson} />;

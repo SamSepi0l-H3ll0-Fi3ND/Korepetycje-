@@ -112,16 +112,19 @@ const UserEditInfo = () => {
                   <p className="text-white text-2xl">
                     <input
                       name="PhoneNumber"
-                      type="number"
+                      type="tel"
+                      pattern="[0-9]{3}[0-9]{3}[0-9]{3}"
+                      minLength="9"
+                      maxLength="9"
                       placeholder="Type here"
-                      className="input input-bordered w-full input-info max-w-xs"
+                      className="input input-bordered w-full input-info max-w-xs phone"
                       value={user.PhoneNumber}
                       onChange={onChange}
                     />
                   </p>
                 </div>
                 <div className="flex flex-col space-y-2">
-                  <p>Zmień address</p>
+                  <p>Zmień Miasto</p>
                   <p className="text-white text-2xl">
                     <input
                       name="Address"
@@ -138,7 +141,7 @@ const UserEditInfo = () => {
                   <p className="text-white text-2xl">
                     <input
                       name="Email"
-                      type="text"
+                      type="email"
                       placeholder="Type here"
                       className="input input-bordered input-info w-full max-w-xs"
                       value={user.Email}

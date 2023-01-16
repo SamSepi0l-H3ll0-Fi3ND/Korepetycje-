@@ -45,6 +45,7 @@ const ModifyAnnouncements = () => {
             <input
               type="number"
               min={0}
+              max={1000}
               className="input input-bordered w-full bg-white shadow-xl"
               placeholder="Cena za korepetycje"
               onChange={onChange}
@@ -54,6 +55,7 @@ const ModifyAnnouncements = () => {
             <p className="text-2xl text-center">Długość lekcji (minuty):</p>
             <input
               min={1}
+              max={200}
               type="number"
               placeholder="Czas przeznaczony na korepetycje"
               className="input input-bordered w-full bg-white shadow-xl"
@@ -82,6 +84,7 @@ const ModifyAnnouncements = () => {
         <div className="w-full bg-light-blue h-1/3 text-dark-blue px-6 py-6  border-solid border-8 border-white ">
           <p className="text-3xl mb-2">Opis:</p>
           <textarea
+            required
             name="Description"
             defaultValue={ann.Description}
             onChange={onChange}

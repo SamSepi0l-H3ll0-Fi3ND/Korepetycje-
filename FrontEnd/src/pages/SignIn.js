@@ -20,7 +20,7 @@ const SignIn = () => {
       return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
     }).join(''));
 
-    return (JSON.parse(jsonPayload))["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
+    return JSON.parse(jsonPayload);
   }
 
   async function loginSubmit(e) {
@@ -47,7 +47,9 @@ const SignIn = () => {
       else {
         const token = await response.text();
         localStorage.setItem("Tajny numerek", token);
-        localStorage.setItem("Role", getRole());
+        const claims = getRole();
+        localStorage.setItem("Role", claims["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"]);
+        localStorage.setItem("MyID", claims["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"]);
         navigate("/");
       }
     } catch (error) {

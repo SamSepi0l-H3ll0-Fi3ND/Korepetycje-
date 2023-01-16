@@ -20,6 +20,7 @@ const Nav = () => {
   const LogOut = () => {
     localStorage.removeItem("Tajny numerek");
     localStorage.removeItem("Role");
+    localStorage.removeItem("MyID");
     setToken(null);
     setRole(null);
   };
