@@ -162,7 +162,7 @@ const Announcements = () => {
                     <option value="" disabled hidden>
                       Przedmiot
                     </option>
-                    <option value="all">Przedmiot</option>
+                    <option value="all">Wszystkie</option>
                     {category === "" ? (
                       Object.values(allSubjects).map((tab) => tab.map((item) => <option key={item} value={item}>{item}</option>
                       ))

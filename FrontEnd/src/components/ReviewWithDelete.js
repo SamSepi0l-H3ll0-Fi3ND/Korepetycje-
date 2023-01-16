@@ -30,11 +30,11 @@ const ReviewWithDelete = ({review, delete: del}) => {
             <button className="btn bg-light-blue hover:bg-rose-800 text-dark-blue btn-sm ml-4" onClick={deleteReview}>
               Usuń opinie
             </button>
-            <Link to="/editAnnouncements">
+            {/* <Link to="/editAnnouncements">
               <button className="btn bg-light-blue hover:bg-yellow-600 text-dark-blue btn-sm ml-4">
                 Modyfikuj opinie
               </button>
-            </Link>
+            </Link> */}
             </div>
           </div>
           <div className="flex justify-left p-6">
