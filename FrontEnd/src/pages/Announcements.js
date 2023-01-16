@@ -23,13 +23,6 @@ const Announcements = () => {
   });
   
 
-  // var allSubjects = {
-  //   "Ścisłe": [],
-  //   "Przyrodnicze": [],
-  //   "Humanistyczne": [],
-  //   "Obce": []
-  // }
-
   useEffect(() => {
     try {
       fetch(`${API}/Announcements`, {
@@ -128,8 +121,6 @@ const Announcements = () => {
         return <Ad key={oneJson.id} adData={oneJson} />;
       });
   }
-  console.log(category)
-  console.log(subject)
   return (
     <div>
       <div className="min-h-screen w-full">
@@ -153,7 +144,7 @@ const Announcements = () => {
             <div className="flex justify-center">
               <div className="max-w-xl">
                 <div className="pb-6">
-                  <select className="m-3 rounded-full" onChange={(e) => { setCategory(e.target.value); setSubject("all") }} defaultValue="">
+                  <select className="m-3 rounded-full" onChange={(e) => { setCategory(e.target.value); }} defaultValue="">
                     <option value="" disabled hidden>
                       Kategoria
                     </option>
@@ -163,11 +154,11 @@ const Announcements = () => {
                     <option value="Przyrodnicze">Przyrodnicze</option>
                     <option value="Obce">Obce</option>
                   </select>
-                  <select className="m-3 rounded-full" onChange={(e) => setSubject(e.target.value)} defaultValue={subject === "" ? inSubject : subject}>
+                  <select className="m-3 rounded-full" onChange={(e) => setSubject(e.target.value)} value={subject === "" ? inSubject : subject}>
                     <option value="" disabled hidden>
                       Przedmiot
                     </option>
-                    <option value="all">Wszystkie</option>
+                    <option value="all">Przedmiot</option>
                     {category === "" ? (
                       Object.values(allSubjects).map((tab) => tab.map((item) => <option key={item} value={item}>{item}</option>
                       ))

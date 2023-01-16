@@ -90,7 +90,7 @@ const AdminPanel = () => {
             <p className="text-white text-2xl"> Nazwisko </p>
           </div>
           <div className="flex flex-col space-y-2">
-            <p className="text-white text-2xl"> Adres </p>
+            <p className="text-white text-2xl"> Miasto </p>
           </div>
           <div className="flex flex-col space-y-2">
             <p className="text-white text-2xl"> Ocena  </p>

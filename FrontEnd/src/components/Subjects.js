@@ -3,6 +3,11 @@ import Subject from './Subject';
 const Subjects = () => {
   return (
     <div>
+      <div className="flex justify-center my-6">
+        <span className="text-4xl text-center text-dark-blue font-bold">
+          Popularne Przedmioty
+        </span>
+      </div>
       <div className="grid grid-cols-4 gap-4 text-center justify-items-center text-dark-blue text-xl pt-6 pb-6 ">
         <div className="text-2xl font-bold px-16 py-2 underline underline-offset-8">
           Ścisłe

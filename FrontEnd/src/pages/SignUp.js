@@ -5,6 +5,7 @@ import { useState } from "react";
 import API from "../env";
 import { useNavigate } from "react-router-dom";
 import FormInput from "../components/FormInput";
+import CircularProgress from '@mui/material/CircularProgress';
 
 const regulamin = `1.1. Niniejszy Regulamin określa zasady korzystania z serwisu internetowego dostępnego pod obecnym adresem.
 1.2. Niniejszy Regulamin jest regulaminem, o którym mowa w art. 8 Ustawy o świadczeniu usług drogą elektroniczną.
@@ -28,16 +29,24 @@ const SignUp = () => {
   var [response2, setResponse2] = useState();
   var [checked, setChecked] = useState();
   var [afterSubmit, setAfterSubmit] = useState();
+  const [waiting, setWaiting] = useState(false);
+
+  const isEmail = (email) =>
+  /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
 
   async function registerSubmit(e) {
+    setResponse(null);
+    setWaiting(true);
     const formdata = new FormData(e.target);
     var jsonObject = {};
     formdata.forEach((value, key) => (jsonObject[key] = value));
+    let emailValid = isEmail(jsonObject.email)
+    if(!emailValid) setResponse("Niepoprawny email");
     setAfterSubmit(true);
     e.preventDefault();
 
     try {
-      if (!checked) {
+      if (!checked || !emailValid) {
         console.log("Akceptuj regulamin!");
       } else {
         if (formdata.get("password") === formdata.get("confirmPassword")) {
@@ -63,6 +72,7 @@ const SignUp = () => {
     } catch (error) {
       console.log(error, error.message);
     }
+    setWaiting(false);
   }
 
   return (
@@ -79,7 +89,7 @@ const SignUp = () => {
               <FormInput name="username" placeholder="Username" label="Nazwa Użytkownika"/>
               <FormInput name="firstname" placeholder="Firstname" label="Imie"/>
               <FormInput name="lastname" placeholder="Last name" label="Nazwisko"/>
-              <FormInput name="address" placeholder="Address" label="Adres"/>
+              <FormInput name="address" placeholder="Address" label="Miasto"/>
               <FormInput name="email" placeholder="Email" label="Adres e-mail"/>
               <FormInput name="password" placeholder="Password" label="Hasło" type="password"/>
               <FormInput name="confirmPassword" placeholder="Confirm password" label="Potwierdź hasło" type="password"/>
@@ -110,6 +120,9 @@ const SignUp = () => {
                   Zarejestruj się
                 </button>
               </div>
+              {waiting && <div className="flex p-4 justify-center">
+                <CircularProgress />
+              </div>}
               {response && <Info responseData={response}></Info>}
               {response2 && (
                 <div>

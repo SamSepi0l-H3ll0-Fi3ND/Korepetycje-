@@ -102,7 +102,7 @@ const OtherUserProfile = () => {
             <p className="text-white text-2xl"> {user.lastName} </p>
           </div>
           <div className="flex flex-col space-y-2">
-            <p>Adres</p>
+            <p>Miasto</p>
             <p className="text-white text-2xl"> {user.address} </p>
           </div>
           <div className="flex flex-col space-y-2">
